@@ -1,9 +1,19 @@
 import express from 'express'
-
+import {mongoConnectionString} from './config.js'
+import mongoose from 'mongoose';
 import bodyParser from 'body-parser'
 
+
+//connect mongo
+mongoose.Promise = global.Promise;
+mongoose.connect(mongoConnectionString,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+
 //import all routes
-import feedbackRoutes from './routes/feedbackRoutes.js'
+import FeedbackRoutes from './routes/FeedbackRoutes.js'
 
 // var path = require('path');
 // var cookieParser = require('cookie-parser');
@@ -20,7 +30,7 @@ server.use(bodyParser.urlencoded({extended: true}));
 server.use(bodyParser.json());
 
 //call the feedback routes
-feedbackRoutes(server);
+FeedbackRoutes(server);
 
 // index.use(logger('dev'));
 
