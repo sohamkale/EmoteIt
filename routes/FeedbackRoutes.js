@@ -12,8 +12,10 @@ export default function FeedbackRoutes (server){
     server.route('/feedback')
         .post(CreateFeedback)
         .get(GetNewFeedbacks)
-        .put(UpdateFeedback)
     ;
+
+    server.route('/feedback/:id')
+        .put(UpdateFeedback)
 
     server.route('/feedback/completed')
         .get(GetFeedbacks);
