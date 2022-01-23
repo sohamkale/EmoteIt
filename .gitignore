@@ -352,3 +352,6 @@ MigrationBackup/
 
 # Ignore the config file
 /config.js
+
+
+.idea/
