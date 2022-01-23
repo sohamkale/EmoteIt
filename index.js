@@ -18,6 +18,7 @@ import FeedbackRoutes from './routes/FeedbackRoutes.js'
 // var path = require('path');
 // var cookieParser = require('cookie-parser');
 import logger from 'morgan'
+import TranslationRoutes from "./routes/TranslationRoutes.js";
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
@@ -31,6 +32,7 @@ server.use(bodyParser.json());
 
 //call the feedback routes
 FeedbackRoutes(server);
+TranslationRoutes(server);
 
 // index.use(logger('dev'));
 
