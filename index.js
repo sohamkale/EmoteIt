@@ -13,12 +13,15 @@ mongoose.connect(mongoConnectionString,{
 
 
 //import all routes
-import FeedbackRoutes from './routes/FeedbackRoutes.js'
+import FeedbackRoutes from './routes/FeedbackRoutes.js';
+import UserRoutes from './routes/userRoutes.js';
+import notificationRoutes from './routes/notificationRoutes.js';
 
 // var path = require('path');
 // var cookieParser = require('cookie-parser');
 import logger from 'morgan'
 import TranslationRoutes from "./routes/TranslationRoutes.js";
+import {createNotification} from "./controllers/NotificationController.js";
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
@@ -33,6 +36,9 @@ server.use(bodyParser.json());
 //call the feedback routes
 FeedbackRoutes(server);
 TranslationRoutes(server);
+UserRoutes(server);
+notificationRoutes(server);
+// createNotification("61ef6c1c5c3f6812a4c55ae4", "Putki", 2,"3")
 
 // index.use(logger('dev'));
 

@@ -1,4 +1,4 @@
-import {GetNotification} from "../controllers/NotificationController.js";
+import {GetNotification, UpdateNotifications, createNotification} from "../controllers/NotificationController.js";
 
 export default function notificationRoutes(server){
     server.route('/notifications') // param stuff use to get data edit data to reflect param
@@ -6,4 +6,6 @@ export default function notificationRoutes(server){
         const data = GetNotification();
         res.send(data);
     })
+    server.route('/notifications/:id')
+        .put(UpdateNotifications)
 }
