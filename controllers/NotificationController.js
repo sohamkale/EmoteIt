@@ -9,9 +9,7 @@ const NotificationEngine = mongoose.model('Notification', NotificationSchema);
 //TODO: Find the user of the given userId and push the newly created notificationId to the array of notificationIds
 
 export function createNotification(userId,msg,typeId,subjectId) {
-    let notificationId;
     let notificationObject = {
-        seen: false,
         message: msg,
         userId: userId,
         typeId: typeId,
@@ -23,12 +21,14 @@ export function createNotification(userId,msg,typeId,subjectId) {
             console.log("Could not create notification!:" + err)
             res.send(err);
         }
+        UserEngine.findOneAndUpdate(userId, {$push: {notificationIds:addNotification.id}},{new:true}, (err, updatedUser)=>{
+            if(err)
+                return err
+           console.log("Added to array" + addNotification.id)
+            return addNotification.id
+        })
         console.log("Notification created");
-        notificationId = addNotification.id;
-        console.log(notificationId + " NID")
-        console.log(userId + " UID")
     })
-    UserEngine.findByIdAndUpdate(userId, {$push: {notificationIds: {id: notificationId}}},{new:true})
 }
 
 //TODO: GetNotifications(req, res)
@@ -38,6 +38,19 @@ export function createNotification(userId,msg,typeId,subjectId) {
 
 export function GetNotification(req, res){
     // scan user database with the userId in req.userid?
+    UserEngine.findById({
+    _id: req.params.user
+    },(err, user)=>{
+        NotificationEngine.find({
+            userId: user.id
+        },(err, notis)=>{
+            if(err)
+                res.send(err)
+            res.send(notis)
+        })
+        if(err)
+            res.send(err);
+    })
 }
 
 //TODO: UpdateNotifications(req, res)

@@ -8,4 +8,6 @@ export default function notificationRoutes(server){
     })
     server.route('/notifications/:id')
         .put(UpdateNotifications)
+    server.route('/notifications/:user')
+        .post(GetNotification)
 }

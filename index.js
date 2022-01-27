@@ -38,7 +38,7 @@ FeedbackRoutes(server);
 TranslationRoutes(server);
 UserRoutes(server);
 notificationRoutes(server);
-// createNotification("61ef6c1c5c3f6812a4c55ae4", "Putki", 2,"3")
+ // createNotification("61f267dd0017642ca52dc23d", "Hameem Kalo", 1, 2);
 
 // index.use(logger('dev'));
 
