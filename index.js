@@ -16,6 +16,7 @@ mongoose.connect(mongoConnectionString,{
 import FeedbackRoutes from './routes/FeedbackRoutes.js';
 import UserRoutes from './routes/userRoutes.js';
 import notificationRoutes from './routes/notificationRoutes.js';
+import EmortionRoutes from "./routes/EmortionRoutes.js";
 
 // var path = require('path');
 // var cookieParser = require('cookie-parser');
@@ -38,6 +39,7 @@ FeedbackRoutes(server);
 TranslationRoutes(server);
 UserRoutes(server);
 notificationRoutes(server);
+EmortionRoutes(server);
  // createNotification("61f267dd0017642ca52dc23d", "Hameem Kalo", 1, 2);
 
 // index.use(logger('dev'));
