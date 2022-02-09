@@ -11,6 +11,6 @@ export const EmortionSchema = new Schema({
     categoryId: Number,
     privacyId: String,
     reactionIds: [String],
-    insightIds: [String]
+    insightUIDs: [String]
 }, { id: true, _id: true, timestamps: true }
 );
