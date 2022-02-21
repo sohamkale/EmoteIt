@@ -38,7 +38,7 @@ export function GetUserEmortions(req, res){
         }
         else{
             console.log("Emortions found!")
-            res.send(emortion)
+               res.send(emortion)
         }
     })
 }
@@ -105,7 +105,19 @@ export function StartInsight(req, res){
             }
         })
 }
-
-export function SubmitEmortion(req,res){
-
+export function SubmitEmortionInsight(req,res){
+    let matchCounter = 0;
+    let answerNumber;
+    let response = req.body.response.split(" ")
+    let secret = req.body.secret.split(" ")
+    for(let i =0; i<response.length;i++){
+        if(response[i] === secret[i]){
+            matchCounter++;
+        }
+    }
+    // Get answer number
+        EmortionEngine.findById(req.params.emortionId,(err, emortion)=>{
+        answerNumber = emortion?.insightUIDs?.length;
+        console.log(answerNumber);
+    } )
 }
