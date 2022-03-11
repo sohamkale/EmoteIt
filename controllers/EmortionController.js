@@ -107,9 +107,13 @@ export function StartInsight(req, res){
 }
 export function SubmitEmortionInsight(req,res){
     let matchCounter = 0;
-    let answerNumber;
+    let answerNumber = 0;
+    let timeSubtract = 0;
+    let subtractAnswerRank = 0;
+    let finalScore = 0;
     let response = req.body.response.split(" ")
     let secret = req.body.secret.split(" ")
+    let startTime;
     for(let i =0; i<response.length;i++){
         if(response[i] === secret[i]){
             matchCounter++;
@@ -117,7 +121,61 @@ export function SubmitEmortionInsight(req,res){
     }
     // Get answer number
         EmortionEngine.findById(req.params.emortionId,(err, emortion)=>{
-        answerNumber = emortion?.insightUIDs?.length;
-        console.log(answerNumber);
-    } )
+        answerNumber = emortion?.insightUIDs?.length
+        subtractAnswerRank = (answerNumber-1)*2;
+
+        //get start time
+        InsightEngine.find({createdBy:LoggedInUserUID, emortionId:req.params.emortionId}, (err, insight)=>{
+            startTime = insight[0].createdAt
+            let currTime = new Date()
+            let timeDifferential = Math.abs(currTime-startTime)
+            if(timeDifferential >= 10000){
+                timeSubtract = 5;
+            }
+            if(timeDifferential >= 20000){
+                timeSubtract = 10;
+            }
+            if(timeDifferential >= 30000){
+                timeSubtract = 15;
+            }
+            if(timeDifferential >= 40000){
+                timeSubtract = 20;
+            }
+            if(timeDifferential >= 50000){
+                timeSubtract = 25;
+            }
+            if(timeDifferential >= 60000){
+                timeSubtract = 30;
+            }
+            finalScore = (matchCounter*10) + (10) - (subtractAnswerRank) + (30) - (timeSubtract);
+            console.log(finalScore)
+            let returnObj = {
+                score : finalScore,
+                submittedAt: currTime,
+                accuracy : finalScore/timeSubtract
+            }
+            InsightEngine.findByIdAndUpdate(insight[0]._id,returnObj,{new:true}, (err, updated)=>{
+                if(err){
+                    res.send(err)
+                }
+                console.log("Updated to insight table")
+            })
+            if(err){
+                res.send(err)
+            }
+            res.send(returnObj)
+            console.log("Submitted Emortion!")
+        })
+    })
 }
+export function GetInsightsOfEmortion(req, res){
+        EmortionEngine.findById(req.params.emortionId,(err, insight)=>{
+            if(err){
+                res.send(err)
+            }
+        if(insight.createdBy === LoggedInUserUID){
+            res.send()
+        }
+    })
+}
+
