@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/EmortionController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/EmortionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/EmortionRoutes.js" afterDir="false" />
     </list>

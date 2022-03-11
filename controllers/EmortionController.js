@@ -67,7 +67,7 @@ export function StartInsight(req, res){
                         res.send(err);
                     }
                     else{
-                        console.log("Insight Already Answered!")
+                        console.log("Emortion Already Answered!")
                         res.send(insight);
                     }
                 })
@@ -88,7 +88,7 @@ export function StartInsight(req, res){
                         res.send(err)
                     }
                     else{
-                        EmortionEngine.findOneAndUpdate(emortion._id,{$push:{insightUIDs:LoggedInUserUID}},{new:true},
+                        EmortionEngine.findOneAndUpdate({_id:req.params.id},{$push:{insightUIDs:LoggedInUserUID}},{new:true},
                             (err,updatedEmortion)=>{
                                 if(err){
                                     res.send(err);
@@ -169,13 +169,38 @@ export function SubmitEmortionInsight(req,res){
     })
 }
 export function GetInsightsOfEmortion(req, res){
-        EmortionEngine.findById(req.params.emortionId,(err, insight)=>{
+        InsightEngine.find({emortionId:req.params.emortionId},(err, insight)=>{
             if(err){
                 res.send(err)
             }
-        if(insight.createdBy === LoggedInUserUID){
-            res.send()
-        }
+           IsEmortionVisible(req.params.emortionId, LoggedInUserUID, function(result){
+                if(result){
+                    res.send(insight.slice(0,req.query.limit))
+                }
+            });
     })
+}
+
+function IsEmortionVisible(emortionID, UID, callBack){
+    const InsightArray = []
+    EmortionEngine.findById(emortionID, (err, emortion) =>{
+        // check if created by user (UID)
+        if(emortion.createdBy === UID){
+            return callBack(true)
+        }
+        // check if expired
+        if(emortion.expireTime < new Date()){
+            return callBack(true)
+        }
+        // check if emortion answered
+        for(var i = 0; i<emortion.insightUIDs.length;i++){
+            InsightArray.push(emortion.insightUIDs[i]);
+        }
+        if(InsightArray.includes(UID)){
+            return callBack(true)
+        }
+        return callBack(false)
+    })
+    return false
 }
 
