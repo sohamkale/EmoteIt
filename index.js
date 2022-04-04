@@ -14,7 +14,7 @@ mongoose.connect(mongoConnectionString,{
 
 //import all routes
 import FeedbackRoutes from './routes/FeedbackRoutes.js';
-import UserRoutes from './routes/userRoutes.js';
+import UserRoutes from './routes/UserRoutes.js';
 import notificationRoutes from './routes/notificationRoutes.js';
 import EmortionRoutes from "./routes/EmortionRoutes.js";
 

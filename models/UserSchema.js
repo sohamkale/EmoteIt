@@ -12,6 +12,6 @@ export const UserSchema = new Schema(
         profileImage: String,
         notificationIds: [String],
         typeId: Number,
-        uId: String,
-    },{ id: true, _id: true, timestamps: true }
+        uid: String,
+    },{  _id: true, timestamps: true }
 );
