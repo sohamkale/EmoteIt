@@ -1,9 +1,18 @@
 import {UserSchema} from "../models/UserSchema.js";
 import mongoose from "mongoose";
-import firebase from "firebase-admin"
+
+//firebase imports!
+import admin from "firebase-admin"
+import {initializeApp} from "firebase-admin/app";
+import {firebasePrivateKey as serviceAccount} from "../config.js";
+
+//initialize the firebase sdk!
+const firebaseApp = initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
+
 
 export const UserEngine = mongoose.model('User', UserSchema);
-
 
 export function CreateUser(req, res){
     let _user = req.body;
@@ -44,20 +53,37 @@ export function GetAllUsers(req, res){
 }
 
 export function GetLoggedInUser(req, res){
-    firebase.auth().verifyIdToken("access-token").then((usr)=>{
-        console.log(usr);
-        res.send(usr);
-    });
-}
-
-export function GetTokenUser(accessToken){
-
-}
-
-export function GetUser(req, res){
-    UserEngine.findById(req.params.id, (err, user)=>{
+    // idToken comes from the client app
+    const idToken = req.get("access-token");
+    GetTokenUser(idToken,(user, err)=>{
         if(err)
-            res.send(err);
-        res.send(user);
+            res.status(500).send(err);
+        else if (err == null && user == null)
+            res.status(404).send("user not found!")
+        else if(err == null)
+            res.send(user);
     })
+
+}
+
+export function GetTokenUser(accessToken, outUser){
+    admin.auth()
+        .verifyIdToken(accessToken)
+        .then((decodedToken) => {
+            const uid = decodedToken.uid;
+            if(uid){
+                UserEngine.findOne({uid:uid}).then((user,err)=>{
+                    if(user == null)
+                        outUser(null,null);
+                    else
+                        outUser(user,null)
+                }).catch((err)=>{
+                    outUser(null,err);
+                })
+            }
+        })
+        .catch((err) => {
+            // Handle error
+            outUser(null,err);
+        });
 }
