@@ -83,3 +83,25 @@ export function UserHappyFriendships(req,res){
         res.send(updated)
     })
 }
+
+export function CancelFriendshipRequest(req,res){
+    const _friendship = req.body;
+    const accessToken = req.get("access-token");
+    GetTokenUser(accessToken, (user, err)=>{
+        if(!user)
+            res.status(401).send("user not retrieved!")
+        else{
+            FriendshipEngine.findOneAndRemove({$and: [{requesterUserId: user.uid},{_id:_friendship._id}]}, (err, deleted)=>{
+                if(err){
+                    res.send(err)
+                }
+                if(deleted)
+                    res.send("deleted");
+                else
+                    res.status(204).send()
+            })
+        }
+
+
+    })
+}

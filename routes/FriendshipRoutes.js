@@ -1,4 +1,5 @@
 import {
+    CancelFriendshipRequest,
     RequestFriendship,
     RespondFriendship,
     UserFriendships,
@@ -10,6 +11,7 @@ export default function FriendshipRoutes (server){
         .post(RequestFriendship)
         .put(RespondFriendship)
         .get(UserFriendships)
+        .delete(CancelFriendshipRequest)
 
     server.route('/api/friendship/user/:userId')
         .get(UserHappyFriendships)
