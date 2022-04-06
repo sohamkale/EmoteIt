@@ -1,4 +1,4 @@
-import{CreateEmortion, GetEmortion, GetUserEmortions, StartInsight, SubmitEmortionInsight, GetInsightsOfEmortion} from "../controllers/EmortionController.js";
+import{CreateEmortion, GetEmortion, GetUserEmortions, StartInsight, SubmitEmortionInsight, GetInsightsOfEmortion, GetUserInsight} from "../controllers/EmortionController.js";
 
 export default function EmortionRoutes (server) {
     server.route('/emortion/emortion')
@@ -13,4 +13,6 @@ export default function EmortionRoutes (server) {
         .patch(SubmitEmortionInsight);
     server.route('/insight/emortion/:emortionId')
         .get(GetInsightsOfEmortion);
+    server.route('/insight/user/:userId')
+        .get(GetUserInsight);
 }
