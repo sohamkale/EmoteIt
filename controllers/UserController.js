@@ -16,8 +16,7 @@ export const UserEngine = mongoose.model('User', UserSchema);
 
 export function CreateUser(req, res){
     let _user = req.body;
-    console.log(_user)
-    UserEngine.findOne({uid:_user.uid}, (err, user)=>{
+    UserEngine.findOne({uid:_user.uid}).then((user, err)=>{
         if(err)
             res.status(500).send(err);
         else if(user)

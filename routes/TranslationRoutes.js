@@ -3,17 +3,16 @@ import{ UpdateTranslation, CreateTranslation, GetTranslation} from "../controlle
 
 
 export default function TranslationRoutes(server){
-    server.route('/translation/:tableIdntfr')
+    server.route('/api/translation/:tableIdntfr')
 
 
         .post(CreateTranslation)
         .get(GetTranslation)
+        .put(UpdateTranslation)
         // .get(GetNewTranslation)
-        // .put(UpdateTranslation)
 
 
-    // server.route('/translation/:tableIdntfr/?rid=:rid')
-    //     .get(GetTranslation)
+
 
 
     }

@@ -7,7 +7,7 @@ const TranslationSchema = new Schema(
         tableIdntfr: {type: String, required: true,},
         text: {type: String, required: true},
         depricated: false
-    },{id: true, _id:true, timestamps: true}
+    },{id: true, timestamps: true}
 
 
 

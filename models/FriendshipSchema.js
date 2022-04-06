@@ -12,15 +12,12 @@ const Schema = mongoose.Schema;
 //         }
 //     )
 
-export const FeedbackSchema = new Schema(
+export const FriendshipSchema = new Schema(
     {
         // createdBy: { type: string, required: 'created by id for feedbacks are requried!'}
-        createdBy: String,
-        updatedBy: String,
-        objectTypeId: Number,
+        requesterUserId: {type: String, required: true},
+        requesteeUserId: {type: String, required: true},
         typeId: {type: Number, required: true},
-        subjectId: {type: String, required: true},
-        message: {type: String, required: true},
-        statusId: {type: Number, default: 0}
-    }, {id: true, timestamps: true}
+        statusId: {type: Number, required: true}
+    }
 );

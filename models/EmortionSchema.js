@@ -3,7 +3,7 @@ const Schema  = mongoose.Schema;
 
 export const EmortionSchema = new Schema({
     createdBy: String,
-    updatedAt: Date,
+    updatedBy: String,
     message: [String],
     secret: String,
     expireTime: Date,
@@ -12,5 +12,5 @@ export const EmortionSchema = new Schema({
     privacyId: String,
     reactionIds: [String],
     insightUIDs: [String]
-}, { id: true, _id: true, timestamps: true }
+}, { id: true, timestamps: true }
 );

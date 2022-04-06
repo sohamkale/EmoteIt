@@ -15,7 +15,7 @@ mongoose.connect(mongoConnectionString,{
 //import all routes
 import FeedbackRoutes from './routes/FeedbackRoutes.js';
 import UserRoutes from './routes/UserRoutes.js';
-import notificationRoutes from './routes/notificationRoutes.js';
+import notificationRoutes from './routes/NotificationRoutes.js';
 import EmortionRoutes from "./routes/EmortionRoutes.js";
 
 // var path = require('path');
@@ -23,6 +23,7 @@ import EmortionRoutes from "./routes/EmortionRoutes.js";
 import logger from 'morgan'
 import TranslationRoutes from "./routes/TranslationRoutes.js";
 import {createNotification} from "./controllers/NotificationController.js";
+import FriendshipRoutes from "./routes/FriendshipRoutes.js";
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
@@ -40,6 +41,7 @@ TranslationRoutes(server);
 UserRoutes(server);
 notificationRoutes(server);
 EmortionRoutes(server);
+FriendshipRoutes(server);
  // createNotification("61f267dd0017642ca52dc23d", "Hameem Kalo", 1, 2);
 
 // index.use(logger('dev'));

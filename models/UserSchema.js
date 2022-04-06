@@ -13,5 +13,5 @@ export const UserSchema = new Schema(
         notificationIds: [String],
         typeId: Number,
         uid: String,
-    },{  _id: true, timestamps: true }
+    },{  id: true, timestamps: true }
 );

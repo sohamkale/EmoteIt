@@ -37,7 +37,8 @@ export function GetFeedbacks(req,res){
 }
 
 export function UpdateFeedback(req, res){
-    FeedbackEngine.findByIdAndUpdate(req.params.id, req.body,{new:true},
+    const _feedback = req.body;
+    FeedbackEngine.findByIdAndUpdate(_feedback.id,_feedback,{new:true},
         (err, updatedFeedback)=>{
         if(err)
             res.send(err);

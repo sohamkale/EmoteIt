@@ -1,20 +1,17 @@
 import {GetNewFeedbacks, GetFeedbacks, CreateFeedback, UpdateFeedback} from "../controllers/FeedbackController.js";
 
 
-function CreateBalance(money,date){
+function CreateBalance(money, date) {
 
 }
-export default function FeedbackRoutes (server){
-    server.route('/feedback')
+
+export default function FeedbackRoutes(server) {
+    server.route('/api/feedback')
         .post(CreateFeedback)
         .get(GetNewFeedbacks)
-    ;
-    server.route('/feedback/:id')
         .put(UpdateFeedback)
 
-    server.route('/feedback/:id')
-        .put(UpdateFeedback)
 
-    server.route('/feedback/completed')
+    server.route('/api/feedback/completed')
         .get(GetFeedbacks);
 }

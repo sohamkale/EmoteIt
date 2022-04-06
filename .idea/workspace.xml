@@ -4,12 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="">
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="user controller completed">
+      <change afterPath="$PROJECT_DIR$/controllers/FriendshipController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/NewsController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/FriendshipSchema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/NewsSchema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/FriendshipRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/FeedbackController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FeedbackController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/TranslationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/TranslationController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebase/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/EmortionSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/EmortionSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/FeedbackSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/FeedbackSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/InsightSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/InsightSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/NotificationSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/NotificationSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/TranslationSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/TranslationSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/UserSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/UserSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/FeedbackRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/FeedbackRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/TranslationRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/TranslationRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/UserRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/UserRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/notificationRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/NotificationRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +84,7 @@
       <workItem from="1641697128610" duration="7532000" />
       <workItem from="1641974699325" duration="2792000" />
       <workItem from="1649133345791" duration="5938000" />
-      <workItem from="1649211760606" duration="2987000" />
+      <workItem from="1649211760606" duration="9931000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -77,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642905993631</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="user controller completed">
+      <created>1649214786299</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649214786299</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +120,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Notification Controller Todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Notification Controller Todo" />
+    <MESSAGE value="user controller completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="user controller completed" />
   </component>
 </project>

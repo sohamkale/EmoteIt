@@ -12,5 +12,5 @@ export const InsightSchema = new Schema({
     emortionId: String,
     reactionIds: [String],
     deprecated: false,
-}, { id: true, _id: true, timestamps: true }
+}, { id: true,  timestamps: true }
 );

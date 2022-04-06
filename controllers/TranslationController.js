@@ -26,7 +26,7 @@ export function CreateTranslation(req, res){
 
 export function GetTranslation(req, res){
     // console.log(req.query.rid);
-    TranslationEngine.find({tableIdntfr: req.params.tableIdntfr,rid: req.query.rid },(err, translation)=>{
+    TranslationEngine.find({tableIdntfr: req.params.tableIdntfr},(err, translation)=>{
         if(err)
             res.send(err);
         res.send(translation);
@@ -36,8 +36,8 @@ export function GetTranslation(req, res){
 }
 
 export function UpdateTranslation(req, res){
-    let _updateReq = req.body;
-    TranslationEngine.findByIdAndUpdate(_updateReq.id, {statusId: _updateReq.statusId},
+    let _translation = req.body;
+    TranslationEngine.findByIdAndUpdate(_translation._id, _translation,{new:true},
         (err, updatedTranslation)=>{
         if(err)
             res.send(err);
