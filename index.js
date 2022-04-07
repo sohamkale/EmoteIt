@@ -24,6 +24,7 @@ import logger from 'morgan'
 import TranslationRoutes from "./routes/TranslationRoutes.js";
 import {createNotification} from "./controllers/NotificationController.js";
 import FriendshipRoutes from "./routes/FriendshipRoutes.js";
+import SecretEmortionRoutes from "./routes/SecretEmortionRoutes.js";
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
@@ -42,6 +43,7 @@ UserRoutes(server);
 notificationRoutes(server);
 EmortionRoutes(server);
 FriendshipRoutes(server);
+SecretEmortionRoutes(server);
  // createNotification("61f267dd0017642ca52dc23d", "Hameem Kalo", 1, 2);
 
 // index.use(logger('dev'));

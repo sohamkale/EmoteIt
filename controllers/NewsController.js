@@ -8,3 +8,16 @@ export function GetNews(req,res){
         res.send(news);
     })
 }
+
+export function CreateNews(req,res){
+    const _news = req.body;
+    const newNews = new NewsEngine(_news);
+    newNews.save((err,addedNews)=>{
+        if(err){
+            console.log("Could not create news!:" + err)
+            res.status(500).send("could not create news");
+        }
+        else
+        res.send(addedNews)
+    })
+}

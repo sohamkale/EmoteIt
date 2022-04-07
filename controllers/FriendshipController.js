@@ -71,7 +71,6 @@ export function UserFriendships(req,res){
             })
         }
 
-
     })
 }
 

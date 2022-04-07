@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="news controller!">
+      <change afterPath="$PROJECT_DIR$/controllers/SecretEmortionController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/SecretEmortionResponseSchema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/SecretEmortionSchema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/SecretEmortionRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/FriendshipController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FriendshipController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/FriendshipRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/FriendshipRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/NewsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/NewsSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/NewsSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/NotificationRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/NotificationRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +51,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\models" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -68,6 +80,7 @@
       <workItem from="1649133345791" duration="5938000" />
       <workItem from="1649211760606" duration="10104000" />
       <workItem from="1649224780464" duration="1917000" />
+      <workItem from="1649307048720" duration="6593000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
