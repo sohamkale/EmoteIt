@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="news controller!">
-      <change afterPath="$PROJECT_DIR$/controllers/SecretEmortionController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/SecretEmortionResponseSchema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/SecretEmortionSchema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/SecretEmortionRoutes.js" afterDir="false" />
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/FriendshipController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FriendshipController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/NewsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/NewsSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/NewsSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/NotificationRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/NotificationRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +72,8 @@
       <workItem from="1649133345791" duration="5938000" />
       <workItem from="1649211760606" duration="10104000" />
       <workItem from="1649224780464" duration="1917000" />
-      <workItem from="1649307048720" duration="6593000" />
+      <workItem from="1649307048720" duration="6815000" />
+      <workItem from="1649326906617" duration="50000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -103,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649224595954</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="daily secret emortion completed!">
+      <created>1649313829239</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649313829239</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +125,7 @@
     <MESSAGE value="Notification Controller Todo" />
     <MESSAGE value="user controller completed" />
     <MESSAGE value="news controller!" />
-    <option name="LAST_COMMIT_MESSAGE" value="news controller!" />
+    <MESSAGE value="daily secret emortion completed!" />
+    <option name="LAST_COMMIT_MESSAGE" value="daily secret emortion completed!" />
   </component>
 </project>
