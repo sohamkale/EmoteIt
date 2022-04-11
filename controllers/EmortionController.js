@@ -50,7 +50,7 @@ export function StartInsight(req, res) {
             if (err) {
                 res.send(err);
             } else {
-                for (var i = 0; i < emortion.insightUIDs.length; i++) {
+                for (let i = 0; i < emortion.insightUIDs.length; i++) {
                     InsightArray.push(emortion.insightUIDs[i]);
                 }
             }
@@ -75,6 +75,7 @@ export function StartInsight(req, res) {
                     secret: emortion.secret,
                     accuracy: 0,
                     score: 0,
+                    hintsTaken: 0,
                     response: "",
                     emortionId: emortion._id,
                 }
@@ -198,6 +199,45 @@ export function GetUserInsight(req, eRes) {
     }).limit(req.query.limit)
 }
 
+export function ReactInsight(req,res){
+    InsightEngine.findByIdAndUpdate(req.params.id,{$push: {reactionIds: LoggedInUserUID} }, {new: true},
+        (err, updated)=>{
+            if(err){
+                res.send(err)
+            }
+            else{
+                console.log("Reacted to Insight!")
+                res.send(updated)
+            }
+        })
+}
+
+export function TakeHint(req,res){
+    InsightEngine.findByIdAndUpdate(req.params.id,{$inc: {hintsTaken:1} },{new:true},
+        (err,updated)=>{
+        if(err){
+            res.send(err);
+        }
+        else{
+            console.log("Hint Taken!")
+            res.send(updated)
+        }
+    })
+}
+
+export function ReactEmortion(req,res){
+    EmortionEngine.findByIdAndUpdate(req.params.id,{$push: {reactionIds: LoggedInUserUID} },{new:true},
+        (err,updated)=>{
+            if(err){
+                res.send(err);
+            }
+            else{
+                console.log("Reacted to Emortion!")
+                res.send(updated)
+            }
+        })
+}
+
 async function IsEmortionVisible(emortionID, UID, callBack) {
     const InsightArray = []
     const query = EmortionEngine.findById(emortionID).exec();
@@ -211,7 +251,7 @@ async function IsEmortionVisible(emortionID, UID, callBack) {
         if (emortion.expireTime < new Date()) {
             return callBack(true)
         }
-        for (var i = 0; i < emortion.insightUIDs.length; i++) {
+        for (let i = 0; i < emortion.insightUIDs.length; i++) {
             InsightArray.push(emortion.insightUIDs[i]);
         }
         if (InsightArray.includes(UID)) {

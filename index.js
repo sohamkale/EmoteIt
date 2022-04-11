@@ -16,8 +16,7 @@ mongoose.connect(mongoConnectionString,{
 import FeedbackRoutes from './routes/FeedbackRoutes.js';
 import UserRoutes from './routes/UserRoutes.js';
 import EmortionRoutes from "./routes/EmortionRoutes.js";
-
-
+import LeaderboardRoutes from "./routes/LeaderboardRoutes.js";
 
 // var path = require('path');
 // var cookieParser = require('cookie-parser');
@@ -45,6 +44,7 @@ EmortionRoutes(server);
 FriendshipRoutes(server);
 SecretEmortionRoutes(server);
 ProfileRoutes(server);
+LeaderboardRoutes(server);
  // createNotification("61f267dd0017642ca52dc23d", "Hameem Kalo", 1, 2);
 
 // index.use(logger('dev'));
