@@ -19,5 +19,5 @@ export const FriendshipSchema = new Schema(
         requesteeUserId: {type: String, required: true},
         typeId: {type: Number, required: true},
         statusId: {type: Number, required: true}
-    }
+    },{  id: true, timestamps: true }
 );

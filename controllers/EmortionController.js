@@ -59,7 +59,7 @@ export function StartInsight(req, res) {
             }
             if (exists === true) {
                 // run insight engine return insight
-                InsightEngine.find({emortionId: emortion._id, createdBy: LoggedInUserUID},
+                InsightEngine.find({$and:[{createdBy: LoggedInUserUID}, {emortionId: emortion._id}]}, // check this!!!!
                     (err, insight) => {
                         if (err) {
                             res.send(err);
@@ -121,7 +121,8 @@ export function SubmitEmortionInsight(req, res) {
         subtractAnswerRank = (answerNumber - 1) * 2;
 
         //get start time
-        InsightEngine.find({createdBy: LoggedInUserUID, emortionId: req.params.emortionId}, (err, insight) => {
+        //check this
+        InsightEngine.find({$and:[{createdBy: LoggedInUserUID}, {emortionId: req.params.emortionId}]}, (err, insight) => {
             startTime = insight[0].createdAt
             let currTime = new Date()
             let timeDifferential = Math.abs(currTime - startTime)
@@ -166,6 +167,7 @@ export function SubmitEmortionInsight(req, res) {
 }
 
 export function GetInsightsOfEmortion(req, eRes) {
+    //fix this
     InsightEngine.find({emortionId: req.params.emortionId}, async (err, insight) => {
         if (err) {
             eRes.send(err)

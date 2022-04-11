@@ -1,7 +1,7 @@
 import{CreateEmortion, GetEmortion, GetUserEmortions, StartInsight, SubmitEmortionInsight, GetInsightsOfEmortion, GetUserInsight, ReactInsight, TakeHint, ReactEmortion} from "../controllers/EmortionController.js";
 
 export default function EmortionRoutes (server) {
-    server.route('/emortion/emortion')
+    server.route('/emortions/emortion')
         .post(CreateEmortion);
     server.route('/emortion/emortion/:id')
         .get(GetEmortion);

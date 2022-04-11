@@ -1,5 +1,7 @@
-import {TopThree} from "../controllers/LeaderboardController.js";
+import {GetStats, TopThree} from "../controllers/LeaderboardController.js";
 export default function LeaderboardRoutes(server){
-    server.route('/leaderboard/stats')
+    server.route('/api/leaderboard/stats')
+        .get(GetStats)
+    server.route('/api/leaderboard/top3')
         .get(TopThree)
 }
