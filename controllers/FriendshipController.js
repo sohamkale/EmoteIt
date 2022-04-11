@@ -12,7 +12,7 @@ export function RequestFriendship(req,res){
     GetTokenUser(accessToken, (user, err)=>{
         if(!user)
             res.status(401).send("user not retrieved!")
-        _friendship.requesterUserId = user.uid;
+        _friendship.requesterUserId = user._id;
         _friendship.statusId = 0;
         FriendshipEngine.findOne({requesterUserId:_friendship.requesterUserId, requesteeUserId:_friendship.requesteeUserId})
             .then((existingFriendship, err)=>{
@@ -42,8 +42,8 @@ export function RespondFriendship(req,res){
     GetTokenUser(accessToken, (user, err)=>{
         if(!user)
             res.status(401).send("user not retrieved!")
-        if(_friendship.requesterUserId != user.uid.toString() && _friendship.requesteeUserId != user.uid.toString())
-            res.status(401).send("only respond to your requests! "+user.uid)
+        if(_friendship.requesteeUserId != user._id.toString())
+            res.status(401).send("only respond to your requests! "+user._id)
         else{
             FriendshipEngine.findByIdAndUpdate(_friendship._id,_friendship,{new:true}, (err, updated)=>{
                 if(err){
@@ -63,7 +63,7 @@ export function UserFriendships(req,res){
         if(!user)
             res.status(401).send("user not retrieved!")
         else{
-            FriendshipEngine.find({$or: [{requesterUserId: user.uid},{requesteeUserId: user.uid}]}, (err, updated)=>{
+            FriendshipEngine.find({$or: [{requesterUserId: user._id},{requesteeUserId: user._id}]}, (err, updated)=>{
                 if(err){
                     res.send(err)
                 }
@@ -90,7 +90,7 @@ export function CancelFriendshipRequest(req,res){
         if(!user)
             res.status(401).send("user not retrieved!")
         else{
-            FriendshipEngine.findOneAndRemove({$and: [{requesterUserId: user.uid},{_id:_friendship._id}]}, (err, deleted)=>{
+            FriendshipEngine.findOneAndRemove({$and: [{requesterUserId: user._id},{_id:_friendship._id}]}, (err, deleted)=>{
                 if(err){
                     res.send(err)
                 }

@@ -15,7 +15,6 @@ mongoose.connect(mongoConnectionString,{
 //import all routes
 import FeedbackRoutes from './routes/FeedbackRoutes.js';
 import UserRoutes from './routes/UserRoutes.js';
-import notificationRoutes from './routes/NotificationRoutes.js';
 import EmortionRoutes from "./routes/EmortionRoutes.js";
 import LeaderboardRoutes from "./routes/LeaderboardRoutes.js";
 
@@ -23,9 +22,9 @@ import LeaderboardRoutes from "./routes/LeaderboardRoutes.js";
 // var cookieParser = require('cookie-parser');
 import logger from 'morgan'
 import TranslationRoutes from "./routes/TranslationRoutes.js";
-import {createNotification} from "./controllers/NotificationController.js";
 import FriendshipRoutes from "./routes/FriendshipRoutes.js";
 import SecretEmortionRoutes from "./routes/SecretEmortionRoutes.js";
+import {ProfileRoutes} from "./routes/ProfileRoutes.js";
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
@@ -41,10 +40,10 @@ server.use(bodyParser.json());
 FeedbackRoutes(server);
 TranslationRoutes(server);
 UserRoutes(server);
-notificationRoutes(server);
 EmortionRoutes(server);
 FriendshipRoutes(server);
 SecretEmortionRoutes(server);
+ProfileRoutes(server);
 LeaderboardRoutes(server);
  // createNotification("61f267dd0017642ca52dc23d", "Hameem Kalo", 1, 2);
 
