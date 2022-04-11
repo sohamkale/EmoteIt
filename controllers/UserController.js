@@ -5,9 +5,7 @@ import mongoose from "mongoose";
 import admin from "firebase-admin"
 import {initializeApp} from "firebase-admin/app";
 import {firebasePrivateKey as serviceAccount} from "../config.js";
-
-//initialize the firebase sdk!
-const firebaseApp = initializeApp({
+initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
 

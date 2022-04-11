@@ -13,7 +13,7 @@ export function CreateSecretEmortion(req, res){
     GetTokenUser(accessToken, (user, err)=>{
         if(!user)
             res.status(401).send("user not retrieved!")
-        _secretEmortion.createdBY = user.uid;
+        _secretEmortion.createdBY = user._id;
         const newSecretEmortion = new SecretEmortionEngine(_secretEmortion);
         newSecretEmortion.save((err,added)=>{
             if(err){
@@ -51,13 +51,13 @@ export function ResponseSecretEmortion(req,res){
         else{
             const _response = req.body;
             _response.submittedAt = new Date();
-            _response.createdBy = user.uid;
+            _response.createdBy = user._id;
             if(_response.secretEmortionId == null)
                 res.status(400).send("emortion Id not provided");
            //get the secret emortion
             SecretEmortionEngine.findById(_response.secretEmortionId,(errr,secretEmortion)=>{
                 //check if already answered!
-                if(secretEmortion.responseUIds.includes(user.uid))
+                if(secretEmortion.responseUIds.includes(user._id))
                     res.status(409).send("already answered emortion!");
                 else{
                     //Check if the secret response match
@@ -80,7 +80,7 @@ export function ResponseSecretEmortion(req,res){
                             }
                             else{
                                 // res.send(added)
-                                SecretEmortionEngine.findByIdAndUpdate(secretEmortion.id,{$push:{responseUIds:user.uid}}, {new: true},
+                                SecretEmortionEngine.findByIdAndUpdate(secretEmortion.id,{$push:{responseUIds:user._id}}, {new: true},
                                     (errrrr, updated) => {
                                         if (errrrr) {
                                             res.send(errrrr);

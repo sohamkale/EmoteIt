@@ -10,7 +10,6 @@ export const UserSchema = new Schema(
         DOB: Date,
         score: Number,
         profileImage: String,
-        notificationIds: [String],
         typeId: Number,
         uid: String,
     },{  id: true, timestamps: true }
