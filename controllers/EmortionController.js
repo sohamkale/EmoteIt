@@ -149,7 +149,8 @@ export function SubmitEmortionInsight(req, res) {
             let returnObj = {
                 score: finalScore,
                 submittedAt: currTime,
-                accuracy: finalScore / timeSubtract
+                accuracy: finalScore / timeSubtract,
+                timeTaken: timeDifferential
             }
             InsightEngine.findByIdAndUpdate(insight[0]._id, returnObj, {new: true}, (err, updated) => {
                 if (err) {

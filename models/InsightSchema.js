@@ -8,6 +8,7 @@ export const InsightSchema = new Schema({
     score: Number,
     response: String,
     hintsTaken: Number,
+    timeTaken: Number,
     submittedAt: Date,
     deviceId: Number,
     emortionId: String,

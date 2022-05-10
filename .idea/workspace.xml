@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="">
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/EmortionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/LeaderboardController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LeaderboardController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/FriendshipSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/FriendshipSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/EmortionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/EmortionRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/LeaderboardRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/LeaderboardRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ProfileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProfileController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/InsightSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/InsightSchema.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="22ZiuNDz1XfU9s8OAzthhbd8RJ7" />
   <component name="ProjectViewState">
@@ -78,7 +84,9 @@
       <workItem from="1649224780464" duration="1917000" />
       <workItem from="1649307048720" duration="6815000" />
       <workItem from="1649326906617" duration="50000" />
-      <workItem from="1649641368884" duration="6461000" />
+      <workItem from="1649641368884" duration="6631000" />
+      <workItem from="1650513898962" duration="1522000" />
+      <workItem from="1652140280807" duration="5298000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>

@@ -2,10 +2,15 @@ import mongoose from "mongoose";
 import {UserSchema} from "../models/UserSchema.js";
 import {NotificationSchema} from "../models/NotificationSchema.js";
 import {GetTokenUser} from "./UserController.js";
+import {EmortionSchema} from "../models/EmortionSchema.js";
+import {InsightSchema} from "../models/InsightSchema.js";
+import {FriendshipSchema} from "../models/FriendshipSchema.js";
 
 export const UserEngine = mongoose.model('User', UserSchema);
 const NotificationEngine = mongoose.model('Notification', NotificationSchema);
-
+const EmortionEngine = mongoose.model('Emortion', EmortionSchema);
+const InsightEngine = mongoose.model('Insight', InsightSchema);
+const FriendshipEngine = mongoose.model('Friendship', FriendshipSchema);
 export function SearchProfiles(req, res){
     const searchParam = req.query.key;
     UserEngine.find({$or:[{name:{$regex:new RegExp(searchParam,"i")}}, {email:{$regex:new RegExp(searchParam,"i")}}]},(err,users)=>{
@@ -88,6 +93,40 @@ export function UpdateNotifications(req, res){
 
 
 //TODO:: Takes in a straight mongo db table user object and performs the calculations and returns an extended user object!
-export function ProcessProfileStats(user){
-
+// Putki Amar
+export function ProcessProfileStats(userIds){
+    for(let i = 0; i<userIds.size(); i++){
+        let UID = userIds[i];
+        //POST LIKES
+        //POST COUNT
+        EmortionEngine.find({createdBy: UID}, (err, emortions)=>{
+            let postLikes = 0;
+            let postCount = emortions.length;
+            for(let i = 0; i<emortions.length;i++){
+                postLikes = postLikes+emortions[i].reactionIds.length;
+            }
+            //ANSWER LIKES
+            //INSIGHT COUNT
+            InsightEngine.find({createdBy: UID},(err,insights)=>{
+                let answerLikes = 0;
+                let insightCount = insights.length;
+                let AnswerTimeSum = 0;
+                let AccuracySum = 0;
+                for(let i = 0; i<insightCount.length; i++){
+                    answerLikes = answerLikes+insights[i].reactionIds.length;
+                    AnswerTimeSum = AnswerTimeSum + insights[i].timeTaken;
+                    AccuracySum = AccuracySum+insights[i].accuracy;
+                }
+                let avgAnswerTime = AnswerTimeSum/insightCount;
+                let avgAccuracy = AccuracySum/insightCount;
+                FriendshipEngine.find({$or:[{requesterUserId: UID},{requesteeUserId: UID}]}, (err,friendship)=>{
+                    let happyFriendCount = 0;
+                    for(let i = 0; i<friendship.length;i++){
+                        // if(friendship[i]) // ????? AND NAKI OR????
+                    }
+                })
+            })
+        })
+    }
 }
+
