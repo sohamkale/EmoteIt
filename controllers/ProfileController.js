@@ -5,12 +5,15 @@ import {GetTokenUser} from "./UserController.js";
 import {EmortionSchema} from "../models/EmortionSchema.js";
 import {InsightSchema} from "../models/InsightSchema.js";
 import {FriendshipSchema} from "../models/FriendshipSchema.js";
+import {LevelScehema} from "../models/LevelSchema";
 
 export const UserEngine = mongoose.model('User', UserSchema);
 const NotificationEngine = mongoose.model('Notification', NotificationSchema);
 const EmortionEngine = mongoose.model('Emortion', EmortionSchema);
 const InsightEngine = mongoose.model('Insight', InsightSchema);
 const FriendshipEngine = mongoose.model('Friendship', FriendshipSchema);
+const LevelEngine = mongoose.model('Level', LevelScehema);
+
 export function SearchProfiles(req, res){
     const searchParam = req.query.key;
     UserEngine.find({$or:[{name:{$regex:new RegExp(searchParam,"i")}}, {email:{$regex:new RegExp(searchParam,"i")}}]},(err,users)=>{
@@ -94,39 +97,41 @@ export function UpdateNotifications(req, res){
 
 //TODO:: Takes in a straight mongo db table user object and performs the calculations and returns an extended user object!
 // Putki Amar
-export function ProcessProfileStats(userIds){
-    for(let i = 0; i<userIds.size(); i++){
-        let UID = userIds[i];
-        //POST LIKES
-        //POST COUNT
-        EmortionEngine.find({createdBy: UID}, (err, emortions)=>{
-            let postLikes = 0;
-            let postCount = emortions.length;
-            for(let i = 0; i<emortions.length;i++){
-                postLikes = postLikes+emortions[i].reactionIds.length;
+export function ProcessProfileStats(userId, userScore){
+    //POST LIKES
+    EmortionEngine.find({createdBy: userId}, (err, emortions)=>{
+        let postLikes = 0;
+        let postCount = emortions.length;
+        for(let i = 0; i<emortions.length;i++){
+            postLikes = postLikes+emortions[i].reactionIds.length;
+        }
+        //ANSWER LIKES
+        //INSIGHT COUNT
+        InsightEngine.find({createdBy: UID},(err,insights)=>{
+            let answerLikes = 0;
+            let insightCount = insights.length;
+            let AnswerTimeSum = 0;
+            let AccuracySum = 0;
+            for(let i = 0; i<insightCount.length; i++){
+                answerLikes = answerLikes+insights[i].reactionIds.length;
+                AnswerTimeSum = AnswerTimeSum + insights[i].timeTaken;
+                AccuracySum = AccuracySum+insights[i].accuracy;
             }
-            //ANSWER LIKES
-            //INSIGHT COUNT
-            InsightEngine.find({createdBy: UID},(err,insights)=>{
-                let answerLikes = 0;
-                let insightCount = insights.length;
-                let AnswerTimeSum = 0;
-                let AccuracySum = 0;
-                for(let i = 0; i<insightCount.length; i++){
-                    answerLikes = answerLikes+insights[i].reactionIds.length;
-                    AnswerTimeSum = AnswerTimeSum + insights[i].timeTaken;
-                    AccuracySum = AccuracySum+insights[i].accuracy;
-                }
-                let avgAnswerTime = AnswerTimeSum/insightCount;
-                let avgAccuracy = AccuracySum/insightCount;
-                FriendshipEngine.find({$or:[{requesterUserId: UID},{requesteeUserId: UID}]}, (err,friendship)=>{
-                    let happyFriendCount = 0;
-                    for(let i = 0; i<friendship.length;i++){
-                        // if(friendship[i]) // ????? AND NAKI OR????
-                    }
-                })
+            let avgAnswerTime = AnswerTimeSum/insightCount;
+            let avgAccuracy = AccuracySum/insightCount;
+            //FRIENDSHIP COUNT!
+            FriendshipEngine.find({$and:[{$or:[{requesterUserId: userId},{requesteeUserId: userId}]}, {status:1}]}, (err,friendships)=>{
+                let happyFriendCount = friendships.length;
+                //LEVEL
+                LevelEngine.find({},(err,levels)=>{
+                    const userLevel = levels[0];
+                    //GLOBAL RANK
+                    UserEngine.find({},(err, users)=>{
+
+                    }).sort({score:-1})
+                }).where(minScore).gt(userScore)
             })
         })
-    }
+    })
 }
 
