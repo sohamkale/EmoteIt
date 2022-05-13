@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
-      <change afterPath="$PROJECT_DIR$/models/LevelSchema.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/ProfileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProfileController.js" afterDir="false" />
     </list>
@@ -41,8 +40,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="16.13.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="16.11.26" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.18.18" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../EmoteIt-React" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -86,6 +85,7 @@
       <workItem from="1649641368884" duration="6631000" />
       <workItem from="1650513898962" duration="1522000" />
       <workItem from="1652140280807" duration="5298000" />
+      <workItem from="1652415673045" duration="684000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -115,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649313829239</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="LevelSchema.js">
+      <created>1652412483060</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652412483060</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +145,7 @@
     <MESSAGE value="user controller completed" />
     <MESSAGE value="news controller!" />
     <MESSAGE value="daily secret emortion completed!" />
-    <option name="LAST_COMMIT_MESSAGE" value="daily secret emortion completed!" />
+    <MESSAGE value="LevelSchema.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="LevelSchema.js" />
   </component>
 </project>

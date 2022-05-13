@@ -5,7 +5,7 @@ import {GetTokenUser} from "./UserController.js";
 import {EmortionSchema} from "../models/EmortionSchema.js";
 import {InsightSchema} from "../models/InsightSchema.js";
 import {FriendshipSchema} from "../models/FriendshipSchema.js";
-import {LevelScehema} from "../models/LevelSchema";
+import {LevelScehema} from "../models/LevelSchema.js";
 
 export const UserEngine = mongoose.model('User', UserSchema);
 const NotificationEngine = mongoose.model('Notification', NotificationSchema);
@@ -25,7 +25,66 @@ export function SearchProfiles(req, res){
 export function GetProfile(req, res){
     const searchId = req.params.id;
     UserEngine.findOne({_id:searchId}).then((user,err)=>{
-        res.send(user);
+        const userId = user.id
+        //POST LIKES
+        EmortionEngine.find({createdBy: userId}, (err, emortions)=>{
+            let latestActive = null;
+            let postLikes = 0;
+            let postCount = emortions.length;
+            if(postCount>0)
+                latestActive = emortions[0].createdAt;
+            for(let i = 0; i<emortions.length;i++){
+                postLikes = postLikes+emortions[i].reactionIds.length;
+            }
+            //ANSWER LIKES
+            //INSIGHT COUNT
+            InsightEngine.find({createdBy: userId},(err,insights)=>{
+                let answerLikes = 0;
+                let insightCount = insights.length;
+                let AnswerTimeSum = 0;
+                let AccuracySum = 0;
+
+                if(insightCount>0){
+                    let latestInsightTime = insights[0].createdAt;
+                    if(latestActive == null && latestActive<latestInsightTime)
+                        latestActive = latestInsightTime;
+                }
+                for(let i = 0; i<insightCount.length; i++){
+                    answerLikes = answerLikes+insights[i].reactionIds.length;
+                    AnswerTimeSum = AnswerTimeSum + insights[i].timeTaken;
+                    AccuracySum = AccuracySum+insights[i].accuracy;
+                }
+                let avgAnswerTime = AnswerTimeSum/insightCount;
+                let avgAccuracy = AccuracySum/insightCount;
+                //FRIENDSHIP COUNT!
+                FriendshipEngine.find({$and:[{$or:[{requesterUserId: userId},{requesteeUserId: userId}]}, {status:1}]}, (err,friendships)=>{
+                    let happyFriendCount = friendships.length;
+                    //LEVEL
+                    LevelEngine.find({},(err,levels)=>{
+                        const userLevel = levels[0];
+                        let globalRank = -1;
+                        //GLOBAL RANK
+                        UserEngine.find({},(err, users)=>{
+                            users.forEach((user,index)=>{
+                                if(user.id == userId){
+                                    globalRank = index+1;
+
+                                    //completed! Now send back the data!
+                                    const finalObject = {
+                                        latestActive,globalRank,userLevel, happyFriendCount,avgAccuracy,avgAnswerTime,
+                                        insightCount,answerLikes,postCount,postLikes
+                                    }
+
+                                    res.send(finalObject);
+                                }
+                            })
+                        }).sort({score:1})
+                    }).where('minScore').gt(user.score)
+                })
+            }).sort('-createdAt')
+        }).sort('-createdAt')
+
+
     }).catch((err)=>{
         res.status(500).send(err);
     })
@@ -94,44 +153,4 @@ export function UpdateNotifications(req, res){
         })
 }
 
-
-//TODO:: Takes in a straight mongo db table user object and performs the calculations and returns an extended user object!
-// Putki Amar
-export function ProcessProfileStats(userId, userScore){
-    //POST LIKES
-    EmortionEngine.find({createdBy: userId}, (err, emortions)=>{
-        let postLikes = 0;
-        let postCount = emortions.length;
-        for(let i = 0; i<emortions.length;i++){
-            postLikes = postLikes+emortions[i].reactionIds.length;
-        }
-        //ANSWER LIKES
-        //INSIGHT COUNT
-        InsightEngine.find({createdBy: UID},(err,insights)=>{
-            let answerLikes = 0;
-            let insightCount = insights.length;
-            let AnswerTimeSum = 0;
-            let AccuracySum = 0;
-            for(let i = 0; i<insightCount.length; i++){
-                answerLikes = answerLikes+insights[i].reactionIds.length;
-                AnswerTimeSum = AnswerTimeSum + insights[i].timeTaken;
-                AccuracySum = AccuracySum+insights[i].accuracy;
-            }
-            let avgAnswerTime = AnswerTimeSum/insightCount;
-            let avgAccuracy = AccuracySum/insightCount;
-            //FRIENDSHIP COUNT!
-            FriendshipEngine.find({$and:[{$or:[{requesterUserId: userId},{requesteeUserId: userId}]}, {status:1}]}, (err,friendships)=>{
-                let happyFriendCount = friendships.length;
-                //LEVEL
-                LevelEngine.find({},(err,levels)=>{
-                    const userLevel = levels[0];
-                    //GLOBAL RANK
-                    UserEngine.find({},(err, users)=>{
-
-                    }).sort({score:-1})
-                }).where(minScore).gt(userScore)
-            })
-        })
-    })
-}
 
