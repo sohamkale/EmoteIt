@@ -1,0 +1,521 @@
+/**=====================
+    Dark css start
+==========================**/
+
+.btn-solid {
+    color: $white;
+}
+
+.btn-outline {
+    &:hover {
+        color: $white;
+    }
+}
+
+.btn-white {
+    border-color: $white;
+}
+.coming-soon {
+    .object {
+        .object-shape{
+            background-color: lighten($theme-color, 10%);
+        }
+    }
+}
+.modal-backdrop {
+    background-color: #232e42;
+}
+
+.overlay-bg {
+    background-color: rgba(#232e42, 0.5);
+}
+
+.custom-dropdown {
+    .dropdown-menu {
+        .search-bar {
+            &.input-style {
+                &.icon-left {
+                    .icon {
+                        stroke: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.notification-btn {
+    &.custom-dropdown {
+        .dropdown-menu {
+            .dropdown-content {
+                .friend-list {
+                    .media {
+                        .media-body {
+                            .action-btns {
+                                button {
+                                    svg {
+                                        stroke: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sidebar-panel {
+    &.panel-lg {
+        background-color: #112032;
+        .main-icon {
+            a {
+                h4 {
+                    color: white;
+                }
+            }
+        }
+        .sidebar-icon {
+            border-color: rgba(white, 0.1);
+            >li {
+                >a {
+                    h4 {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    &.sidebar-white {
+        background-color: #112032;
+    }
+    &.sidebar-light {
+        .sidebar-icon {
+            >li {
+                &.active {
+                    background-color: #232e42;
+                }
+            }
+        }
+        .user-wrap {
+            .profile-img {
+                &:before {
+                    background: #112032;
+                }
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.story-section {
+    .story-box {
+        .add-icon {
+            .icon {
+                background-color: rgba($white, 0.10);
+            }
+            h6 {
+                color: $white;
+            }
+        }
+    }
+}
+
+.card-title {
+    &.light-version {
+        h3 {
+            color: $white;
+        }
+    }
+}
+
+.icon-light {
+    stroke: $white;
+}
+
+.event-box {
+    .image-section {
+        .card-title {
+            h3 {
+                color: $white;
+            }
+        }
+    }
+}
+
+.chat-header {
+    .menu-option {
+        ul {
+            li {
+                img {
+                    filter: invert(1);
+                }
+            }
+        }
+    }
+}
+
+.create-post {
+    .create-bg {
+        .bg-post {
+            .input-sec {
+                 ::placeholder {
+                    color: rgba($black, 0.5);
+                }
+            }
+        }
+    }
+}
+
+.comment-model {
+    .modal-dialog {
+        .modal-content {
+            .slick-slider {
+                .custom_paging {
+                    li {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gallery-section {
+    .overlay {
+        &.image-plus {
+            span {
+                color: $white;
+            }
+        }
+    }
+}
+
+.app-box {
+    background-color: #112032;
+    .app-icon {
+        .icon {
+            background-color: #232e42;
+        }
+    }
+}
+
+.event-cover {
+    .event-img {
+        .event-content {
+            h1 {
+                color: $white;
+            }
+        }
+        .cover-img-detail {
+            span {
+                background-color: $white;
+                color: $black;
+            }
+            h3 {
+                color: $white;
+            }
+            a {
+                color: rgba($white, 0.75);
+            }
+        }
+        &:after {
+            background-color: rgba($black, 0.5);
+        }
+    }
+    .event-timeline {
+        .timeline-title {
+            .media {
+                img {
+                    filter: invert(1);
+                }
+            }
+        }
+    }
+    .weather-timeline {
+        &.event-timeline {
+            .timeline-content {
+                li {
+                    img {
+                        filter: invert(1);
+                    }
+                }
+            }
+        }
+    }
+    &.light-cover {
+        .event-img {
+            &:after {
+                background-color: rgba($black, 0.21);
+            }
+        }
+    }
+}
+
+.weather-light {
+    &.weather-section {
+        background-color: #112032;
+    }
+}
+
+.login-section {
+    .header-section {
+        .right-links {
+            ul {
+                li {
+                    border-left: 1px solid rgba(255, 255, 255, 0.5);
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .how-work {
+        .media {
+            svg {
+                circle {
+                    fill: $white;
+                    stroke: $white;
+                }
+            }
+            .media-body {
+                h2 {
+                    color: $white;
+                }
+                p {
+                    color: rgba($white, 0.4);
+                }
+            }
+        }
+    }
+}
+
+.messanger-section {
+    .chat-content {
+        .tab-box {
+            .user-chat {
+                .chat-history {
+                    .avenue-messenger {
+                        .chat {
+                            .messages-content {
+                                .message.message-personal {
+                                    color: rgba($white, 0.8);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.setting-section {
+    .tab-section {
+        .nav-pills {
+            .nav-link.active,
+            .show>.nav-link {
+                color: $white;
+            }
+        }
+    }
+}
+
+.Choose-photo-modal {
+    .gallery-album {
+        .card {
+            .card-body {
+                h6 {
+                    color: rgba($white, 0.85);
+                }
+                .card-title {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.typography-section {
+    .color-cls {
+        .color-box {
+            color: $white;
+        }
+    }
+}
+
+.element-emoji {
+    &.weather-icon {
+        li {
+            img {
+                filter: invert(1);
+            }
+        }
+    }
+}
+
+.element-btn {
+    .btn {
+        color: $white;
+    }
+}
+header {
+    &.home-landing {
+        .navbar-nav {
+            .nav-link {
+                &.btn-white {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+    &.header-light {
+        background-color: #112032;
+        .header-section {
+            .header-left {
+                .search-box {
+                     ::placeholder {
+                        color: rgba(white, 0.7);
+                    }
+                    .form-control {
+                        color: white;
+                    }
+                    .icon {
+                        stroke: white;
+                    }
+                }
+            }
+        }
+    }
+    .header-section {
+        .header-left {
+            .search-box {
+                .search-suggestion {
+                    background-color: #112032;
+                    box-shadow: none;
+                    .recent {
+                        color: rgba(255, 255, 255, 0.7);
+                    }
+                    .friend-list {
+                        li {
+                            &:hover {
+                                background-color: #232e41;
+                            }
+                        }
+                        .media {
+                            .media-body {
+                                h5 {
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home-section {
+    background-color: #232e42;
+    background: #232e42;
+    background-image: none !important;
+}
+
+.title-sec {
+    h3 {
+        &:after {
+            background-color: #112032;
+        }
+    }
+}
+
+.blog-wrapper {
+    .blog-wrap {
+        .blog-image {
+            .title {
+                color: $white;
+            }
+            .blog-label {
+                h6 {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.testimonial-section {
+    .testimonial-vector {
+        .users-sec {
+            .user-box {
+                .content {
+                    h6 {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    &.footer-theme {
+        background-color: #232e42;
+        .footer-title {
+            h4 {
+                color: $white;
+            }
+        }
+        .footer-content {
+            p {
+                color: $white;
+            }
+            li {
+                a {
+                    color: $white;
+                }
+            }
+        }
+        .sub-footer {
+            border-top: 1px solid rgba($white, 0.06);
+            p {
+                color: $white;
+            }
+        }
+    }
+}
+
+.tap-top {
+    color: $white;
+}
+
+.story-model {
+    .modal-dialog {
+        .modal-content {
+            .modal-body {
+                .story-bg {
+                    .left-box  {
+                        background-color: #232e42;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sidebar-panel {
+    .user-wrap {
+        .user-info {
+            h3 {
+                color: #d8d8d8;
+            }
+        }
+    }
+}
+
+

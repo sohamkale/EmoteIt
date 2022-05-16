@@ -1,0 +1,63 @@
+/*=====================
+ Title start
+==========================*/
+
+.card-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+    h3 {
+        text-transform: capitalize;
+        color: $title-color;
+        font-weight: 700;
+    }
+    h5 {
+        font-size: $medium-size;
+        text-transform: capitalize;
+        color: $font-color;
+        font-weight: 500;
+        margin-left: 12px;
+    }
+    .settings {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+    &.light-version {
+        h3 {
+            color: $white;
+        }
+    }
+}
+
+.title-sec {
+    text-align: center;
+    margin-bottom: calc(25px + (50 - 25) * ((100vw - 320px) / (1920 - 320)));
+    h4 {
+        text-transform: capitalize;        
+        font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));        
+        letter-spacing: 1px;
+        color: $title-color;
+    }
+    h3 {
+        color: $theme-color;
+        font-weight: 700;
+        text-transform: capitalize;
+        font-size: calc(18px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        padding: 0 5px;
+        &:after {
+            content: "";
+            width: 100%;
+            height: 18px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: lighten($color: $theme-color, $amount: 55%);
+            z-index: -1;
+        }
+    }
+}

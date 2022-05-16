@@ -1,0 +1,26 @@
+/**=====================
+    Timer css start
+==========================**/
+
+.timer {
+    li {
+        display: inline-block;
+        font-size: 14px;
+        list-style-type: none;
+        padding: 10px 24px;
+        text-transform: capitalize;
+        color: $white;
+        background: rgba($white, 0.15);
+        text-align: center;
+        font-weight: 500;
+        border-radius: 15px;
+        margin: 0 12px;
+        &:last-child {
+            margin-right: 0;
+        }
+        span {
+            display: block;
+            font-size: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+        }
+    }
+}

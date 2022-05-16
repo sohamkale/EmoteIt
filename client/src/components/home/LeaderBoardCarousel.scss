@@ -1,0 +1,144 @@
+.leaderboard-carousel{
+  overflow-x: auto ;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+
+  //-webkit-overflow-scrolling: touch;
+
+  //width: 200%;
+  .leaderboard-card{
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .leaderboard-card:hover{
+    display: inline-block;
+    margin: 5px;
+    transform:scale(1.1,1.1);
+    cursor: pointer;
+  }
+
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 1vh;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: darkgray;
+  width: 2%;
+}
+
+/* Handle */
+.leaderboard-carousel::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+
+}
+
+
+
+$border-radius-size: 5px;
+$barbarian: #343a40;
+$archer: #EE5487;
+$giant: #F6901A;
+$goblin: #82BB30;
+$wizard: #4FACFF;
+$font-family: "Montserrat", sans-serif;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100px;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+
+
+.clash-card {
+
+  background: white;
+  width: 100%;
+  //height: 260px;
+  display: inline-block;
+  margin: auto;
+  border-radius: $border-radius-size + 5px;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+
+  font-family: $font-family;
+  background: floralwhite;
+
+}
+
+.clash-card__level {
+  font-size: 12px;
+  color: whitesmoke;
+  font-weight: 650;
+  background: $barbarian;
+  border-radius: $border-radius-size;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.clash-card__level--barbarian {
+  color: $barbarian;
+}
+
+
+.clash-card__unit-name {
+  font-size: 12px;
+}
+
+.clash-card__unit-description {
+  padding: 0px;
+  margin-bottom: 10px;
+}
+
+.clash-card__unit-stats {
+  background: $barbarian;
+  color: white;
+  font-weight: 100;
+  border-bottom-left-radius: $border-radius-size;
+  border-bottom-right-radius: $border-radius-size;
+
+  .one-third {
+    border-left: 1px solid  #FFFFFF;
+    padding: 5px 0;
+    //float: left;
+  }
+
+}
+.clash-card__image--barbarian {
+
+  overflow: hidden;
+  height: 120px;
+  text-align: center;
+  border-radius: $border-radius-size;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none !important;
+  img {
+
+    width: fit-content;
+    position: relative;
+    height: 100%;
+  }
+}

@@ -1,0 +1,90 @@
+%default-scroll {
+    /* width */
+     ::-webkit-scrollbar {
+        width: 3px;
+    }
+    /* Track */
+     ::-webkit-scrollbar-track {
+        background: $theme-light;
+        border-radius: 6px;
+    }
+    /* Handle */
+     ::-webkit-scrollbar-thumb {
+        background: rgba($theme-color, 0.5);
+        border-radius: 4px;
+    }
+    /* Handle on hover */
+     ::-webkit-scrollbar-thumb:hover {
+        background: darken($theme-color, 0.2);
+    }
+}
+
+%light-scroll {
+    /* width */
+     ::-webkit-scrollbar {
+        width: 3px;
+    }
+    /* Track */
+     ::-webkit-scrollbar-track {
+        background: $theme-light;
+        border-radius: 6px;
+    }
+    /* Handle */
+     ::-webkit-scrollbar-thumb {
+        background: rgba($theme-color, 0.1);
+        border-radius: 4px;
+    }
+    /* Handle on hover */
+     ::-webkit-scrollbar-thumb:hover {
+        background: darken($theme-color, 0.2);
+    }
+}
+
+%dark-scroll {
+    /* width */
+     ::-webkit-scrollbar {
+        width: 3px;
+    }
+    /* Track */
+     ::-webkit-scrollbar-track {
+        background: rgba($black, 0.05);
+        border-radius: 6px;
+    }
+    /* Handle */
+     ::-webkit-scrollbar-thumb {
+        background: rgba($theme-color, 0.5);
+        border-radius: 4px;
+    }
+    /* Handle on hover */
+     ::-webkit-scrollbar-thumb:hover {
+        background: darken($theme-color, 0.2);
+    }
+}
+
+%loader-skeleton {
+    background: linear-gradient(90deg, $theme-light 8%, darken($theme-light, 3%) 18%, $theme-light 33%);
+    background-size: 800px 104px;
+    animation: skeleton-loader 2s infinite linear;
+}
+
+%loader-skeleton-white {
+    background: linear-gradient(90deg, $white 8%, #f1f1f1 18%, $white 33%);
+    background-size: 380px 44px;
+    animation: skeleton-loader 5s infinite linear;
+}
+
+$i: 1;
+@while $i<=50 {
+    .iw-#{$i} {
+        width: #{$i}px !important;
+    }
+    $i: $i+1;
+}
+
+$i: 1;
+@while $i<=50 {
+    .ih-#{$i} {
+        height: #{$i}px !important;
+    }
+    $i: $i+1;
+}

@@ -1,0 +1,64 @@
+/*=====================
+ slick slider css start
+==========================*/
+
+.default-space {
+    .slick-list {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .slick-slide {
+        >div {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.default-space-lg {
+    .slick-list {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .slick-slide {
+        >div {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+}
+
+.no-arrow {
+    .slick-next,
+    .slick-prev {
+        display: none !important;
+    }
+}
+
+.box-arrow {
+    .slick-next,
+    .slick-prev {
+        &:before {
+            content: "\f054";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 24px;
+        }
+    }
+    .slick-prev {
+        &:before {
+            content: "\f053";
+        }
+    }
+}
+
+.dots-number {
+    .custom_paging {
+        li {
+            display: none;
+            &.slick-active {
+                display: block;
+            }
+        }
+    }
+}

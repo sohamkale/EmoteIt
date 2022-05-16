@@ -1,0 +1,122 @@
+/**=====================
+    event css start
+==========================**/
+.event-box {
+    background-color: $white;
+    border-radius: $radius-5;
+    overflow: hidden;
+    position: relative;
+    .image-section {
+        position: relative;
+        z-index: 1;
+        .card-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 25px 35px;
+            z-index: 1;
+            h3 {
+                color: $white;
+            }
+        }
+        .play-btn {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            img {
+                transition: all 0.5s ease;
+            }
+        }
+        &:hover {
+            .play-btn {
+                img {
+                    transform: scale(1.5);
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+    .event-content {
+        padding: 30px;
+        position: relative;
+        h3 {
+            text-transform: capitalize;
+            font-weight: 700;
+            color: $title-color;
+            margin-bottom: 6px;
+            margin-top: -2px;
+        }
+        h6 {
+            text-transform: capitalize;
+            color: $font-color;
+            margin-bottom: 6px;
+        }
+        p {
+            color: $light-font;
+            font-size: $h5-size;
+            line-height: 22px;
+            span {
+                color: $title-color;
+            }
+        }
+        .bottom-part {
+            display: flex;
+            margin-top: 20px;
+            .event-btn {
+                padding: 10px 10px;
+                border-radius: $radius-5;
+                background-color: $theme-light;
+                display: inline-block;
+                font-size: $h6-size;
+                text-transform: capitalize;                
+                font-weight: 700;
+                &.comment {
+                    margin-left: 8px;
+                    color: $font-color;
+                    font-weight: 500;
+                    span {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 10px solid $white;
+            z-index: 1;
+        }
+        .share-btn {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            width: 34px;
+            height: 34px;
+            border-radius: $radius-10;
+            background-color: $theme-light;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.video-model {
+    padding: 0;
+    margin-bottom: -5px;
+    .video {
+        width: 100%;
+        height: 440px;
+        margin-bottom: -1px;
+        border: none;
+    }
+}

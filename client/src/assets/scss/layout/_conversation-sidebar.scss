@@ -1,0 +1,226 @@
+/**=================================
+    Comversation sidebar css start
+====================================**/
+
+.conversation-panel {
+    width: 300px;
+    background-color: $white;
+    padding: 30px;
+    box-shadow: $light-shadow;
+    margin-left: auto;
+    border-radius: $radius-5;
+    height: max-content;
+    position: sticky;
+    z-index: 1;
+    top: 100px;
+    margin-bottom: 30px;
+    .panel-header {
+        position: relative;
+        h2 {
+            color: $title-color;
+            text-transform: capitalize;
+            margin-bottom: 6px;
+        }
+        h5 {
+            color: $font-color;
+            text-transform: capitalize;
+        }
+        .setting {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background-color: $theme-light;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: $radius-10;
+        }
+    }
+    .search-bar {
+        position: relative;
+        margin-top: 35px;
+         ::placeholder {
+            font-size: $h6-size;
+            text-transform: capitalize;
+            color: $light-font;
+        }
+        .form-control {
+            background-color: $theme-light;
+            border: none;
+            padding: 10px 10px 10px 45px;
+            font-size: $h6-size;
+            text-transform: capitalize;
+            color: $light-font;
+            border-radius: $radius-5;
+        }
+        .icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .xs-search {
+            padding-bottom: 25px;
+            border-bottom: 1px solid $light-border;
+            display: none;
+            cursor: pointer;
+            .icon-search {
+                width: 50px;
+                height: 50px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $theme-light;
+                border-radius: $radius-5;
+            }
+            .lg-search {
+                display: block !important;
+                position: absolute;
+                top: 0px;
+                right: 3px;
+                width: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.5s ease;
+                .form-control {
+                    padding: 16px 10px 16px 45px;
+                }
+            }
+            .icon-close {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                display: flex;
+            }
+            &.open-full {
+                .lg-search {
+                    width: 250px;
+                    opacity: 1;
+                    visibility: visible;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+    .friend-section {
+        padding-top: 30px;
+        .header-section {
+            position: relative;
+            a {
+                text-transform: capitalize;
+                color: $font-color;
+                cursor: pointer;
+                display: block;
+                font-weight: 500;
+            }
+            .down-arrow {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 22px;
+                height: 22px;
+                background-color: $theme-light;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: $radius-100;
+                z-index: -1;
+            }
+        }
+        .friend-list {
+            margin-top: 25px;
+            .friend-box {
+                position: relative;
+                cursor: pointer;
+                .media {
+                    align-items: center;
+                    .media-body {
+                        h5 {
+                            font-family: $font-1;
+                            color: $title-color;
+                            text-transform: capitalize;
+                            font-weight: 600;
+                            margin-bottom: 5px;
+                        }
+                        h6 {
+                            text-transform: capitalize;
+                            color: $font-color;
+                            font-weight: 500;
+                        }
+                    }
+                }
+                .user-img {
+                    width: 55px;
+                    height: 55px;
+                    margin-right: 16px;
+                    position: relative;
+                    border-radius: $radius-15;
+                    .available-stats {
+                        position: absolute;
+                        right: -3px;
+                        top: -2px;
+                        width: 14px;
+                        height: 14px;
+                        border-radius: $radius-100;
+                        &.online {
+                            border: 3px solid $white;
+                            background-color: $theme-success;
+                        }
+                        &.offline {
+                            border: 3px solid $white;
+                            background-color: $theme-danger;
+                        }
+                        &.away {
+                            border: 3px solid $white;
+                            background-color: $theme-warning;
+                        }
+                    }
+                }
+                +.friend-box {
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+    &.panel-xs {
+        width: 96px;
+        padding: 0 20px 25px 20px;
+        .panel-header {
+            display: none;
+        }
+        .search-bar {
+            margin-top: 25px;
+            .lg-search {
+                display: none;
+            }
+            .xs-search {
+                display: block;
+            }
+        }
+        .friend-section {
+            padding-top: 25px;
+            .header-section {
+                display: none;
+            }
+            .friend-list {
+                margin-top: 0;
+                .friend-box {
+                    .user-img {
+                        margin-right: 0;
+                    }
+                    .media-body {
+                        display: none;
+                    }
+                    +.friend-box {
+                        margin-top: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

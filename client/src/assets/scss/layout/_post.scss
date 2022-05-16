@@ -1,0 +1,818 @@
+/**=====================
+    post css start
+==========================**/
+
+// create post
+.create-post {
+    background-color: $white;
+    border-radius: $radius-5;
+    padding: 35px;
+    box-shadow: $card-shadow;
+    .card-title {
+        margin-bottom: 10px;
+    }
+    .create-option {
+        display: flex;
+        align-items: center;
+        li {
+            cursor: pointer;
+            h5 {
+                font-size: $medium-size;
+                display: flex;
+                align-items: center;
+                svg {
+                    margin-right: 5px;
+                }
+            }
+            &.options {
+                h5 {
+                    svg {
+                        margin-left: 5px;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .create-btm-option {
+        margin-top: 10px;
+        margin-bottom: -8px;
+        margin-left: -4px;
+        li {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: $radius-5;
+            border: 1px solid $light-border;
+            position: relative;
+            cursor: pointer;
+            margin: 4px;
+            h5 {
+                display: flex;
+                align-items: center;
+                color: $font-color;
+                text-transform: capitalize;
+                font-weight: 500;
+                font-size: $medium-size;
+                svg {
+                    margin-right: 6px;
+                }
+            }
+            .choose-file {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                opacity: 0;
+            }
+        }
+    }
+    .create-bg {
+        .bg-post {
+            display: none;
+            width: 100%;
+            height: 230px;
+            border-radius: $radius-5;
+            position: relative;
+            .input-sec {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                .form-control {
+                    font-size: $h2-size;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    text-align: center;
+                    border: none;
+                    padding: 0;
+                    width: 75%;
+                    color: rgba($black, 0.6);
+                    background-color: transparent;
+                }
+                 ::placeholder {
+                    color: rgba($black, 0.5);
+                }
+            }
+            .close-icon {
+                position: absolute;
+                top: -23px;
+                right: -23px;
+                a {
+                    color: $theme-color;
+                }
+            }
+        }
+        .gradient-bg {
+            margin-top: 25px;
+            li {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border-radius: $radius-100;
+                cursor: pointer;
+                +li {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    .options-input {
+        position: relative;
+        input::-webkit-calendar-picker-indicator {
+            display: none;
+          }
+        .icon-close {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            z-index: 1;
+            transform: translateY(-50%);
+            display: none;
+        }
+        .search-input {
+            position: relative;
+            display: none;
+            margin-top: 10px;
+            .icon-left {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 13px;
+            }
+        }
+        .form-control {
+            padding: 10px 10px 10px 34px;
+            font-size: $h6-size;
+            text-transform: capitalize;
+            color: $font-color;
+            border-radius: $radius-5;
+        }
+        &.feeling {
+            .feeling-input {
+                display: block;
+            }
+            .icon-close {
+                display: block;
+            }
+        }
+        &.place {
+            .place-input {
+                display: block;
+            }
+            .icon-close {
+                display: block;
+            }
+        }
+        &.friends {
+            .friend-input {
+                display: block;
+            }
+            .icon-close {
+                display: block;
+            }
+        }
+    }
+    .post-btn {
+        display: none;
+        button {
+            width: 100%;
+            padding: 10px 20px;
+            text-align: center;
+            background-color: rgba($theme-color, 1);
+            color: white;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            &:disabled {
+                background-color: rgba($theme-color, 0.28);
+                color: rgba($black, 0.78);
+            }
+        }
+    }
+    .close-btn {
+        display: none;
+        position: absolute;
+        right: -25px;
+        top: -25px;
+        cursor: pointer;
+        svg {
+            stroke: $white;
+        }
+    }
+    &.active {
+        box-shadow: 0px 5px 20px 0px rgba($theme-color, 0.21);
+        .close-btn {
+            display: block;
+        }
+    }
+}
+
+.create-overlay {
+    &:after {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: rgba($black, 0.4);
+        width: 100vw;
+        height: 100vh;
+        z-index: 3;
+    }
+    .create-post {
+        z-index: 4;
+        position: relative;
+    }
+}
+
+// post style
+.post-panel {
+    margin-bottom: 30px;
+    .post-wrapper {
+        background-color: $white;
+        box-shadow: $card-shadow;
+        border-radius: $radius-5;
+        .post-title {
+            display: flex;
+            align-items: center;
+            padding: 0px 40px;
+            padding-top: 20px;
+        }
+        .profile {
+            .media {
+                align-items: center;
+                .user-img {
+                    width: 55px;
+                    height: 55px;
+                    margin-right: 16px;
+                    position: relative;
+                    border-radius: $radius-100;
+                }
+                .media-body {
+                    h5 {
+                        font-family: $font-1;
+                        color: $title-color;
+                        text-transform: capitalize;
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                        span {
+                            font-weight: 500;
+                            color: $font-color;
+                        }
+                    }
+                    h6 {
+                        text-transform: capitalize;
+                        color: $font-color;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        .post-details {
+            .img-wrapper {
+                position: relative;
+                margin-bottom: 25px;
+                iframe {
+                    border: none;
+                    width: 100%;
+                    height: 100%;
+                }
+                .map-wrapper {
+                    .map {
+                        width: 100%;
+                        height: 350px;
+                    }
+                    .map-details {
+                        padding: 26px 40px;
+                        border-bottom: 1px solid $theme-light;
+                        position: relative;
+                        .media {
+                            .map-img {
+                                width: 50px;
+                                height: 50px;
+                                border-radius: $radius-5;
+                                margin-right: 20px;
+                            }
+                            .media-body {
+                                h5 {
+                                    text-transform: capitalize;
+                                    font-weight: 600;
+                                    margin-bottom: 2px;
+                                }
+                                h6 {
+                                    color: $font-color;
+                                    text-transform: capitalize;
+                                    margin-bottom: 2px;
+                                }
+                                span {
+                                    color: $light-font;
+                                }
+                            }
+                        }
+                        .btn {
+                            position: absolute;
+                            right: 40px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+                .controler {
+                    .play {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        svg {
+                            stroke: $white;
+                        }
+                    }
+                    .duration {
+                        background-color: $white;
+                        border-radius: $radius-5;
+                        position: absolute;
+                        padding: 8px 14px;
+                        bottom: 40px;
+                        left: 40px;
+                        h6 {
+                            font-size: $medium-size;
+                            color: $title-color;
+                            font-weight: 500;
+                        }
+                    }
+                    .volume {
+                        background-color: $white;
+                        border-radius: 5px;
+                        position: absolute;
+                        padding: 8px 8px;
+                        bottom: 40px;
+                        right: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        svg {
+                            stroke: $title-color;
+                        }
+                    }
+                }
+                .slider-section {
+                    overflow: hidden;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-top: 1px solid $theme-light;
+                    border-bottom: 1px solid $theme-light;
+                    .slider-wrapper {
+                        box-shadow: 0px 5px 25px 0px rgba($black, 0.06);
+                        margin: 30px 0;
+                        border-radius: 0 0 $radius-10 $radius-10;
+                        .img-part {
+                            position: relative;
+                            .image {
+                                overflow: hidden;
+                                border-radius: $radius-10 $radius-10 0 0;
+                            }
+                            .label-ribbon {
+                                width: 130px;
+                                height: 130px;
+                                top: -10px;
+                                left: -10px;
+                                overflow: hidden;
+                                position: absolute;
+                                span {
+                                    position: absolute;
+                                    display: block;
+                                    width: 205px;
+                                    font-size: 16px;
+                                    padding: 3px;
+                                    background-color: $label-danger;
+                                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                                    color: #fff;
+                                    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+                                    text-transform: uppercase;
+                                    text-align: center;
+                                    right: -25px;
+                                    top: 30px;
+                                    transform: rotate(-45deg);
+                                }
+                                &:after,
+                                &::before {
+                                    position: absolute;
+                                    z-index: -1;
+                                    content: "";
+                                    display: block;
+                                    border: 5px solid darken($label-danger, 10%);
+                                    border-top-color: transparent;
+                                    border-left-color: transparent;
+                                }
+                                &:before {
+                                    top: 0;
+                                    right: 12px;
+                                }
+                                &:after {
+                                    bottom: 12px;
+                                    left: 0;
+                                }
+                            }
+                        }
+                        .slider-content {
+                            padding: 20px;
+                            h5 {
+                                line-height: 1.5;
+                                color: $title-color;
+                                span {
+                                    color: $theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .people-likes {
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+                ul {
+                    display: flex;
+                    li {
+                        width: 24px;
+                        height: 24px;
+                        border: 2px solid $white;
+                        border-radius: $radius-100;
+                        cursor: pointer;
+                        +li {
+                            margin-left: -10px;
+                        }
+                    }
+                }
+                h6 {
+                    font-size: $medium-size;
+                    color: $font-color;
+                    margin-left: 6px;
+                    font-weight: 500;
+                }
+            }
+            .detail-box {
+                padding: 0 35px 25px 35px;
+                position: relative;
+                h4 {
+                    color: $font-color;
+                    line-height: 26px;
+                }
+                h3 {
+                    font-weight: 700;
+                    color: $title-color;
+                    max-width: 89%;
+                }
+                .tag {
+                    color: $font-color;
+                    margin-top: 10px;
+                    span {
+                        color: $theme-color;
+                        font-weight: 600;
+                    }
+                }
+                p {
+                    font-size: $h4-size;
+                    color: $light-font;
+                    margin-top: 10px;
+                    span {
+                        color: $theme-color;
+                        font-weight: 600;
+                    }
+                }
+                .bookmark {
+                    position: absolute;
+                    right: 30px;
+                    top: 15px;
+                    padding: 10px 10px;
+                    background-color: $theme-light;
+                    border-radius: $radius-5;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    svg {
+                        stroke: $title-color;
+                    }
+                    &.active {
+                        svg {
+                            fill: $title-color;
+                        }
+                    }
+                }
+
+            }
+        }
+        .like-panel {
+            padding: 15px 35px;
+            border-top: 1px solid $theme-light;
+            border-bottom: 1px solid $theme-light;
+            display: flex;
+            align-items: center;
+            .left-emoji {
+                display: flex;
+                align-items: center;
+                ul {
+                    display: flex;
+                    align-items: center;
+                    li {
+                        img {
+                            width: 20px;
+                        }
+                        +li {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                h6 {
+                    font-size: $medium-size;
+                    color: $font-color;
+                    margin-left: 6px;
+                    font-weight: 600;
+                }
+            }
+            .right-stats {
+                margin-left: auto;
+                ul {
+                    display: flex;
+                    align-items: center;
+                    li {
+                        h5 {
+                            font-size: $medium-size;
+                            color: $font-color;
+                            text-transform: capitalize;
+                            svg,
+                            i,
+                            img {
+                                display: none;
+                            }
+                            span {
+                                font-weight: 700;
+                            }
+                        }
+                        +li {
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .post-react {
+            padding: 14px;
+            border-bottom: 1px solid $theme-light;
+            background-color: rgba($theme-light, 0.25);
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                li {
+                    a {
+                        display: flex;
+                        align-items: center;
+                        color: $font-color;
+                        text-transform: capitalize;
+                        font-weight: 500;
+                        svg {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+            .react-btn {
+                position: relative;
+                .react-box {
+                    position: absolute;
+                    bottom: 18px;
+                    left: 10px;
+                    background-color: $white;
+                    padding: 12px 15px;
+                    box-shadow: $dark-shadow;
+                    border-radius: $radius-5;
+                    display: none;
+                    ul {
+                        li {
+                            padding: 0 6px;
+                            position: relative;
+                            img {
+                                width: 28px;
+                                transform: scale(0.95, 0.95) translate(0, 0);
+                                transition: transform 200ms ease;
+                            }
+                            &:after {
+                                display: block;
+                                position: absolute;
+                                width: fit-content;
+                                bottom: 40px;
+                                content: attr(data-title);
+                                background-color: rgba($black, 0.7);
+                                color: #fff;
+                                padding: 4px 8px;
+                                border-radius: 20px;
+                                opacity: 0;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                font-size: 10px;
+                                text-transform: capitalize;
+                            }
+                            &:hover {
+                                img {
+                                    transform: scale(1, 1) translate(0, -6px);
+                                    transition: all 0.2s ease;
+                                }
+                                &:after {
+                                    opacity: 1;
+                                }
+                            }
+                            &:nth-child(1) {
+                                animation: emoji1 0.7333s;
+                            }
+                            &:nth-child(2) {
+                                animation: emoji2 0.9833s;
+                            }
+                            &:nth-child(3) {
+                                animation: emoji3 1.0833s;
+                            }
+                            &:nth-child(4) {
+                                animation: emoji4 0.9333s;
+                            }
+                            &:nth-child(5) {
+                                animation: emoji5 1.2167s;
+                            }
+                            &:nth-child(6) {
+                                animation: emoji6 1.2833s;
+                            }
+                        }
+                    }
+                    &.show {
+                        display: block;
+                    }
+                }
+            }
+        }
+        &.no-background {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+.comment-section {
+    padding: 25px 35px;
+    position: relative;
+    .comments {
+        display: none;
+        margin-bottom: 30px;
+        .main-comment {
+            .media {
+                position: relative;
+                .user-img {
+                    width: 45px;
+                    height: 45px;
+                    margin-right: 10px;
+                    position: relative;
+                    border-radius: $radius-100;
+                }
+                .media-body {
+                    h5 {
+                        font-family: $font-1;
+                        color: $title-color;
+                        text-transform: capitalize;
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                    }
+                    p {
+                        color: $font-color;
+                        font-weight: 400;
+                        max-width: 84%;
+                    }
+                    .comment-option {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 5px;
+                        li {
+                            a {
+                                font-size: $medium-size;
+                                text-transform: capitalize;
+                                color: $theme-color;
+                                font-weight: 500;
+                            }
+                            +li {
+                                margin-left: 20px;
+                            }
+                        }
+                    }
+                }
+                .comment-time {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    h6 {
+                        font-size: $medium-size;
+                        color: $theme-color;
+                        font-weight: 500;
+                    }
+                }
+            }
+            .sub-comment {
+                margin-top: 40px;
+                .media {
+                    margin-left: 50px;
+                    .media-body {
+                        p {
+                            max-width: 75%;
+                        }
+                    }
+                    +.media {
+                        margin-top: 25px;
+                    }
+                }
+                .loader {
+                    margin-left: 50px;
+                    display: flex;
+                    align-items: center;
+                    text-transform: capitalize;
+                    margin-top: 20px;
+                    color: $theme-color;
+                    font-weight: 500;
+                    background-color: rgba($theme-light, 0.25);
+                    padding: 8px 15px;
+                    border-radius: 5px;
+                    svg {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            +.main-comment {
+                margin-top: 30px;
+            }
+        }
+    }
+    .reply {
+        .emojionearea {
+            box-shadow: none;
+            &.emojionearea-inline {
+                height: 42px;
+                >.emojionearea-editor {
+                    top: 7px;
+                }
+            }
+            .emojionearea-picker {
+                &.emojionearea-picker-position-top {
+                    right: 26px;
+                }
+            }
+            .emojionearea-button {
+                right: 42px;
+                opacity: 0;
+            }
+        }
+        .emojionearea {
+            &.form-control {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.infinite-loader-sec {
+    .col-grid-box {
+        display: none;
+    }
+}
+
+.post-loader {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    .loader-icon {
+        background-color: $white;
+        border-radius: $radius-100;
+        margin: 0 auto;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .no-more-text {
+        display: none;
+        p {
+            text-transform: capitalize;
+            color: $theme-color;
+            font-weight: 500;
+        }
+    }
+    &.no-more {
+        .loader-icon {
+            display: none;
+        }
+        .no-more-text {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+/**=====================
+    Form css start
+==========================**/
+
+.icon-theme {
+    stroke: $theme-color;
+}
+
+.icon-dark {
+    stroke: $title-color;
+}
+
+.icon-font-color {
+    stroke: $font-color;
+}
+
+.icon-font-light {
+    stroke: rgba($font-color, 0.6);
+}
+
+.icon-light {
+    stroke: $white;
+}
+
+.stroke-width-3 {
+    stroke-width: 3px;
+}
+
+.fill-white {
+    fill: $white;
+}

@@ -1,0 +1,40 @@
+/**=====================
+    Game Page css start
+==========================**/
+
+.suggestion-box {
+    .story-box {
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($black, 0.4);
+            border-radius: $radius-10;
+            display: none;
+            transition: all 0.5s ease;
+        }
+        .play-btn {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            transition: all .5s ease;
+            z-index: 1;
+        }
+        &:hover {
+            &:after {
+                display: block;
+                transition: all 0.5s ease;
+            }
+            .play-btn {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+                transition: all 0.5s ease;
+            }
+        }
+    }
+}

@@ -1,0 +1,108 @@
+/**=====================
+    footer css start
+==========================**/
+
+.footer-t-space {
+    padding-top: 50px;
+}
+
+.footer-b-space {
+    padding-bottom: 50px;
+}
+
+.footer-pt-space {
+    padding-top: calc(40px + (70 - 40) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.footer-pb-space {
+    padding-bottom: calc(24px + (70 - 24) * ((100vw - 320px) / (1920 - 320)));
+}
+
+footer {
+    position: relative;
+    .footer-title {
+        h4 {
+            color: $title-color;
+            font-weight: 500;
+            text-transform: capitalize;
+            margin-bottom: 18px;
+        }
+        .according-menu {
+            float: right;
+        }
+    }
+    .footer-content {
+        .footer-logo {
+            margin-bottom: 14px;
+        }
+        p {
+            color: $font-color;
+            line-height: 26px;
+            max-width: 90%;
+        }
+        li {
+            a {
+                color: $font-color;
+                text-transform: capitalize;
+                font-weight: 500;
+            }
+            +li {
+                margin-top: 7px;
+            }
+        }
+        .footer-social {
+            margin-top: 12px;
+            li {
+                +li {
+                    margin-top: 0;
+                    margin-left: 14px;
+                }
+            }
+        }
+    }
+    &.footer-theme {
+        background-color: $theme-color;
+        .footer-title {
+            h4 {
+                color: $white;
+                font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+            }
+        }
+        .footer-content {
+            .footer-logo {
+                margin-bottom: 20px;
+                img {
+                    width: 44%;
+                }
+            }
+            p {
+                color: $white;
+                font-size: 16px;
+                letter-spacing: 0.05em;
+            }
+            li {
+                a {
+                    font-weight: 400;
+                    color: $white;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+        }
+        .sub-footer {
+            border-top: 1px solid rgba($white, 0.06);
+            p {
+                color: $white;
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+            }
+        }
+    }
+}
+
+.sub-footer {
+    padding: 20px 0;
+    border-top: 1px solid rgba($black, 0.06);
+    text-align: center;
+    p {
+        color: $font-color;
+    }
+}

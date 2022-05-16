@@ -1,0 +1,133 @@
+/**=======================
+    Setting Page css start
+==========================**/
+
+.setting-section {
+    .back-btn {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+    .setting-sidebar {
+        padding: 35px;
+        box-shadow: $card-shadow;
+        background-color: $white;
+        border-radius: $radius-10;
+        height: 100%;
+    }
+    .user-details {
+        text-align: center;
+        .user-img {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            border-radius: $radius-100;
+        }
+        h5 {
+            color: $title-color;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        h6 {
+            color: $light-font;
+            margin-top: 5px;
+        }
+    }
+    .tab-section {
+        margin-top: 20px;
+        .nav-pills {
+            .nav-link.active,
+            .show>.nav-link {
+                background-color: $theme-color;
+                color: $white;
+            }
+            .nav-link {
+                color: $title-color;
+                font-weight: 500;
+                font-size: $h4-size;
+                text-transform: capitalize;
+                +.nav-link {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+    .tab-content {
+        .setting-home {
+            background-color: $white;
+            padding: 35px;
+            box-shadow: $card-shadow;
+            border-radius: $radius-10;
+            h2 {
+                text-transform: capitalize;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            p {
+                color: $light-font;
+                line-height: 25px;
+            }
+            .top-content {
+                margin-bottom: 30px;
+            }
+            .detail-box {
+                text-align: center;
+                padding: 50px 30px;
+                display: block;
+                img {
+                    height: 90px;
+                    margin: 0 auto 20px;
+                    width: auto;
+                }
+                h3 {
+                    color: $title-color;
+                }
+                h3,
+                p {
+                    text-transform: capitalize;
+                }
+            }
+            .row {
+                >div {
+                    border-right: 1px solid rgba($black, 0.05);
+                    transition: all 0.5s ease;
+                    &:nth-child(3),
+                    &:nth-child(6) {
+                        border-right: 0;
+                    }
+                    &:hover {
+                        box-shadow: 0 1px 8px rgba($theme-color, 0.10);
+                        transition: all 0.5s ease;
+                    }
+                    &:nth-child(-n + 3) {
+                        border-bottom: 1px solid rgba($black, 0.05);
+                    }
+                }
+            }
+        }
+        .setting-wrapper {
+            background-color: $white;
+            padding: 35px;
+            box-shadow: $card-shadow;
+            border-radius: $radius-5;
+            min-height: 600px;
+            .form-group{
+                margin-bottom: 1rem;
+            }
+            .setting-title {
+                margin-bottom: 30px;
+                h3 {
+                    color: $title-color;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .gj-datepicker {
+            .input-group-append {
+                display: none;
+            }
+        }
+    }
+}
+

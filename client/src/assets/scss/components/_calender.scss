@@ -1,0 +1,58 @@
+/**==========================
+    Custom Full calender css start
+==========================**/
+
+.custom-calender {
+    .fc-toolbar {
+        &.fc-header-toolbar {
+            padding: 25px;
+            margin-bottom: 0;
+        }
+    }
+    .fc-unthemed th,
+    td,
+    thead,
+    tbody,
+    .fc-divider,
+    .fc-row,
+    .fc-content,
+    .fc-popover,
+    .fc-list-view,
+    .fc-list-heading td {
+        border-color: $theme-light;
+    }
+    .fc-day-grid-event {
+        background-color: $theme-light;
+        border-color: $theme-light;
+        border-left: 2px solid $theme-color;
+        padding-left: 5px;
+        color: $font-color;
+    }
+    .fc-button-primary {
+        background-color: $theme-color;
+        border-color: $theme-color;
+        padding: 4px 10px;
+        text-transform: capitalize;
+    }
+    .fc-day-header {
+        height: 40px;
+        vertical-align: middle;
+        span {
+            color: $title-color;
+        }
+    }
+    .fc-toolbar {
+        h2 {
+            font-size: 16px;
+        }
+    }
+    .fc-ltr {
+        .fc-dayGrid-view {
+            .fc-day-top {
+                .fc-day-number {
+                    color: $font-color;
+                }
+            }
+        }
+    }
+}

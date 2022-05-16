@@ -1,0 +1,35 @@
+/*=====================
+ emoji start
+==========================*/
+
+.emoji {
+    display: flex;
+    align-items: center;
+    li {
+        img,
+        svg {
+            width: 24px;
+            height: 24px;
+            margin: 0 auto;
+            transition: all 0.5s ease;
+        }
+        &:hover {
+            img,
+            svg {
+                transform: scale(1.1);
+                transition: all 0.5s ease;
+            }
+        }
+        +li {
+            margin-left: 10px;
+        }
+    }
+    &.icon-xl {
+        img,
+        svg {
+            width: 30px;
+            height: 30px;
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+/**=====================
+    Contact Pages css start
+==========================**/
+
+.contact-section {
+    .card{
+        box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
+        border: none;
+    }
+    .title {
+        h2 {
+            font-size: calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320)));
+            text-transform: capitalize;
+            margin-bottom: 10px;
+            max-width: 55%;
+        }
+        p {
+            color: $light-font;
+            letter-spacing: 0.05em;
+            text-transform: capitalize;
+        }
+    }
+   
+    .theme-form {
+        margin-top: 30px;
+        .form-group{
+            margin-bottom: 1rem;
+        }
+    }
+    .left-part {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .contact-img {
+            text-align: center;
+            img {
+                width: 66%;
+            }
+        }
+        .contact-detail {
+            margin-top: 50px;
+            h4 {
+                display: flex;
+                align-items: center;
+                text-transform: capitalize;
+                color: $title-color;
+                font-weight: 500;
+                font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: 10px;
+                svg {
+                    margin-right: 8px;
+                }
+            }
+            p {
+                color: $light-font;
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                line-height: 24px;
+            }
+        }
+    }
+    .detail-box {
+        margin-bottom: 40px;
+    }
+}

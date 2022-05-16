@@ -1,0 +1,219 @@
+/**=================================
+    Chatbox css start
+====================================**/
+
+
+/**** Chat Popup Layout******/
+
+.chat-box {
+    position: fixed;
+    bottom: -5px;
+    width: 300px;
+    background: $white;
+    border-radius: $radius-10 $radius-10 0px 0px;
+    z-index: 9;
+    box-shadow: 0 0 8px rgba($black, 0.12);
+    @extend %dark-scroll;
+}
+
+.chat-header {
+    display: flex;
+    border-radius: $radius-10 $radius-10 0 0;
+    align-items: center;
+    padding: 15px;
+    background-color: $white;
+    .name {
+        position: relative;
+        line-height: 40px;
+        display: flex;
+        align-items: center;
+        flex: 2;
+        position: relative;
+        .user-img {
+            width: 30px;
+            height: 30px;
+            border-radius: $radius-100;
+            margin-right: 10px;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            .available-stats {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 12px;
+                height: 12px;
+                border-radius: $radius-100;
+                &.online {
+                    border: 3px solid $white;
+                    background-color: $theme-success;
+                }
+                &.offline {
+                    border: 3px solid $white;
+                    background-color: $theme-danger;
+                }
+                &.away {
+                    border: 3px solid $white;
+                    background-color: $theme-warning;
+                }
+            }
+        }
+        span {
+            font-weight: 500;
+            color: $title-color;
+            font-size: $h5-size;
+            text-transform: capitalize;
+            width: 70px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+    .menu-option {
+        ul {
+            display: flex;
+            position: relative;
+            align-items: center;
+            li {
+                cursor: pointer;
+                img {
+                    width: 16px;
+                    opacity: 0.6;
+                }
+                i {
+                    font-size: $h2-size;
+                    color: $white;
+                }
+                +li {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+.chat-wrap {
+    .chat-body {
+        box-shadow: inset 0px 6px 6px 0px rgba($black, 0.04);
+        height: 220px;
+        font-size: $h6-size;
+        padding: 15px;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    .chat-footer {
+        box-shadow: 0px -6px 6px 0px rgba($black, 0.03);
+        border-radius: $radius-10 $radius-10 0 0;
+        position: relative;
+         ::placeholder {
+            color: $light-font;
+            text-transform: capitalize;
+        }
+        .chat-input {
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+            border: none;
+            box-sizing: border-box;
+            font-size: $h6-size;
+            color: $font-color;
+        }
+        .add-extent {
+            i {
+                cursor: pointer;
+                position: absolute;
+                right: 18px;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                background-color: $theme-light;
+                top: 15%;
+                transition: all 0.5s ease;
+                color: $font-color;
+            }
+            .options {
+                position: absolute;
+                right: 13px;
+                bottom: 50%;
+                background-color: $white;
+                padding: 10px 5px;
+                border-radius: $radius-20;
+                box-shadow: 0px 5px 7px 1px rgba($black, 0.09);
+                height: 0;
+                opacity: 0;
+                visibility: hidden;
+                li {
+                    width: 30px;
+                    height: 30px;
+                    background-color: $theme-light;
+                    border-radius: $radius-100;
+                    padding: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    img {
+                        width: 16px;
+                        filter: invert(1);
+                    }
+                    +li {
+                        margin-top: 6px;
+                    }
+                    &:nth-child(1) {
+                        background-color: skyblue;
+                    }
+                    &:nth-child(2) {
+                        background-color: orangered;
+                    }
+                    &:nth-child(3) {
+                        background-color: orange;
+                    }
+                }
+            }
+            &.show {
+                i {
+                    transform: rotate(45deg);
+                    transition: all 0.5s ease;
+                }
+                .options {
+                    opacity: 1;
+                    visibility: visible;
+                    height: auto;
+                    bottom: 100%;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+}
+
+.msg-left {
+    position: relative;
+    background: rgba($black, 0.05);
+    padding: 5px;
+    min-height: 10px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    word-break: break-all;
+}
+
+.msg-right {
+    margin-bottom: 5px;
+    position: relative;
+    text-align: right;
+    span {
+        background: $theme-light;
+        min-height: 15px;
+        padding: 5px 15px;
+        border-radius: $radius-10;
+        display: inline-block;
+        max-width: 90%;
+        word-break: break-all;
+        color: $font-color;
+    }
+}

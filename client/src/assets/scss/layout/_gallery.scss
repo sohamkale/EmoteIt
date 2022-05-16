@@ -1,0 +1,47 @@
+/**=====================
+    Gallery css start
+==========================**/
+
+.gallery-section {
+    background-color: $white;
+    border-radius: $radius-5;
+    box-shadow: $card-shadow;
+    .gallery-top {
+        display: flex;
+        align-items: center;
+        padding: 30px 35px;
+    }
+    .portfolio-section {
+        padding: 0 6px 6px !important;
+        .row {
+            margin-left: -3px;
+            margin-right: -3px;
+            >div {
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+        }
+        .pt-cls {
+            padding-top: 6px !important;
+        }
+    }
+    .overlay {
+        &.image-plus {
+            position: relative;
+            span {
+                position: absolute;
+                background-color: rgba($theme-color, 0.45);
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+                font-weight: 500;
+                font-size: calc(28px + (30 - 28) * ((100vw - 320px) / (1920 - 320)));
+            }
+        }
+    }
+}

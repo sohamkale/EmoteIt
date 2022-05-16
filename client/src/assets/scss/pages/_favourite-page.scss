@@ -1,0 +1,46 @@
+/**=====================
+    Favourite Page css start
+==========================**/
+
+.map-about {
+    border-radius: $radius-5;
+    box-shadow: $card-shadow;
+    background-color: $white;
+    .card-title {
+        padding: 30px 35px;
+    }
+    .map-iframe {
+        width: 100%;
+        height: 250px;
+    }
+    .map-content {
+        padding: 26px 35px;
+        position: relative;
+        .media {
+            align-items: center;
+            .map-img {
+                width: 50px;
+                height: 50px;
+                border-radius: $radius-5;
+                margin-right: 20px;
+            }
+            .media-body {
+                h4 {
+                    text-transform: capitalize;
+                    font-weight: 600;
+                    margin-bottom: 2px;
+                }
+                h5 {
+                    color: $font-color;
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .btn {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

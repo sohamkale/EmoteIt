@@ -1,0 +1,14 @@
+.mostInsightedEmortion{
+  max-height: 550px;
+  //overflow-y: auto;
+  overflow:hidden;
+}
+
+.profilePageRestrictedHeight{
+  overflow-y: auto;
+  max-height: 600px;
+}
+.profilePageRestrictedHeight::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}

@@ -1,0 +1,83 @@
+/**=====================
+    like page list css start
+==========================**/
+
+.activity-list {
+    background-color: $white;
+    border-radius: $radius-5;
+    box-shadow: $card-shadow;
+    .card-title {
+        padding: 26px 35px;
+        border-bottom: 1px solid $theme-light;
+    }
+    .activity-title {
+        padding: 20px 35px 0;
+        h4 {
+            text-transform: capitalize;
+            color: $title-color;
+            font-weight: 500;
+        }
+    }
+    .activity-content {
+        ul {
+            padding: 12px 0;
+            li {
+                position: relative;
+                padding: 10px 30px;
+                .media {
+                    align-items: center;
+                    .img-part {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: $radius-100;
+                        margin: 0 auto;
+                    }
+                    .media-body {
+                        margin-left: 14px;
+                        h4 {
+                            color: $font-color;
+                            text-transform: capitalize;
+                            font-weight: 400;
+                            margin-bottom: 3px;
+                            font-size: 13px;
+                            font-family: $font-2;
+                            line-height: 22px;
+                            span {
+                                color: $theme-color;
+                                font-weight: 600;
+                            }
+                        }
+                        h6 {
+                            text-transform: capitalize;
+                            color: rgba($font-color, 0.5);
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .load-more {
+        padding: 10px 0 20px;
+        text-align: center;
+    }
+    &.actitvity-page {
+        .activity-content {
+            ul {
+                li {
+                    .media {
+                        .media-body {
+                            h4 {
+                                font-size: 15px;
+                            }
+                        }
+                        .img-part {
+                            width: 55px;
+                            height: 55px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

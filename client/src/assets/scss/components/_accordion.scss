@@ -1,0 +1,67 @@
+/**=====================
+    Accordion css start
+==========================**/
+
+.theme-accordion {
+    .card {
+        border: 0;
+        .card-header {
+            padding: 15px 15px;
+            background-color: $theme-light;
+            margin-bottom: 0;
+            border-bottom: none;
+            border-radius: $radius-5;
+            .btn {
+                font-size: 16px;
+                color: $theme-color;
+                padding: 0;
+                text-decoration: none;
+                &:after {
+                    content: "\f068";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    position: absolute;
+                    right: 15px;
+                    transition: all 0.5s ease;
+                }
+                &.collapsed {
+                    &:after {
+                        content: "\f067";
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        position: absolute;
+                        right: 15px;
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+        }
+        .card-body {
+            color: $light-font;
+            line-height: 28px;
+            padding: 20px 15px;
+        }
+        +.card {
+            margin-top: 20px;
+        }
+    }
+    &.accordion-sm {
+        .card {
+            .card-header {
+                padding: 10px 12px;
+                .btn {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+.theme-card{
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;    
+    box-shadow: $card-shadow;
+    background-color: $theme-light;
+    padding: 20px;
+}

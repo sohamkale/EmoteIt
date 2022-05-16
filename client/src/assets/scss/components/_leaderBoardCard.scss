@@ -1,0 +1,155 @@
+
+
+$border-radius-size: 0px;
+$barbarian: #373332;
+$archer: #EE5487;
+$giant: #F6901A;
+$goblin: #82BB30;
+$wizard: #4FACFF;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100px;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+
+
+.clash-card {
+
+  background: white;
+  width: 100%;
+  //height: 260px;
+  display: inline-block;
+  margin: auto;
+  border-radius: $border-radius-size + 5;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+  //display: inline-block;
+  //width: 100px;
+  //height: 100px;
+  //padding: 5px;
+  //border: 1px solid blue;
+  //background-color: yellow;
+
+}
+
+.clash-card__level {
+  font-size: 18px;
+  color: black;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 3px;
+  text-align: left;
+  margin-left: 5px;
+
+
+}
+
+.clash-card__level--barbarian {
+  color: $barbarian;
+}
+
+
+.clash-card__unit-name {
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 800;
+  margin-top:-10px;
+  margin-bottom: 3px;
+  text-align: left;
+  margin-left: 5px;
+}
+
+.clash-card__unit-description {
+  padding: 0px;
+  margin-bottom: 10px;
+}
+
+.clash-card__unit-stats--barbarian {
+  background: $barbarian;
+
+  .one-third {
+    border-right: 1px solid  #FFFFFF;
+  }
+}
+
+
+.clash-card__unit-stats {
+
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: $border-radius-size;
+  border-bottom-right-radius: $border-radius-size;
+
+  .one-third {
+      width: 33%;
+      float: left;
+      padding: 2px 5px;
+
+
+  }
+
+
+  .stat {
+    position: relative;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1px;
+  }
+
+  .stat-value {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8px;
+  }
+
+  .no-border {
+    border-right: none;
+  }
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.slick-prev {
+  left: 100px;
+  z-index: 999;
+}
+
+.slick-next {
+  right: 100px;
+  z-index: 999;
+}
+.clash-card__image--barbarian {
+
+  overflow: hidden;
+  height: 150px;
+  text-align: center;
+  img {
+
+   // width: 100%;
+    height: 150px;
+
+
+  }
+}

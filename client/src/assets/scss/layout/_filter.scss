@@ -1,0 +1,82 @@
+/**=====================
+    filter section css start
+==========================**/
+.filter-section {
+    box-shadow: $card-shadow;
+    border-radius: $radius-5;
+    background-color: $white;
+    .card-title {
+        padding: 26px 35px;
+        border-bottom: 1px solid $theme-light;
+    }
+    .filters-button-group {
+        button {
+            border: 1px solid $theme-color;
+            background-color: $white;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 0 0 0 10px;
+            color: $theme-color;
+            font-weight: 500;
+            text-transform: capitalize;
+            transition: all 0.5s ease;
+            &.is-checked {
+                background-color: $theme-color;
+                color: $white;
+                transition: all 0.5s ease;
+            }
+        }
+    }
+    .filter-content {
+        padding: 26px 35px;
+        .grid {
+            margin-left: -10px;
+            margin-right: -10px;
+            margin-bottom: -20px;
+        }
+        .element-item {
+            flex: 0 0 20%;
+            max-width: 20%;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            .img-sec {
+                border-radius: $radius-5;
+                margin-bottom: 10px;
+                position: relative;
+                .btn {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0);
+                    opacity: 0;
+                    transition: all 0.5s ease;
+                }
+            }
+            .game-content {
+                h4 {
+                    color: $theme-color;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                }
+                h5 {
+                    color: $font-color;
+                    line-height: 1.5;
+                }
+                p {
+                    color: $light-font;
+                }
+            }
+            &:hover {
+                .img-sec {
+                    .btn {
+                        opacity: 1;
+                        transition: all 0.5s ease;
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+                }
+            }
+        }
+    }
+}

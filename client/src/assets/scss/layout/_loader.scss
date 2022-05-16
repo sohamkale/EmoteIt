@@ -1,0 +1,1144 @@
+/**=====================
+    Loader css start
+==========================**/
+
+// comments sekeleton loader
+.ldr-comments {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: $white;
+    display: none;
+    ul {
+        li {
+            .media {
+                .ldr-img {
+                    width: 45px;
+                    height: 45px;
+                    margin-right: 10px;
+                    position: relative;
+                    border-radius: 100%;
+                    background-color: $theme-light;
+                }
+                .media-body {
+                    .contents {
+                        .ldr-content {
+                            width: 25%;
+                            height: 16px;
+                            @extend %loader-skeleton;
+                            +.ldr-content {
+                                margin-top: 8px;
+                            }
+                            &:nth-child(2) {
+                                width: 70%;
+                            }
+                        }
+                    }
+                }
+            }
+            +li {
+                margin-top: 30px;
+            }
+            .sub-comment {
+                margin-top: 40px;
+                margin-left: 50px;
+            }
+        }
+    }
+}
+
+.ldr-btn {
+    width: 116px;
+    height: 34px;
+    border-radius: $radius-5;
+    background-color: $theme-light;
+}
+
+.loading-text {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: $theme-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    text-align: center;
+    h1 {
+        text-transform: uppercase;
+        color: $theme-color;
+        &.animate {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:100%;
+            margin: auto;
+            animation: load 1.2s infinite 0s ease-in-out;
+            animation-direction: alternate;
+            text-shadow: 0 0 1px white;
+        }
+    }
+    img {
+        width: 12%;
+    }
+}
+
+.pre-loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999999999;
+    background-color: $theme-light;
+    overflow: auto;
+    .story-section {
+        .story-box {
+            .story-bg {
+                background-color: $white;
+            }
+        }
+    }
+    .profile-box {
+        .profile-content {
+            .image-section {
+                .profile-img {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+            .profile-detail {
+                h2 {
+                    height: 20px;
+                    width: 70%;
+                    margin: 0 auto 10px;
+                    @extend %loader-skeleton;
+                }
+                h5 {
+                    height: 20px;
+                    width: 50%;
+                    margin: 0 auto;
+                    @extend %loader-skeleton;
+                }
+                .description {
+                    p {
+                        height: 16px;
+                        width: 80%;
+                        margin: 0 auto;
+                        @extend %loader-skeleton;
+                        &:nth-child(2) {
+                            height: 16px;
+                            width: 70%;
+                            margin: 8px auto 0;
+                            @extend %loader-skeleton;
+                        }
+                    }
+                }
+                .counter-stats {
+                    span {
+                        height: 50px;
+                        margin: 0 auto;
+                        width: 94%;
+                        display: block;
+                        @extend %loader-skeleton;
+                    }
+                }
+            }
+        }
+    }
+    .suggestion-box {
+        .story-box {
+            .story-bg {
+                background-color: $theme-light;
+            }
+            &:hover {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+    .page-list {
+        .list-content {
+            ul {
+                li {
+                    .media {
+                        .img-part {
+                            background-color: $theme-light;
+                        }
+                        .media-body {
+                            h4 {
+                                width: 65%;
+                                height: 18px;
+                                @extend %loader-skeleton;
+                            }
+                            h6 {
+                                width: 50%;
+                                height: 14px;
+                                @extend %loader-skeleton;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .create-post {
+        .create-bg {
+            .gradient-bg {
+                width: 78%;
+                height: 20px;
+                @extend %loader-skeleton;
+            }
+        }
+        .create-btm-option {
+            li {
+                width: 16%;
+                height: 36px;
+                border: none;
+                @extend %loader-skeleton;
+                &:nth-child(2) {
+                    width: 20%;
+                }
+            }
+        }
+    }
+    .post-panel {
+        .post-wrapper {
+            box-shadow: 0px 5px 20px 0px rgba($black, 0.05);
+            .profile {
+                .media {
+                    .user-img {
+                        background-color: $theme-light;
+                    }
+                    .media-body {
+                        h5 {
+                            height: 16px;
+                            width: 90px;
+                            @extend %loader-skeleton;
+                        }
+                        h6 {
+                            height: 16px;
+                            width: 80%;
+                            @extend %loader-skeleton;
+                        }
+                    }
+                }
+            }
+            .post-details {
+                .img-wrapper {
+                    @extend %loader-skeleton;
+                }
+                .detail-box {
+                    h3 {
+                        width: 80%;
+                        height: 20px;
+                        @extend %loader-skeleton;
+                    }
+                    .tag {
+                        width: 50%;
+                        height: 17px;
+                        @extend %loader-skeleton;
+                    }
+                    .ldr-p {
+                        p {
+                            width: 100%;
+                            height: 22px;
+                            @extend %loader-skeleton;
+                            &:nth-child(2) {
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .birthday-section {
+        .birthday-top {
+            .title {
+                h3 {
+                    width: 80%;
+                    height: 20px;
+                    @extend %loader-skeleton;
+                }
+                h6 {
+                    width: 140px;
+                    height: 15px;
+                    @extend %loader-skeleton;
+                }
+            }
+        }
+        .birthday-content {
+            .details {
+                form {
+                    .form-control {
+                        @extend %loader-skeleton;
+                    }
+                }
+                h3 {
+                    width: 40%;
+                    height: 20px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    @extend %loader-skeleton;
+                }
+                h6 {
+                    width: 45%;
+                    height: 14px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    @extend %loader-skeleton;
+                }
+                .ldr-p {
+                    p {
+                        height: 16px;
+                        width: 90%;
+                        margin: 0 auto;
+                        @extend %loader-skeleton;
+                        &:nth-child(2) {
+                            height: 16px;
+                            width: 70%;
+                            margin: 8px auto 0;
+                            @extend %loader-skeleton;
+                        }
+                    }
+                }
+            }
+            .image-section {
+                .icon {
+                    background-color: $theme-light;
+                }
+                .center-profile {
+                    &:after {
+                        background-color: $theme-light;
+                    }
+                }
+            }
+        }
+        &:after {
+            background: $white;
+        }
+    }
+    .gallery-section {
+        .portfolio-section {
+            .portfolio-image {
+                background-color: $theme-light;
+            }
+        }
+    }
+    .conversation-panel {
+        .panel-header {
+            h2 {
+                width: 80px;
+                height: 24px;
+                @extend %loader-skeleton;
+            }
+            h5 {
+                width: 70%;
+                height: 16px;
+                @extend %loader-skeleton;
+            }
+        }
+        .friend-section {
+            .header-section {
+                h5 {
+                    width: 40%;
+                    height: 16px;
+                    @extend %loader-skeleton;
+                }
+            }
+            .friend-list {
+                .friend-box {
+                    .user-img {
+                        background-color: $theme-light;
+                    }
+                    .media {
+                        .media-body {
+                            h5 {
+                                width: 90px;
+                                height: 16px;
+                                @extend %loader-skeleton;
+                            }
+                            h6 {
+                                width: 70px;
+                                height: 14px;
+                                @extend %loader-skeleton;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .card-title {
+        h3 {
+            width: 70%;
+            height: 18px;
+            @extend %loader-skeleton;
+        }
+    }
+    .sidebar-panel {
+        .bar-icon-img {
+            height: 22px;
+            background-color: $theme-light;
+        }
+        &.panel-lg {
+            .sidebar-icon {
+                >li {
+                    >a {
+                        h4 {
+                            width: 40%;
+                            height: 16px;
+                            @extend %loader-skeleton;
+                        }
+                    }
+                    &:nth-child(3),
+                    &:nth-child(5) {
+                        >a {
+                            h4 {
+                                width: 49%;
+                            }
+                        }
+                    }
+                    &:nth-child(7),
+                    &:nth-child(9) {
+                        >a {
+                            h4 {
+                                width: 55%;
+                            }
+                        }
+                    }
+                }
+            }
+            .main-icon {
+                h4 {
+                    width: 34%;
+                    height: 16px;
+                    @extend %loader-skeleton;
+                }
+            }
+        }
+        &.sidebar-light {
+            .bar-icon-img {
+                background-color: $white;
+            }
+            .main-icon {
+                h4 {
+                    @extend %loader-skeleton-white;
+                }
+            }
+            .sidebar-icon {
+                >li {
+                    >a {
+                        h4 {
+                            @extend %loader-skeleton-white;
+                        }
+                    }
+                }
+            }
+        }
+        &.dark-sidebar {
+            .user-wrap {
+                .user-info {
+                    h3,
+                    h4 {
+                        width: auto;
+                        height: auto;
+                        background: unset;
+                    }
+                }
+            }
+            .sidebar-icon {
+                >li {
+                    >a {
+                        h4 {
+                            width: auto;
+                            height: auto;
+                            background: unset;
+                        }
+                    }
+                }
+            }
+        }
+        .user-wrap {
+            .user-info {
+                h3 {
+                    width: 120px;
+                    height: 20px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    @extend %loader-skeleton-white;
+                }
+                h4 {
+                    width: 90px;
+                    height: 16px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    @extend %loader-skeleton-white;
+                }
+            }
+            .profile-img {
+                >div {
+                    background-color: $white;
+                }
+                &:after,
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+    .profile-cover {
+        background-color: rgba($theme-color, 0.1);
+        box-shadow: none;
+        .profile-box {
+            .profile-content {
+                .profile-detail {
+                    h5 {
+                        width: 216px;
+                    }
+                }
+            }
+        }
+    }
+    .profile-menu {
+        ul {
+            li {
+                width: 114px;
+                height: 40px;
+                @extend %loader-skeleton;
+            }
+        }
+    }
+    .profile-about {
+        .about-footer {
+            ul {
+                li {
+                    width: 32px;
+                    height: 32px;
+                    background-color: $theme-light;
+                    border-radius: $radius-5;
+                }
+            }
+        }
+        .about-content {
+            li {
+                .details {
+                    h4 {
+                        width: 80px;
+                        height: 20px;
+                        @extend %loader-skeleton;
+                    }
+                    h5 {
+                        width: 80%;
+                        height: 16px;
+                        @extend %loader-skeleton;
+                    }
+                    h6 {
+                        width: 70%;
+                        height: 16px;
+                        margin-top: 5px;
+                        @extend %loader-skeleton;
+                    }
+                }
+            }
+        }
+    }
+    .activity-list {
+        .activity-content {
+            ul {
+                li {
+                    .media {
+                        .img-part {
+                            background-color: $theme-light;
+                        }
+                        .media-body {
+                            h4 {
+                                width: 100%;
+                                height: 20px;
+                                @extend %loader-skeleton;
+                            }
+                            h6 {
+                                width: 30%;
+                                height: 16px;
+                                @extend %loader-skeleton;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .activity-title {
+            h4 {
+                width: 60px;
+                height: 20px;
+                @extend %loader-skeleton;
+            }
+        }
+    }
+    .about-profile {
+        ul {
+            &.about-list {
+                li {
+                    .title {
+                        position: relative;
+                        height: 20px;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: -40px;
+                            width: 70%;
+                            height: 20px;
+                            @extend %loader-skeleton;
+                        }
+                    }
+                    .content {
+                        position: relative;
+                        height: 50px;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: -10px;
+                            width: 100%;
+                            height: 20px;
+                            @extend %loader-skeleton;
+                        }
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 20px;
+                            width: 70%;
+                            height: 20px;
+                            @extend %loader-skeleton;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .friend-list-box {
+        .friend-list {
+            .friend-box {
+                .user-img {
+                    background-color: $theme-light;
+                }
+                .media {
+                    .media-body {
+                        h5 {
+                            width: 70px;
+                            height: 20px;
+                            @extend %loader-skeleton;
+                        }
+                        h6 {
+                            width: 65px;
+                            height: 16px;
+                            @extend %loader-skeleton;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .gallery-page-section {
+        .Choose-photo-modal {
+            .gallery-album {
+                .card {
+                    background-color: $theme-light;
+                    .card-body {
+                        background: transparent;
+                        .card-title {
+                            width: 32%;
+                            height: 16px;
+                            @extend %loader-skeleton-white;
+                        }
+                        h6 {
+                            width: 25%;
+                            height: 16px;
+                            margin-top: 5px;
+                            @extend %loader-skeleton-white;
+                        }
+                    }
+                }
+            }
+        }
+        .tab-section {
+            .nav-tabs {
+                .nav-link {
+                    width: 90px;
+                    height: 42px;
+                    position: relative;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        left: 8px;
+                        top: 10px;
+                        width: 80%;
+                        height: 20px;
+                        @extend %loader-skeleton;
+                    }
+                }
+            }
+        }
+    }
+    .hashtag-list {
+        .hashtag-content {
+            ul {
+                li {
+                    h5 {
+                        width: 70%;
+                        height: 16px;
+                        @extend %loader-skeleton;
+                    }
+                    h6 {
+                        width: 30%;
+                        height: 16px;
+                        @extend %loader-skeleton;
+                    }
+                }
+            }
+        }
+    }
+    .event-cover {
+        .event-img {
+            background-color: rgba($theme-color, 0.1) !important;
+            &:after {
+                background-color: rgba($theme-color, 0.1) !important;
+            }
+        }
+        .event-timeline {
+            .timeline-title {
+                .media {
+                    .media-body {
+                        h4 {
+                            width: 65px;
+                            height: 20px;
+                            @extend %loader-skeleton;
+                        }
+                        h6 {
+                            width: 80px;
+                            height: 16px;
+                            @extend %loader-skeleton;
+                        }
+                    }
+                }
+            }
+            .timeline-content {
+                li {
+                    h4 {
+                        width: 50px;
+                        height: 20px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        @extend %loader-skeleton;
+                    }
+                    h6 {
+                        width: 60px;
+                        height: 16px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        @extend %loader-skeleton;
+                    }
+                }
+            }
+        }
+    }
+    .event-box {
+        .image-section {
+            background-color: rgba($theme-color, 0.18);
+        }
+        .event-content {
+            h3 {
+                width: 58%;
+                height: 20px;
+                @extend %loader-skeleton;
+            }
+            h6 {
+                width: 40%;
+                height: 15px;
+                @extend %loader-skeleton;
+            }
+            .description {
+                p {
+                    height: 16px;
+                    width: 80%;
+                    @extend %loader-skeleton;
+                    &:nth-child(2) {
+                        height: 16px;
+                        width: 70%;
+                        margin-top: 5px;
+                        @extend %loader-skeleton;
+                    }
+                }
+            }
+        }
+    }
+    .page-cover {
+        .cover-img {
+            background-color: rgba($theme-color, 0.1) !important;
+        }
+        .cover-content {
+            .social-btn {
+                ul {
+                    li {
+                        width: 55px;
+                        height: 34px;
+                    }
+                }
+            }
+            .page-stats {
+                ul {
+                    li {
+                        h2 {
+                            width: 25px;
+                            height: 20px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            @extend %loader-skeleton;
+                        }
+                        h6 {
+                            width: 36px;
+                            height: 14px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            @extend %loader-skeleton;
+                        }
+                    }
+                }
+            }
+        }
+        .page-name {
+            h4 {
+                width: 118px;
+                height: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                @extend %loader-skeleton;
+            }
+            h6 {
+                width: 170px;
+                height: 16px;
+                margin-left: auto;
+                margin-right: auto;
+                @extend %loader-skeleton;
+            }
+        }
+    }
+    .page-list-section {
+        .list-box {
+            .cover-img {
+                background-color: rgba($theme-color, 0.15);
+            }
+            .list-content {
+                .page-name {
+                    h4 {
+                        width: 45%;
+                        height: 20px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        @extend %loader-skeleton;
+                    }
+                    h6 {
+                        width: 55%;
+                        height: 16px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        @extend %loader-skeleton;
+                    }
+                }
+                .counter-stats {
+                    span {
+                        height: 50px;
+                        margin: 0 auto;
+                        width: 94%;
+                        display: block;
+                        @extend %loader-skeleton;
+                    }
+                }
+            }
+        }
+    }
+    .review-counter {
+        .review-content {
+            h2 {
+                width: 40px;
+                height: 20px;
+                @extend %loader-skeleton;
+            }
+            h4 {
+                width: 40%;
+                height: 16px;
+                @extend %loader-skeleton;
+            }
+            .ratings {
+                width: 34%;
+                height: 16px;
+                @extend %loader-skeleton;
+            }
+        }
+    }
+    .review-part {
+        li {
+            .progress {
+                background-color: $theme-light;
+            }
+            h5 {
+                margin-right: 12px;
+                padding-right: 0;
+                height: 16px;
+                @extend %loader-skeleton;
+            }
+        }
+    }
+    .recommend-sec {
+        h3 {
+            width: 80%;
+            height: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            @extend %loader-skeleton;
+        }
+    }
+    .calender-section {
+        height: calc(100% - 30px);
+        .calender-ldr {
+            height: calc(100% - 161px);
+            background-color: rgba($theme-color, 0.18);
+        }
+        .event-bottom {
+            .event-content {
+                border-left: 0;
+                &:after {
+                    display: none;
+                }
+                h3 {
+                    width: 66%;
+                    height: 20px;
+                    @extend %loader-skeleton;
+                }
+                p {
+                    width: 92%;
+                    height: 16px;
+                    @extend %loader-skeleton;
+                }
+                h6 {
+                    width: 16%;
+                    height: 16px;
+                    @extend %loader-skeleton;
+                }
+            }
+        }
+    }
+    .event-category {
+        .event-title {
+            .content {
+                h3 {
+                    width: 70px;
+                    height: 20px;
+                    @extend %loader-skeleton;
+                }
+                h6 {
+                    width: 50px;
+                    height: 16px;
+                    @extend %loader-skeleton;
+                }
+            }
+        }
+    }
+    .weather-light {
+        &.weather-section {
+            .weather-content {
+                h5 {
+                    width: 25%;
+                    height: 16px;
+                    @extend %loader-skeleton;
+                }
+                h6 {
+                    width: 70%;
+                    height: 14px;
+                    @extend %loader-skeleton;
+                }
+                .top-title {
+                    h2 {
+                        width: 100px;
+                        height: 42px;
+                        @extend %loader-skeleton;
+                        &:after {
+                            display: none;
+                        }
+                    }
+                    h5 {
+                        width: 66px;
+                        height: 26px;
+                        background-color: $theme-light;
+                    }
+                }
+            }
+        }
+    }
+    .weather-search {
+        .theme-form {
+            .form-control {
+                background-color: $theme-light;
+                border-color: $theme-light;
+            }
+        }
+    }
+    .forecast-table {
+        height: 100%;
+        .detail-box {
+            h3 {
+                width: 80%;
+                height: 20px;
+                @extend %loader-skeleton;
+            }
+            .tag {
+                width: 50%;
+                height: 17px;
+                @extend %loader-skeleton;
+                margin-top: 10px;
+            }
+            .ldr-p {
+                margin-top: 10px;
+                p {
+                    width: 100%;
+                    height: 22px;
+                    @extend %loader-skeleton;
+                    &:nth-child(2) {
+                        width: 80%;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .player-box {
+        .main-wrapper {
+            .song-wrapper {
+                .song-thumb-wrapper {
+                    .song-thumb {
+                        background-color: $theme-light;
+                        background-image: none !important;
+                    }
+                }
+                .song-info {
+                    h2 {
+                        width: 140px;
+                        height: 20px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        @extend %loader-skeleton;
+                    }
+                    h6 {
+                        width: 160px;
+                        height: 20px;
+                        margin-top: 8px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        @extend %loader-skeleton;
+                    }
+                }
+            }
+            .volume-wrapper {
+                width: 70%;
+                height: 40px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: $theme-light;
+            }
+        }
+    }
+    .table-sec {
+        h5,
+        h6 {
+            width: 65px;
+            height: 16px;
+            @extend %loader-skeleton;
+        }
+        .media {
+            .img-sec {
+                background-color: $theme-light;
+            }
+        }
+    }
+    .popular-song-sec {
+        ul {
+            li {
+                .media {
+                    .media-body {
+                        h5 {
+                            width: 165px;
+                            height: 16px;
+                            @extend %loader-skeleton;
+                        }
+                        h6 {
+                            width: 90px;
+                            height: 14px;
+                            @extend %loader-skeleton;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bg-loader {
+    background-color: $theme-light;
+}
+
+@keyframes load {
+    0%{
+        opacity: 0.08;
+        filter: blur(5px);
+        letter-spacing: 3px;
+    }
+}
+
+// resonsive
+@media (max-width: 1199px) {
+    .pre-loader {
+        .sidebar-panel {
+            &.sidebar-light {
+                .bar-icon-img {
+                    background-color: $theme-light;
+                }
+            }
+        }
+        .calender-section {
+            .calender-ldr {
+                height: 200px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .pre-loader {
+        .profile-page {
+            .profile-box {
+                &.friend-box {
+                    .profile-content {
+                        .image-section {
+                            .profile-img {
+                                &:after,
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,217 @@
+/**=====================
+    Help-support Page css start
+==========================**/
+
+// popular topic
+.popular-topics {
+    margin-bottom: calc(-20px + (-40 - -20) * ((100vw - 320px) / (1920 - 320)));
+    .title {
+        text-align: center;
+        h3 {
+            text-transform: capitalize;
+            font-weight: 600;
+            margin-bottom: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+            font-size: calc(24px + (34 - 24) * ((100vw - 320px) / (1920 - 320)));
+            color: $title-color;
+        }
+    }
+    .topic-box {
+        padding: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
+        box-shadow: 0px 5px 20px 0px rgba($black, 0.06);
+        text-align: center;
+        margin-bottom: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: $radius-10;
+        transition: all 0.5s ease;
+        .icon {
+            svg,
+            img {
+                width: 40%;
+                height: 100px;
+            }
+        }
+        .topic-content {
+            margin-top: 30px;
+            h4 {
+                text-transform: capitalize;
+                font-weight: 600;
+                color: $theme-color;
+                transition: all 0.5s ease;
+                font-size :calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)))
+            }
+            p {
+                color: $light-font;
+                margin-top: 10px;
+                line-height: 1.4;
+                font-size: 110%;
+            }
+        }
+        &:hover {
+            box-shadow: 0px 5px 20px 0px rgba($black, 0.12);
+            transition: all 0.5s ease;
+            .topic-content {
+                h4 {
+                    color: $theme-color;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+}
+
+// contact section
+.help-contact {
+    .intro-part {
+        .title {
+            h2 {
+                font-size: calc(24px + (34 - 24) * ((100vw - 320px) / (1920 - 320)));
+                text-transform: capitalize;
+                margin-bottom: 10px;
+                max-width: 55%;
+            }
+            p {
+                color: $light-font;
+                letter-spacing: 0.05em;
+                text-transform: capitalize;
+            }
+        }
+        .contact-img {
+            text-align: center;
+            margin-top: 40px;
+            img {
+                width: 60%;
+            }
+        }
+    }
+}
+
+// help article page
+.article-section {
+    .article-part {
+        .main-title {
+            margin-bottom: 20px;
+            h2 {
+                text-transform: capitalize;
+                font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320)));
+                color: $theme-color;
+            }
+        }
+        .sub-title {
+            margin-bottom: 15px;
+            margin-top: 40px;
+            h3 {
+                text-transform: capitalize;
+                font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+                font-weight: 600;
+            }
+        }
+        .inner-title {
+            margin-bottom: 15px;
+            h4 {
+                text-transform: capitalize;
+                font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+                font-weight: 500;
+            }
+        }
+        .content {
+            margin-bottom: 15px;
+            a {
+                color: $light-font;
+                text-decoration: underline !important;
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+            p {
+                line-height: 30px;
+                color: $light-font;
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: 10px;
+            }
+            ul {
+                padding-left: 20px;
+                li {
+                    line-height: 22px;
+                    color: $light-font;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    display: list-item;
+                    list-style-type: circle;
+                    font-family: $font-2;
+                    +li {
+                        margin-top: 10px;
+                    }
+                }
+            }
+            ol {
+                padding-left: 20px;
+                li {
+                    line-height: 22px;
+                    color: $light-font;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    font-family: $font-2;
+                    +li {
+                        margin-top: 10px;
+                    }
+                }
+            }
+            .accordion {
+                margin-bottom: 30px;
+                &.theme-accordion {
+                    .card {
+                        .card-header {
+                            background-color: rgba($black, 0.03);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .article-sidebar {
+        .sidebar-title {
+            margin-bottom: 20px;
+            h3 {
+                text-transform: capitalize;
+                color: $title-color;
+                font-weight: 600;
+            }
+        }
+        ul {
+            position: relative;
+            li {
+                a {
+                    display: flex;
+                    padding-left: 25px;
+                    svg {
+                        margin-right: 15px;
+                        width: 18px;
+                        height: 16px;
+                        color: $light-font;
+                        position: absolute;
+                        left: 0;
+                    }
+                    h6 {
+                        color: $light-font;
+                        font-size: 15px;
+                        text-transform: capitalize;
+                        line-height: 20px;
+                        margin-top: -2px;
+                        transition: all 0.5s ease;
+                    }
+                }
+                +li {
+                    margin-top: 16px;
+                }
+                &.active, &:hover {
+                    a {
+                        h6,
+                        svg {
+                            color: $theme-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

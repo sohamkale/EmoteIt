@@ -1,0 +1,33 @@
+/**=====================
+    Birthday Page css start
+==========================**/
+
+.birthday-page {
+    .page-content {
+        .content-center {
+            width: calc(100% - 380px);
+        }
+    }
+}
+
+.birthday-list {
+    &.friend-list-box {
+        .friend-list {
+            &.friend-page-list {
+                .friend-box {
+                    display: flex;
+                    align-items: center;
+                    .btn {
+                        margin-left: auto;
+                    }
+                }
+                > ul {
+                    > li {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

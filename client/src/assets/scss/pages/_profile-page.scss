@@ -1,0 +1,496 @@
+/**=====================
+    profile Page css start
+==========================**/
+
+//overall page
+.profile-cover{
+    background-image: url(../../images/cover/1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+// profile tab
+.profile-menu {
+    background-color: $white;
+    border-radius: $radius-5;
+    box-shadow: $card-shadow;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    ul {
+        margin-left: -15px;
+        li {
+            background-color: $theme-light;
+            border-radius: $radius-5;
+            display: inline-block;
+            margin: 20px 0 20px 15px;
+            a {
+                display: flex;
+                align-items: center;
+                padding: 13px 22px;
+                svg {
+                    margin-right: 5px;
+                    stroke: $font-color;
+                    transition: all 0.5s ease;
+                }
+                h6 {
+                    text-transform: capitalize;
+                    color: $font-color;
+                    font-weight: 600;
+                    font-size: calc(13px + (15 - 13) * ((100vw - 320px) / (1920 - 320)));
+                    transition: all 0.5s ease;
+                }
+                &.active,
+                &:hover {
+                    h6 {
+                        color: $theme-color;
+                        transition: all 0.5s ease;
+                    }
+                    svg {
+                        stroke: $theme-color;
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+            &.active,
+            &:hover {
+                h6 {
+                    color: $theme-color;
+                    transition: all 0.5s ease;
+                }
+                svg {
+                    stroke: $theme-color;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+    .nav-tabs {
+        border-bottom: 0;
+        .nav-item {
+            margin: 20px 0 20px 15px;
+        }
+    }
+    .right-menu {
+        margin-left: auto;
+    }
+    .search-inmenu {
+        &.input-style {
+            &.icon-left {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                .icon {
+                    left: 13px;
+                }
+                .form-control {
+                    padding: 10px 10px 10px 40px;
+                }
+            }
+        }
+    }
+}
+
+// about tab
+.about-profile {
+    border-radius: $radius-5;
+    box-shadow: $card-shadow;
+    background-color: $white;
+    .card-title {
+        border-bottom: 1px solid $theme-light;
+        padding: 26px 35px;
+    }
+    ul.about-list {
+        padding: 26px 35px;
+        li {
+            display: flex;
+            align-items: baseline;
+            padding: 0 0 10px 0;
+            .title {
+                color: $title-color;
+                width: 25%;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+            .content {
+                width: 75%;
+                line-height: 22px;
+                color: $light-font;
+                font-size: 14px;
+            }
+            +li {
+                padding: 10px 0;
+            }
+        }
+    }
+    .tab-section {
+        padding: 26px 35px;
+    }
+    .nav-tabs {
+        border-bottom: none;
+        .nav-link {
+            border: none;
+            color: $font-color;
+            text-transform: capitalize;
+            font-weight: 500;
+            &.active,
+            &:hover {
+                background-color: $theme-light;
+                border: none;
+                border-radius: $radius-5;
+                color: $theme-color;
+            }
+        }
+    }
+}
+
+.friend-list-box {
+    border-radius: $radius-5;
+    box-shadow: $card-shadow;
+    background-color: $white;
+    .card-title {
+        border-bottom: 1px solid $theme-light;
+        padding: 26px 35px;
+    }
+    .right-setting {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        .search-input {
+            .form-control {
+                width: 140px;
+                padding: 6px 30px 6px 10px;
+            }
+        }
+        .setting-dropdown {
+            .btn-group {
+                >a {
+                    height: 30px;
+                    background-color: $theme-light;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 10px;
+                    border-radius: $radius-5;
+                    color: $font-color;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                }
+            }
+            .dropdown-menu {
+                li {
+                    &.active {
+                        a {
+                            color: $theme-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .friend-list {
+        padding: 25px 5px 10px;
+        margin-left: -15px;
+        margin-right: -15px;
+        >div {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .friend-box {
+            padding: 8px 10px;
+            border: 1px solid rgba($black, 0.04);
+            border-radius: 5px;
+            margin-bottom: 25px;
+            position: relative;
+            transition: all 0.5s ease;
+            .user-img {
+                width: 55px;
+                height: 55px;
+                margin-right: 16px;
+                position: absolute;
+                border-radius: $radius-15;
+                left: 0;
+                .available-stats {
+                    position: absolute;
+                    right: -3px;
+                    top: -2px;
+                    width: 14px;
+                    height: 14px;
+                    border-radius: $radius-100;
+                    &.online {
+                        border: 3px solid $white;
+                        background-color: $theme-success;
+                    }
+                    &.offline {
+                        border: 3px solid $white;
+                        background-color: $theme-danger;
+                    }
+                    &.away {
+                        border: 3px solid $white;
+                        background-color: $theme-warning;
+                    }
+                }
+            }
+            .media {
+                align-items: center;
+                padding-left: 70px;
+                position: relative;
+                min-height: 55px;
+                .media-body {
+                    h5 {
+                        font-family: $font-1;
+                        color: $title-color;
+                        text-transform: capitalize;
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                    }
+                    h6 {
+                        text-transform: capitalize;
+                        color: $font-color;
+                        font-weight: 500;
+                    }
+                }
+            }
+            .setting-btn {
+                cursor: pointer;
+                position: absolute;
+                right: 8px;
+                top: 26px;
+            }
+            &:hover {
+                box-shadow: 0 0 8px 0 rgba($theme-color, 0.09);
+                transition: all 0.5s ease;
+            }
+        }
+        &.friend-page-list {
+            >ul {
+                display: flex;
+                flex-wrap: wrap;
+                >li {
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+            .friend-box {
+                padding: 18px 12px;
+            }
+        }
+    }
+    .see-all {
+        padding: 0 20px 26px;
+        text-align: right;
+    }
+}
+
+// friend tab
+.page-body {
+    &.profile-page-friend {
+        .page-content {
+            .content-center {
+                width: calc(100% - 380px);
+            }
+        }
+    }
+}
+
+// gallery tab
+.gallery-page-section {
+    border-radius: $radius-5;
+    box-shadow: $card-shadow;
+    background-color: $white;
+    >.card-title {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $theme-light;
+        padding: 26px 35px;
+        .right-setting {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+    }
+    .tab-section {
+        padding: 25px 35px;
+        .tab-content {
+            position: relative;
+        }
+        .nav-tabs {
+            border-color: rgba($black, 0.1);
+            .nav-link {
+                text-transform: capitalize;
+                font-weight: 600;
+                color: $title-color;
+                font-size: $h4-size;
+                &.active {
+                    color: $theme-color;
+                    border-color: rgba($black, 0.1) rgba($black, 0.1) transparent;
+                }
+            }
+        }
+        .Choose-photo-modal {
+            .gallery-album {
+                margin-left: -15px;
+                margin-right: -15px;
+                margin-bottom: -30px;
+                >div {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+    .Choose-photo-modal {
+        .gallery-album {
+            padding-top: 25px;
+            .card {
+                height: 300px;
+            }
+        }
+        .gallery-open {
+            padding-top: 25px;
+        }
+    }
+    .portfolio-section {
+        padding-top: 25px;
+        .row {
+            margin-bottom: -20px;
+        }
+        .portfolio-image {
+            padding: 5px;
+            border: 1px solid rgba($black, 0.1);
+            border-radius: $radius-5;
+            margin-bottom: 20px;
+            position: relative;
+            a {
+                border-radius: $radius-5;
+            }
+            .settings {
+                position: absolute;
+                right: 16px;
+                top: 16px;
+                opacity: 0;
+                transform: scale(0);
+                transition: all 0.5s ease;
+                
+            }
+            &:hover {
+                .settings {
+                    opacity: 1;
+                    transform: scale(1);
+                    transition: all 0.5s ease;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}
+
+// review tab
+.review-counter {
+    border-radius: 5px;
+    box-shadow: $card-shadow;
+    background-color: $white;
+    .card-title {
+        padding: 30px 35px;
+        border-bottom: 1px solid $theme-light;
+    }
+    .review-content {
+        padding: 30px 35px;
+        h4 {
+            margin-top: 5px;
+            text-transform: capitalize;
+            color: $light-font;
+            font-weight: 400;
+        }
+        .ratings {
+            display: flex;
+            align-items: center;
+            li {
+                i {
+                    font-size: 16px;
+                    margin-top: 8px;
+                    color: #ffc107;
+                }
+                +li {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+.review-part {
+    margin-top: 14px;
+    li {
+        display: flex;
+        align-items: center;
+        h5 {
+            width: 20%;
+            padding-right: 12px;
+            color: $light-font;
+        }
+        .progress {
+            width: 80%;
+        }
+        .progress-bar {
+            background-color: $theme-color;
+        }
+        +li {
+            margin-top: 10px;
+        }
+    }
+}
+
+// review-statement
+.review-statement {
+    border-radius: 5px;
+    box-shadow: $card-shadow;
+    background-color: $white;
+    .card-title {
+        padding: 30px 35px;
+        border-bottom: 1px solid $theme-light;
+    }
+    .apexcharts-legend-text {
+        color: $title-color !important;
+    }
+    #chart-container {
+        padding: 30px 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    ul {
+        li {
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+// recommend section
+.recommend-sec {
+    border-radius: 5px;
+    box-shadow: $card-shadow;
+    background-color: $white;
+    padding: 30px 35px;
+    text-align: center;
+    h3 {
+        color: $title-color;
+        line-height: 30px;
+    }
+    .recommend-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 7px;
+        .btn {
+            margin: 0 5px;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+/**=====================
+     Reset css start
+==========================**/
+
+.custom-padding {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.section-t-space {
+    margin-top: 20px;
+}
+
+.section-b-space {
+    margin-bottom: 20px;
+}
+
+.section-pt-space {
+    padding-top: calc(30px + (90 - 30) * ((100vw - 320px) / (1920 - 320)))
+}
+
+.section-pb-space {
+    padding-bottom: calc(30px + (90 - 30) * ((100vw - 320px) / (1920 - 320)))
+}
+
+.sm-pt-space {
+    padding-top: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)))
+}
+
+.sm-pb-space {
+    padding-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)))
+}
+
+/*Lazy load */
+
+.blur-up {
+    filter: blur(5px);
+    transition: filter 400ms, -webkit-filter 400ms;
+    &.lazyloaded {
+        filter: blur(0);
+    }
+}
+
+
+.margin-deafult {
+    margin-bottom: -30px;
+    > div {
+        margin-bottom: 30px;
+    }
+}
+
+.sticky-top{
+    z-index: 1;
+}
