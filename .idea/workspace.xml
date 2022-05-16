@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ProfileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProfileController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,8 @@
       <workItem from="1649641368884" duration="6631000" />
       <workItem from="1650513898962" duration="1522000" />
       <workItem from="1652140280807" duration="5298000" />
-      <workItem from="1652415673045" duration="684000" />
+      <workItem from="1652415673045" duration="790000" />
+      <workItem from="1652654819086" duration="1200000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -122,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652412483060</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="profile completed. needs to be tested heavily">
+      <created>1652416386383</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1652416386383</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +153,7 @@
     <MESSAGE value="news controller!" />
     <MESSAGE value="daily secret emortion completed!" />
     <MESSAGE value="LevelSchema.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="LevelSchema.js" />
+    <MESSAGE value="profile completed. needs to be tested heavily" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile completed. needs to be tested heavily" />
   </component>
 </project>
