@@ -2,6 +2,7 @@
   "name": "emoteit",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5002/",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@testing-library/jest-dom": "^5.14.1",

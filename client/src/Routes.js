@@ -98,9 +98,9 @@ export default function EmoteItRouter(props, {appUser}){
 
                 </Layout>
             </Route>
-            <Route>
+        {/*    <Route>
                 <Error/>
-            </Route>
+            </Route>*/}
         </Switch>
     )
 }

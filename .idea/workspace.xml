@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
-      <change afterPath="$PROJECT_DIR$/package.json.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/Authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/Authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +66,11 @@
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService" />
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\server" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.server-start">
+  <component name="RunManager" selected="npm.site-start">
     <list>
       <item itemvalue="npm.server-start" />
       <item itemvalue="npm.site-start" />
