@@ -72,8 +72,10 @@ export function GetTokenUser(accessToken, outUser){
                 UserEngine.findOne({uid:uid}).then((user,err)=>{
                     if(user == null)
                         outUser(null,null);
-                    else
-                        outUser(user,null)
+                    else {
+                        user["pictureUrl"] = decodedToken.picture;
+                        outUser(user, null)
+                    }
                 }).catch((err)=>{
                     outUser(null,err);
                 })

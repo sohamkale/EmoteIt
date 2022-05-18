@@ -53,9 +53,6 @@ export default function EmoteItRouter(props, {appUser}){
 
     return (
         <Switch>
-            <Route exact path={"/"}     component={()=>
-                <Authentication appUser={appUser} setLoading={setLoading}/>
-            }/>
             <Route path={["/app"]}>
                 <Layout pageLinks={pageLinks} adminLinks={adminLinks} appUser={appUser} setLoading={setLoading}>
                     <Switch>
@@ -98,9 +95,10 @@ export default function EmoteItRouter(props, {appUser}){
 
                 </Layout>
             </Route>
-        {/*    <Route>
-                <Error/>
-            </Route>*/}
+            {/*Test Routes*/}
+            <Route exact path={'/'} component={()=>
+                <Authentication/>
+            }/>
         </Switch>
     )
 }

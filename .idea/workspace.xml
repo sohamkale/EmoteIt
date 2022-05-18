@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
+      <change afterPath="$PROJECT_DIR$/client/src/components/contexts/AuthenticationProvider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/FlyingEmojis.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/FlyingEmojis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/ForgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/ForgotPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/GoogleLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/GoogleLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/config.firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/config.firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/snowflakes.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/snowflakes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/authentication/Authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/Authentication.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/Authentication.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/Authentication.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/UserSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/UserSchema.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +64,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.15.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.18.18" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EmoteIt-React" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../applystart/applystart-applicant" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -66,6 +78,7 @@
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\views\authentication\components" />
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService" />
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\server" />
     </key>
@@ -99,6 +112,7 @@
       <workItem from="1652415673045" duration="790000" />
       <workItem from="1652654819086" duration="1200000" />
       <workItem from="1652666695724" duration="938000" />
+      <workItem from="1652837870824" duration="8204000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>

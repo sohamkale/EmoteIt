@@ -1,14 +1,16 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import './Layout.scss'
 import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
-import Notifications from "../components/shared/Notifications"; // optional
+import Notifications from "../components/shared/Notifications";
+import {AuthenticationContext} from "../components/contexts/AuthenticationProvider"; // optional
 
 export default function Layout(props) {
 
     const [showNotifications, setShowNotifications] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
+    const {user} = useContext(AuthenticationContext);
 
     function ResetTabs() {
         setShowNotifications(false);
@@ -204,8 +206,9 @@ export default function Layout(props) {
                                         <i className="icon-light stroke-width-3 d-sm-none d-block iw-16 ih-16"
                                            data-feather="user"></i>
                                         <div className="media d-none d-sm-flex">
-                                            <div className="user-img">
-                                                <img src={require('../assets/images/shared/default-dp.png').default}
+                                            <div className="user-img usercard-img">
+                                                <img src={user?.pictureUrl??
+                                                    require('../assets/images/shared/default-dp.png').default}
                                                      className="img-fluid bg-img" alt="user"/>
                                                 {/*  <span className="available-stats online"></span>*/}
                                             </div>

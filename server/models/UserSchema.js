@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const Schema = mongoose.Schema;
 
 export const UserSchema = new Schema(
@@ -11,6 +12,7 @@ export const UserSchema = new Schema(
         score: Number,
         profileImage: String,
         typeId: Number,
+        pictureUrl: String,
         uid: String,
-    },{  id: true, timestamps: true }
+    }, {id: true, timestamps: true}
 );
