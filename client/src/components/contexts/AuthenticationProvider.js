@@ -4,6 +4,7 @@ import axios from "axios";
 import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import firebase from "firebase/compat";
 import {config} from "../../views/authentication/components/config.firebase";
+import Authentication from "../../views/authentication/Authentication";
 
 export const AuthenticationContext = createContext();
 
@@ -58,14 +59,21 @@ export function AuthenticationProvider(props) {
         setCookie('token',null);
         setCookie('tokenExpires',null);
         setUser(null);
-        console.log("you are now logged out!")
+        console.log("you are now logged out!");
+        window.location.href = "/";
     }
 
     function GetEmoteitUser(token){
         axios.get('/api/user/authenticate',{
             headers:{ "access-token": token}
         }).then((res)=>{
-            setUser(res.data);
+            if(res.data){
+                setUser(res.data);
+            }
+            else if (res.status == 204){
+                console.log("new user... calling create")
+                setUser(1);
+            }
         }).catch((err)=>{
             console.log(err);
         })
@@ -118,7 +126,12 @@ export function AuthenticationProvider(props) {
 
     return (
         <AuthenticationContext.Provider value={returnee}>
-            {props.children}
+            {
+                user == null?
+                    <Authentication/>
+                    :
+                    props.children
+            }
         </AuthenticationContext.Provider>
     )
 }

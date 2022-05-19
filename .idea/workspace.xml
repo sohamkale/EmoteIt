@@ -5,25 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
-      <change afterPath="$PROJECT_DIR$/client/src/components/contexts/AuthenticationProvider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/FlyingEmojis.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/FlyingEmojis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/ForgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/ForgotPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/GoogleLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/GoogleLogin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/config.firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/config.firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/authentication/snowflakes.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/components/snowflakes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark-1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/dark-1.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark-2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/dark-2.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/dark.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style-1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/style-1.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style-2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/style-2.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_shims.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/brands.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/fontawesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/regular.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/solid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/font-awesome/v4-shims.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/contexts/AuthenticationProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/contexts/AuthenticationProvider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/authentication/Authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/Authentication.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/Authentication.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/Authentication.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/UserSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/UserSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/UserRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/UserRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +142,8 @@
       <workItem from="1652415673045" duration="790000" />
       <workItem from="1652654819086" duration="1200000" />
       <workItem from="1652666695724" duration="938000" />
-      <workItem from="1652837870824" duration="8204000" />
+      <workItem from="1652837870824" duration="8311000" />
+      <workItem from="1652927305863" duration="5476000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -163,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652666939645</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="front end authentication done! create call still left!">
+      <created>1652846229999</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1652846229999</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +227,7 @@
     <MESSAGE value="LevelSchema.js" />
     <MESSAGE value="profile completed. needs to be tested heavily" />
     <MESSAGE value="begin" />
-    <option name="LAST_COMMIT_MESSAGE" value="begin" />
+    <MESSAGE value="front end authentication done! create call still left!" />
+    <option name="LAST_COMMIT_MESSAGE" value="front end authentication done! create call still left!" />
   </component>
 </project>

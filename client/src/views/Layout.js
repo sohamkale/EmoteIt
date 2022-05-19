@@ -10,7 +10,7 @@ export default function Layout(props) {
 
     const [showNotifications, setShowNotifications] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
-    const {user} = useContext(AuthenticationContext);
+    const {user, SignOut} = useContext(AuthenticationContext);
 
     function ResetTabs() {
         setShowNotifications(false);
@@ -213,8 +213,8 @@ export default function Layout(props) {
                                                 {/*  <span className="available-stats online"></span>*/}
                                             </div>
                                             <div className="media-body d-none d-md-block">
-                                                <h4>{props.appUser?.name}</h4>
-                                                <span>Level: {props.appUser?.level}</span>
+                                                <h4>{user?.name}</h4>
+                                                <span>Level: {user?.level}</span>
                                             </div>
                                         </div>
                                     </a>
@@ -275,16 +275,14 @@ export default function Layout(props) {
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="login.html">
                                                                 <div className="media">
                                                                     <i data-feather="log-out"></i>
-                                                                    <div className="media-body">
+                                                                    <div className="media-body btn">
                                                                         <div>
-                                                                            <h5 className="mt-0">log out</h5>
+                                                                            <h5 className="mt-0" onClick={SignOut}>log out</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </a>
                                                         </li>
                                                     </ul>
                                                 </div>
