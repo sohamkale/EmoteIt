@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
-      <change afterPath="$PROJECT_DIR$/client/src/views/shared/FeedbackModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/admin/Feedbacks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/admin/Feedbacks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/FeedbackController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/FeedbackController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/FeedbackSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/FeedbackSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +61,10 @@
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\server" />
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\views\shared" />
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\views\authentication\components" />
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService" />
-      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\server" />
     </key>
   </component>
   <component name="RunManager" selected="npm.server-start">
@@ -106,7 +99,7 @@
       <workItem from="1652837870824" duration="8311000" />
       <workItem from="1652927305863" duration="6712000" />
       <workItem from="1653454739109" duration="3000" />
-      <workItem from="1653537220631" duration="5740000" />
+      <workItem from="1653537220631" duration="5986000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -171,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652933106122</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feedbacks">
+      <created>1653543077443</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1653543077443</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +199,7 @@
     <MESSAGE value="begin" />
     <MESSAGE value="front end authentication done! create call still left!" />
     <MESSAGE value="authentication workflow completed. local font-awesome removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="authentication workflow completed. local font-awesome removed" />
+    <MESSAGE value="feedbacks" />
+    <option name="LAST_COMMIT_MESSAGE" value="feedbacks" />
   </component>
 </project>

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node_modules/.bin/nodemon server/index.js --exec babel-node -e js"
+    "start": "./node_modules/.bin/nodemon ./index.js --exec babel-node -e js"
   },
   "dependencies": {
     "body-parser": "^1.19.1",
