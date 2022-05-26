@@ -1,21 +1,39 @@
 import {FeedbackSchema} from "../models/FeedbackSchema.js";
 import mongoose from "mongoose";
+import {GetTokenUser} from "./UserController.js";
 const FeedbackEngine = mongoose.model('Feedbacks', FeedbackSchema);
 
 export function CreateFeedback(req, res){
-    let _feedback = req.body;
-    let newFeedback = new FeedbackEngine(_feedback);
-    console.log(newFeedback);
 
-    newFeedback.save((err, addedFeedback)=>{
+    const accessToken = req.get("access-token");
+
+    GetTokenUser(accessToken,(user, err)=>{
         if(err)
+            res.status(500).send(err);
+        else if (err == null && user == null)
+            res.status(401).send("user not found!")
+        else if(err == null)
         {
-            console.log("Could not save to mongo!: "+err)
-            res.send(err);
+            //create the feedback
+            let _feedback = req.body;
+            _feedback.createdBy = user._id;
+            let newFeedback = new FeedbackEngine(_feedback);
+            console.log(newFeedback);
+
+            newFeedback.save((err, addedFeedback)=>{
+                if(err)
+                {
+                    console.log("Could not save to mongo!: "+err)
+                    res.send(err);
+                }
+                console.log("Feedback saved to mongo!");
+                res.send(addedFeedback);
+            })
+
         }
-        console.log("Feedback saved to mongo!");
-        res.send(addedFeedback);
     })
+
+
 }
 
 export function GetNewFeedbacks(req, res){

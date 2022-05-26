@@ -4,7 +4,9 @@ import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import Notifications from "../components/shared/Notifications";
-import {AuthenticationContext} from "../components/contexts/AuthenticationProvider"; // optional
+import {AuthenticationContext} from "../components/contexts/AuthenticationProvider";
+import Feedback from "./shared/FeedbackModal";
+import FeedbackModal from "./shared/FeedbackModal"; // optional
 
 export default function Layout(props) {
 
@@ -25,6 +27,7 @@ export default function Layout(props) {
 
     return (
         <>
+
             <header>
                 <div className="mobile-fix-menu"></div>
                 <div className="container-fluid">
@@ -40,6 +43,7 @@ export default function Layout(props) {
                             <div className="search-box">
                                 <i data-feather="search" className="icon fas fa-search icon-light"></i>
                                 <input type="text" className="form-control search-type" placeholder="find friends..."/>
+
                                 <div className="icon-close">
                                     <i data-feather="x" className="iw-16 icon-light"></i>
                                 </div>
@@ -81,6 +85,14 @@ export default function Layout(props) {
                                         </li>
                                     </ul>
                                 </div>
+                            </div>
+
+                            <div className="m-2 btn "  title={"Provide Feedback"} onClick={()=>{}}>
+
+                                <button type="button" className="" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                    <i className="fa-solid fa-comment"></i>
+                                </button>
                             </div>
                             {/*        <ul className="btn-group">
                                 <li className="header-btn home-btn">

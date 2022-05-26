@@ -1,6 +1,19 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
+import {AuthenticationContext} from "../../components/contexts/AuthenticationProvider";
+import axios from "axios";
 
 export default function Feedbacks(props){
+
+    const {user,accessToken} = useContext(AuthenticationContext);
+    const [feedbacks, setFeedbacks] = useState([]);
+
+    useEffect(()=>{
+        axios.get('/api/feedback').then((res)=>{
+            setFeedbacks(res.data);
+        }).catch((err)=>{
+            console.log(err.message)})
+    },[])
+
     return (
         <div className="content-center">
             <div className="leaderboard-table section-b-space">
@@ -10,6 +23,7 @@ export default function Feedbacks(props){
                 <div className="table-sec">
                     <table className="table table-hover table-responsive-md">
                         <thead>
+                        {/*foreach feedback create a row*/}
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Created At</th>
@@ -20,22 +34,27 @@ export default function Feedbacks(props){
                         </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>20</td>
-                                <td>10/20/2021</td>
-                                <td>Ashiqul Jeem</td>
-                                <td>76643</td>
-                                <td className="word-wrap" style={{maxWidth:"220px"}}>Jeem sent a friend request Asdnnnasnd as hdhnasdhasdfnasd asdnashdashf</td>
-                                <td>Emortion</td>
-                                <td>
-                                    <select className="form-control-sm">
-                                        <option>New</option>
-                                        <option>Read</option>
-                                        <option>In Progress</option>
-                                        <option>Completed</option>
-                                    </select>
-                                </td>
-                            </tr>
+                        {
+                            feedbacks.map((item, row)=>
+                                <tr>
+                                        <td>{item._id}</td>
+                                        <td>{item.createdAt}</td>
+                                        <td>{item.createdBy}</td>
+                                        <td>{item.objectTypeId}</td>
+                                        <td className="word-wrap" style={{maxWidth:"220px"}}>{item.message}</td>
+                                        <td>
+                                            <select className="form-control-sm">
+                                                <option selected hidden>{item.statusId}</option>
+                                                <option value="0">New</option>
+                                                <option value="1">Read</option>
+                                                <option value="2">In Progress</option>
+                                                <option  value="3">Completed</option>
+                                            </select>
+                                        </td>
+                                </tr>
+                            )
+                        }
+
                         </tbody>
                     </table>
                 </div>

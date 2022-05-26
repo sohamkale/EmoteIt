@@ -19,7 +19,7 @@ export const FeedbackSchema = new Schema(
         updatedBy: String,
         objectTypeId: Number,
         typeId: {type: Number, required: true},
-        subjectId: {type: String, required: true},
+        subjectId: {type: String},
         message: {type: String, required: true},
         statusId: {type: Number, default: 0}
     }, {id: true, timestamps: true}

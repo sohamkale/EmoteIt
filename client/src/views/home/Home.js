@@ -4,6 +4,7 @@ import LeaderBoardCarousel from "../../components/home/LeaderBoardCarousel";
 import EmortionView from "../../components/emortion/EmortionView";
 import NewsCenter from "../../components/home/NewsCenter";
 import EmortionCreate from "../../components/emortion/EmortionCreate";
+import FeedbackModal from "../shared/FeedbackModal";
 
 
 export default function Home(props) {
@@ -18,6 +19,7 @@ export default function Home(props) {
     ];
     return (
         <>
+
             <div className="row">
                 <div className="col-xl-4 col-sm-12">
                     <UserCard/>
