@@ -8,11 +8,14 @@ export default function Feedbacks(props){
     const [feedbacks, setFeedbacks] = useState([]);
 
     useEffect(()=>{
-        axios.get('/api/feedback').then((res)=>{
-            setFeedbacks(res.data);
-        }).catch((err)=>{
-            console.log(err.message)})
-    },[])
+        if(user){
+            axios.get('/api/feedback').then((res)=>{
+                setFeedbacks(res.data);
+            }).catch((err)=>{
+                console.log(err.message)})
+        }
+
+    },[user])
 
     return (
         <div className="content-center">
@@ -25,7 +28,6 @@ export default function Feedbacks(props){
                         <thead>
                         {/*foreach feedback create a row*/}
                         <tr>
-                            <th scope="col">Id</th>
                             <th scope="col">Created At</th>
                             <th scope="col">Created By</th>
                             <th scope="col">Object Type Id</th>
@@ -37,7 +39,6 @@ export default function Feedbacks(props){
                         {
                             feedbacks.map((item, row)=>
                                 <tr>
-                                        <td>{item._id}</td>
                                         <td>{item.createdAt}</td>
                                         <td>{item.createdBy}</td>
                                         <td>{item.objectTypeId}</td>

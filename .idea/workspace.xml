@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/admin/Feedbacks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/admin/Feedbacks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/FeedbackController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/FeedbackController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/ProfileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/ProfileController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +69,7 @@
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.server-start">
+  <component name="RunManager" selected="npm.site-start">
     <list>
       <item itemvalue="npm.server-start" />
       <item itemvalue="npm.site-start" />
@@ -99,7 +101,9 @@
       <workItem from="1652837870824" duration="8311000" />
       <workItem from="1652927305863" duration="6712000" />
       <workItem from="1653454739109" duration="3000" />
-      <workItem from="1653537220631" duration="5986000" />
+      <workItem from="1653537220631" duration="6342000" />
+      <workItem from="1654055053778" duration="47000" />
+      <workItem from="1654225452458" duration="3090000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -171,7 +175,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653543077443</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feedbacks -2">
+      <created>1653543300814</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1653543300814</updated>
+    </task>
+    <task id="LOCAL-00012" summary="runConfig">
+      <created>1653543326957</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1653543326957</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +218,8 @@
     <MESSAGE value="front end authentication done! create call still left!" />
     <MESSAGE value="authentication workflow completed. local font-awesome removed" />
     <MESSAGE value="feedbacks" />
-    <option name="LAST_COMMIT_MESSAGE" value="feedbacks" />
+    <MESSAGE value="feedbacks -2" />
+    <MESSAGE value="runConfig" />
+    <option name="LAST_COMMIT_MESSAGE" value="runConfig" />
   </component>
 </project>

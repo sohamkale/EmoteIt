@@ -6,6 +6,7 @@ import {EmortionSchema} from "../models/EmortionSchema.js";
 import {InsightSchema} from "../models/InsightSchema.js";
 import {FriendshipSchema} from "../models/FriendshipSchema.js";
 import {LevelScehema} from "../models/LevelSchema.js";
+import admin from "firebase-admin";
 
 export const UserEngine = mongoose.model('User', UserSchema);
 const NotificationEngine = mongoose.model('Notification', NotificationSchema);
@@ -68,11 +69,10 @@ export function GetProfile(req, res){
                             users.forEach((user,index)=>{
                                 if(user.id == userId){
                                     globalRank = index+1;
-
                                     //completed! Now send back the data!
                                     const finalObject = {
                                         latestActive,globalRank,userLevel, happyFriendCount,avgAccuracy,avgAnswerTime,
-                                        insightCount,answerLikes,postCount,postLikes
+                                        insightCount,answerLikes,postCount,postLikes,user
                                     }
 
                                     res.send(finalObject);
@@ -89,6 +89,25 @@ export function GetProfile(req, res){
         res.status(500).send(err);
     })
 }
+
+
+
+
+export async function GetProfileById(profileId){
+    let outUser = await UserEngine.findById(profileId);
+    return outUser;
+}
+
+
+//use the above funtion in the following way
+/*GetTokenUser(idToken,(user, err)=>{
+    if(err)
+        res.status(500).send(err);
+    else if (err == null && user == null)
+        res.status(204).send("user not found!")
+    else if(err == null)
+        res.send(user);
+})*/
 
 
 //Notification Stuff
