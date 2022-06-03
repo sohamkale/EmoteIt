@@ -38,9 +38,7 @@ export function CreateFeedback(req, res) {
 
 export async function GetNewFeedbacks(req, res) {
     let feedbacks = [];
-    feedbacks = await FeedbackEngine.find({
-        statusId: 0
-    });
+    feedbacks = await FeedbackEngine.find({$or:[{statusId:0}, {statusId:1},{statusId: 2}]});
 
     let finalArray = [];
 
@@ -49,8 +47,6 @@ export async function GetNewFeedbacks(req, res) {
         f.createdBy = profile.name;
         finalArray.push(f);
     }
-
-    console.log(finalArray)
     res.send(finalArray);
 
     /*FeedbackEngine.find({
@@ -65,13 +61,17 @@ export async function GetNewFeedbacks(req, res) {
     })*/
 }
 
-export function GetFeedbacks(req, res) {
-    FeedbackEngine.find({}, (err, feedbacks) => {
-        if (err)
-            res.send(err);
+export async function GetFeedbacks(req, res) {
+    let feedbacks = [];
+    feedbacks = await FeedbackEngine.find({});
+    let finalArray = [];
 
-        res.send(feedbacks);
-    })
+    for (let f of feedbacks){
+        let profile = await GetProfileById(f.createdBy);
+        f.createdBy = profile.name;
+        finalArray.push(f);
+    }
+    res.send(finalArray);
 }
 
 export function UpdateFeedback(req, res) {
