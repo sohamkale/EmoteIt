@@ -7,8 +7,6 @@
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/admin/Feedbacks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/admin/Feedbacks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/FeedbackController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/FeedbackController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,7 @@
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.site-start">
+  <component name="RunManager" selected="npm.server-start">
     <list>
       <item itemvalue="npm.server-start" />
       <item itemvalue="npm.site-start" />
@@ -105,6 +103,7 @@
       <workItem from="1654055053778" duration="47000" />
       <workItem from="1654225452458" duration="3090000" />
       <workItem from="1654230191480" duration="10822000" />
+      <workItem from="1654405175155" duration="4259000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>

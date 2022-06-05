@@ -7,45 +7,36 @@ export default function Feedbacks(props){
     const [completed, setCompleted] = useState(false);
     const {user,accessToken} = useContext(AuthenticationContext);
     const [feedbacks, setFeedbacks] = useState([]);
-    function UpdateFeedback(){
-        axios.get('/api/feedback').then((res)=>{
-            setFeedbacks(res.data);
-            console.log("Feedbacks Updated!")
-        }).catch((err)=>{
-            console.log(err.message)})
-    }
-    useEffect(()=>{
-        if(user){
-            UpdateFeedback()
-        }
-    },[user])
-    const ChangeFeedback = change =>{
-        axios.put('/api/feedback', {id:change.feedbackId , statusId: change.value}).then((response)=>{
-            for(let i = 0; i<feedbacks.length; i++){
-                if(feedbacks[i]._id === change.feedbackId){
-                    feedbacks[i] = response.data
-                }
-            }
-        })
+    function GetFeedback(){
         if(!completed){
-            UpdateFeedback()
-        }
-        console.log(feedbacks)
-    }
-    function GetCompletedFeedback(){
-        console.log(completed)
-        if(!completed){
+            axios.get('/api/feedback').then((res)=>{
+                setFeedbacks(res.data);
+                console.log("Feedbacks Updated!")
+            }).catch((err)=>{
+                console.log(err.message)})
+        }else{
             axios.get('/api/feedback/completed').then((res)=>{
                 setFeedbacks(res.data)
-                setCompleted(true)
             }).catch((err)=>{
                 console.log(err.message)
             })
         }
-        else if(completed){
-            UpdateFeedback()
-            setCompleted(false)
+    }
+    useEffect(()=>{
+        if(user){
+            GetFeedback()
         }
+    },[user])
+
+    useEffect(()=>{
+        GetFeedback()
+    },[completed])
+
+    const ChangeFeedback = change =>{
+        axios.put('/api/feedback', {id:change.feedbackId , statusId: change.value}).then((response)=>{
+            GetFeedback()
+        })
+        console.log(feedbacks)
     }
     return (
         <div className="content-center">
@@ -68,13 +59,17 @@ export default function Feedbacks(props){
                         <tbody>
                         {
                             feedbacks.map((item, row)=>
-                                <tr>
+                                <tr key={row}>
                                         <td>{item.createdAt}</td>
                                         <td>{item.createdBy}</td>
                                         <td>{item.objectTypeId}</td>
                                         <td className="word-wrap" style={{maxWidth:"220px"}}>{item.message}</td>
                                         <td>
-                                            <select onChange={
+                                            <select value={
+                                                (item.statusId===0)&&"New"|| (item.statusId===1)&&
+                                                "Read"||(item.statusId===2)&&"In Progress"
+                                                ||(item.statusId===3)&&"Completed"
+                                            } id={"select_" + row} onChange={
                                                 (e)=>ChangeFeedback({
                                                     feedbackId:item._id,
                                                     value:e.target.value
@@ -100,8 +95,10 @@ export default function Feedbacks(props){
                     </table>
                 </div>
             </div>
-            <button onClick={GetCompletedFeedback} className="btn btn-primary">{
-                (!completed)&&"Show Completed Feedbacks"||(completed)&&"Hide Completed Feedbacks"
+            <button onClick={()=>{
+                setCompleted(!completed)
+            }} className="btn btn-primary">{
+                completed?"Hide Completed Feedbacks":"Show Completed Feedbacks"
             }</button>
         </div>
     );
