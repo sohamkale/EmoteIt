@@ -44,3 +44,12 @@ export function UpdateTranslation(req, res){
         res.send(updatedTranslation);
         })
 }
+
+export function GetAll(req,res){
+    TranslationEngine.find({},(err,trans)=>{
+        if(err){
+            res.send(err)
+        }
+            res.send(trans)
+    })
+}

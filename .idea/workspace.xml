@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/admin/Feedbacks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/admin/Feedbacks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/admin/Translation.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/admin/Translation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/TranslationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/TranslationController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/TranslationRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/TranslationRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +69,7 @@
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.server-start">
+  <component name="RunManager" selected="npm.site-start">
     <list>
       <item itemvalue="npm.server-start" />
       <item itemvalue="npm.site-start" />
@@ -104,6 +106,7 @@
       <workItem from="1654225452458" duration="3090000" />
       <workItem from="1654230191480" duration="10822000" />
       <workItem from="1654405175155" duration="4259000" />
+      <workItem from="1655704979867" duration="6944000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
