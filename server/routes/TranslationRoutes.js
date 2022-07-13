@@ -1,4 +1,4 @@
-import{ UpdateTranslation, CreateTranslation, GetTranslation} from "../controllers/TranslationController.js";
+import{ UpdateTranslation, CreateTranslation, GetTranslation , GetAll} from "../controllers/TranslationController.js";
 
 
 
@@ -9,11 +9,8 @@ export default function TranslationRoutes(server){
         .post(CreateTranslation)
         .get(GetTranslation)
         .put(UpdateTranslation)
-        // .get(GetNewTranslation)
-
-
-
-
-
+        // .get(GetNewTranslation
+    server.route('/api/translations')
+        .get(GetAll)
     }
 
