@@ -94,7 +94,10 @@ export function GetTokenUser(accessToken, outUser){
                         outUser(null,null);
                     else {
                         user["pictureUrl"] = googleUser.picture;
-                        outUser(user, null)
+                        // outUser(user, null);
+                        UserEngine.findByIdAndUpdate(user._id,user,{new:true}).then((res)=>{
+                            outUser(res, null);
+                        })
                     }
                 }).catch((err)=>{
                     outUser(null,err);

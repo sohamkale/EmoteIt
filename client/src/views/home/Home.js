@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import UserCard from "../../components/shared/UserCard";
 import LeaderBoardCarousel from "../../components/home/LeaderBoardCarousel";
 import EmortionView from "../../components/emortion/EmortionView";
 import NewsCenter from "../../components/home/NewsCenter";
 import EmortionCreate from "../../components/emortion/EmortionCreate";
 import FeedbackModal from "../shared/FeedbackModal";
+import {AuthenticationContext} from "../../components/contexts/AuthenticationProvider";
 
 
 export default function Home(props) {
+    const {user} = useContext(AuthenticationContext);
     //TODO:: Get news
     const news = [
         {
@@ -22,7 +24,7 @@ export default function Home(props) {
 
             <div className="row">
                 <div className="col-xl-4 col-sm-12">
-                    <UserCard/>
+                    <UserCard user={user}/>
                 </div>
                 <div className="col-xl-8 col-sm-12">
                     <LeaderBoardCarousel/>

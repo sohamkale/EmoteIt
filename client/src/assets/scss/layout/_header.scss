@@ -85,7 +85,7 @@ header {
                     border-radius: $radius-5;
                 }
                 .search-suggestion {
-                    height: 0px;
+                    max-height: 30vh;
                     background-color: $white;
                     position: absolute;
                     width: 100%;

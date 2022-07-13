@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 export default function Notifications(props) {
+
+
     return props.showNotifications ? (
             <div className="dropdown-menu dropdown-menu-right show"
                  style={{
@@ -42,8 +44,11 @@ export default function Notifications(props) {
                             </div>
                         </li>*/}
                         {/*TODO:: Map All Notifications for this props.appUser*/}
-                        <Notification notification={
-                            {message: "is developping now", createdAt: "2021-11-10T19:44:49.850+00:00"}} />
+                        {
+                            props.notifications.map((item)=>
+                                <Notification notification={item} />
+                            )
+                        }
                     </ul>
                 </div>
             </div>)
@@ -51,6 +56,8 @@ export default function Notifications(props) {
 }
 
 function Notification({notification}){
+
+    console.log(notification)
     //TODO:: Get the actual about user from details of item
     const [aboutUser,setAboutUser] = useState({
         name: "Loading...",

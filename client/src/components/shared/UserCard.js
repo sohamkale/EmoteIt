@@ -7,7 +7,7 @@ export default function UserCard(props){
                 <div className="image-section">
                     <div className="profile-img">
                         <div>
-                            <img src={img} className="img-fluid lazyload usercard-img" style={{
+                            <img src={props.    user?.pictureUrl ?? img} className="img-fluid lazyload usercard-img" style={{
                                 borderLeft: "3px solid purple",
                                 borderBottom: "2px solid purple"
                             }} alt="profile"/>
@@ -18,7 +18,7 @@ export default function UserCard(props){
                     </div>
                 </div>
                 <div className="profile-detail">
-                    <h2>jeem kalaputki<span>❤</span></h2>
+                    <h2>{props.user.name}&nbsp;<span>❤</span></h2>
                     <div className="counter-stats">
                         <ul>
                             <li>
