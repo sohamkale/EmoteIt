@@ -1,12 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react'
-import './Layout.scss'
 import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import Notifications from "../components/shared/Notifications";
 import {AuthenticationContext} from "../components/contexts/AuthenticationProvider";
-import Feedback from "./shared/FeedbackModal";
-import FeedbackModal from "./shared/FeedbackModal";
 import axios from "axios"; // optional
 
 export default function Layout(props) {
@@ -66,7 +63,7 @@ export default function Layout(props) {
                         <div className="header-left">
                             <div className="brand-logo">
                                 <a href="index.html">
-                                    <img src={require('../assets/images/logo/logo-no-bg.png').default} alt="logo"
+                                    <img src={require('../assets/img/brand/logo/logo-tpback.png').default} alt="logo"
                                          className="img-fluid {/*blur-up lazyload*/}"/>
                                 </a>
                                 {/*<span className="title text-light">EmoteIt</span>*/}

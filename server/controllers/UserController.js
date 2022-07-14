@@ -14,6 +14,15 @@ export const UserEngine = mongoose.model('User', UserSchema);
 
 export function CreateUser(req, res){
     let _user = req.body;
+    var _birthday = new Date(_user.DOB);
+    var _age = new Date (new Date() - _birthday);
+    _age = Math.abs(_age.getUTCFullYear() - 1970); //epoch year is from 1970!
+
+    if(_age < 18){
+        res.status(400).send({message: `must be atleast 18 years old. Provided age: ${_age}`});
+        return;
+    }
+
     const accessToken = req.get("access-token");
 
     admin.auth()

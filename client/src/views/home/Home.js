@@ -4,7 +4,6 @@ import LeaderBoardCarousel from "../../components/home/LeaderBoardCarousel";
 import EmortionView from "../../components/emortion/EmortionView";
 import NewsCenter from "../../components/home/NewsCenter";
 import EmortionCreate from "../../components/emortion/EmortionCreate";
-import FeedbackModal from "../shared/FeedbackModal";
 import {AuthenticationContext} from "../../components/contexts/AuthenticationProvider";
 
 

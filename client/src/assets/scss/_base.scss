@@ -1,0 +1,51 @@
+body{
+
+}
+
+
+//Navbar
+
+.brand-logo {
+  width: 7%;
+}
+
+@media (max-width: 720px) {
+  .brand-logo {
+    width: 35%;
+  }
+}
+//End Navbar
+
+.bg{
+  &_fullpage{
+    background-color: lightgrey;
+    height: 100vh;
+  }
+}
+
+.container{
+  &_fullpage{
+    height: 100vh;
+  }
+}
+
+.bg{
+  &-dark{
+    &-75{
+      background-color: rgba(0,0,0,0.75);
+    }
+  }
+}
+
+.op{
+  &-25{
+    opacity: 0.25;
+  }
+}
+
+
+//modal
+.modal{
+  z-index: 1100 !important;
+}
+

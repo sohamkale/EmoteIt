@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {Route, Switch} from "react-router-dom";
-import Authentication from "./views/authentication/Authentication";
 import Layout from "./views/Layout";
 import Home from "./views/home/Home";
 import Profile from "./views/profile/Profile";
@@ -10,6 +9,8 @@ import Emortion from "./views/emortion/Emortion";
 import Error from "./views/Error";
 import Feedbacks from "./views/admin/Feedbacks";
 import Translations from "./views/admin/Translation";
+import {Login} from "./views/authentication/Login";
+import {MainLayout} from "./views/shared/MainLayout";
 
 const pageLinks = [
     {
@@ -54,7 +55,7 @@ export default function EmoteItRouter(props, {appUser}){
     return (
         <Switch>
             <Route path={["/app"]}>
-                <Layout pageLinks={pageLinks} adminLinks={adminLinks} appUser={appUser} setLoading={setLoading}>
+                <MainLayout pageLinks={pageLinks} adminLinks={adminLinks} appUser={appUser} setLoading={setLoading}>
                     <Switch>
                         <Route exact path={'/app/home'} component={()=>
                             <Home appUser={appUser} setLoading={setLoading}/>
@@ -76,10 +77,10 @@ export default function EmoteItRouter(props, {appUser}){
                         </Route>
                     </Switch>
 
-                </Layout>
+                </MainLayout>
             </Route>
             <Route path={["/admin"]}>
-                <Layout pageLinks={pageLinks} adminLinks={adminLinks} appUser={appUser} setLoading={setLoading}>
+                <MainLayout pageLinks={pageLinks} adminLinks={adminLinks} appUser={appUser} setLoading={setLoading}>
                     <Switch>
                         <Route exact path={'/admin/feedbacks'} component={()=>
                             <Feedbacks appUser={appUser} setLoading={setLoading}/>
@@ -93,11 +94,10 @@ export default function EmoteItRouter(props, {appUser}){
                         </Route>
                     </Switch>
 
-                </Layout>
+                </MainLayout>
             </Route>
-            {/*Test Routes*/}
             <Route exact path={'/'} component={()=>
-                <Authentication/>
+                <Login/>
             }/>
         </Switch>
     )

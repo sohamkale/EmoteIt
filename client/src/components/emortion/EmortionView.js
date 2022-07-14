@@ -6,10 +6,6 @@ import './emortion.scss'
 import {Link} from "react-router-dom";
 import EmoteItReactOptions from "../shared/EmoteItReactOptions";
 
-const imgStyle={
-    backgroundImage: "url(&quot;../assets/images/user-sm/1.jpg&quot;)",
-    backgroundSize: "cover"
-}
 
 
 export default function EmortionView(props){
@@ -44,14 +40,7 @@ export default function EmortionView(props){
                         <div className="col-2"></div>
                         <div className="col-5">
 
-                                    {/*   <ul>
-                        <li className="bg-size lazyloaded"
-                            style={imgStyle}>
-                            <img src={require("../../assets/images/user-sm/1.jpg").default} className="img-fluid lazyload bg-img d-block"
-                                 alt=""/>
-                        </li>
-
-                    </ul>*/}
+                                    {/**/}
                             <span>+12 emorters reacted</span>
                                 </div>
                         <div className="col-5">

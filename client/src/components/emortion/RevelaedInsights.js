@@ -25,10 +25,7 @@ export default function RevealedInsights(props) {
 }
 
 export function RevealedInsight(props){
-    const imgStyle={
-        backgroundImage: "url(&quot;../assets/images/user-sm/1.jpg&quot;)",
-        backgroundSize: "cover"
-    }
+
     const [reactShow, setReactShow] = useState(false);
     return(
         <div className="revealedInsight m-1 p-2">

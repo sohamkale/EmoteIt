@@ -1,0 +1,16 @@
+.bg{
+  &-extra_dark{
+    background-color: black;
+    color: whitesmoke;
+  }
+}
+
+.btn{
+  &-extra_dark{
+    background-color: black;
+    color: whitesmoke;
+    &:hover {
+      color: darkgoldenrod !important;
+    }
+  }
+}

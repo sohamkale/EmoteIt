@@ -3,8 +3,8 @@ import {useCookies} from "react-cookie";
 import axios from "axios";
 import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import firebase from "firebase/compat";
-import {config} from "../../views/authentication/components/config.firebase";
-import Authentication from "../../views/authentication/Authentication";
+import {config} from "../../config.firebase";
+import {Login} from "../../views/authentication/Login";
 
 export const AuthenticationContext = createContext();
 
@@ -128,7 +128,7 @@ export function AuthenticationProvider(props) {
         <AuthenticationContext.Provider value={returnee}>
             {
                 user == null?
-                    <Authentication/>
+                    <Login/>
                     :
                     props.children
             }

@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import './App.css';
-import '../src/assets/scss/style.scss'
+import '../src/assets/scss/main.scss'
 import EmoteItRouter from "./Routes";
 import {user} from "./FakeData";
 import {AuthenticationProvider} from "./components/contexts/AuthenticationProvider";
 import {CookiesProvider} from "react-cookie";
-import FeedbackModal from "./views/shared/FeedbackModal";
 
 function App() {
 
@@ -13,7 +11,6 @@ function App() {
         <div id="emoteit-app-top" className="">
             <CookiesProvider>
                 <AuthenticationProvider>
-                    <FeedbackModal/>
                     <EmoteItRouter/>
                 </AuthenticationProvider>
             </CookiesProvider>

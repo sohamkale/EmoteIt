@@ -9,7 +9,7 @@ export const UserSchema = new Schema(
         totalAnswerTimeMs: Number,
         email: String,
         DOB: Date,
-        score: Number,
+        score: {type: Number, default: 0},
         profileImage: String,
         typeId: Number,
         pictureUrl: String,
