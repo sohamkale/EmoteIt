@@ -4,54 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="changing front end">
-      <change afterPath="$PROJECT_DIR$/client/src/assets/scss/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/scss/_ui.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/scss/authentication.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/scss/main.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/shared/MainLayout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/shared/components/DisplayPicture.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/shared/components/Feedback.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/shared/components/NavAccountInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/shared/components/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/shared/components/NotificationTray.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/shared/components/SearchBox.js" afterDir="false" />
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="navbar restored">
+      <change afterPath="$PROJECT_DIR$/client/src/views/shared/components/RoutesBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/images/authentication/bg-bw.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/extra/bg-bw.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/images/authentication/bg-ej.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/extra/bg-ej.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/images/authentication/bg-ej.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/extra/bg-ej.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/images/authentication/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/images/authentication/emojipad.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/authentication/emoji_keyboard.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/images/logo/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/images/logo/logo-back.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/brand/logo/logo-dark-tp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/images/logo/logo-no-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/brand/logo/logo-tpback.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_login-signup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/pages/_login-signup.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_images.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/contexts/AuthenticationProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/contexts/AuthenticationProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/emortion/EmortionView.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/emortion/EmortionView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/emortion/RevelaedInsights.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/emortion/RevelaedInsights.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/LeaderBoardCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/LeaderBoardCarousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/Authentication.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/Authentication.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/components/FlyingEmojis.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/components/ForgotPassword.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/components/GoogleLogin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/components/Login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/components/Signup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/components/config.firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/config.firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/components/snowflakes.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/shared/FeedbackModal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/UserSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/UserSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/_ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_ui.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark-1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/dark-1.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark-2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/dark-2.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/emoteit-theme.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/landing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/landing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style-1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/style-1.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style-2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/style-2.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/utils/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/MainLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/MainLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/Feedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/Feedback.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/NavAccountInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/NavAccountInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/NotificationTray.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/NotificationTray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/SearchBox.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,11 +80,11 @@
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\assets\scss" />
+      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\assets" />
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\assets\img\brand" />
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src" />
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client" />
-      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService" />
-      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\assets\img\extra" />
     </key>
   </component>
   <component name="RunManager" selected="npm.server-start">
@@ -154,7 +127,8 @@
       <workItem from="1655258766882" duration="21000" />
       <workItem from="1655703720288" duration="3448000" />
       <workItem from="1657680542075" duration="710000" />
-      <workItem from="1657681271665" duration="16287000" />
+      <workItem from="1657681271665" duration="17100000" />
+      <workItem from="1657851429365" duration="9144000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -247,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657682248414</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="navbar restored">
+      <created>1657772518171</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1657772518171</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +259,7 @@
     <MESSAGE value="feedbacks -2" />
     <MESSAGE value="runConfig" />
     <MESSAGE value="changing front end" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing front end" />
+    <MESSAGE value="navbar restored" />
+    <option name="LAST_COMMIT_MESSAGE" value="navbar restored" />
   </component>
 </project>

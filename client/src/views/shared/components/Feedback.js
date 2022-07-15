@@ -9,8 +9,6 @@ export const Feedback = ()=>{
     const [typeId, setTypeId] = useState(1);
     const [message, setMessage] = useState("");
     const [subjectId, setSubjectId] = useState("");
-
-    const [modalBody, setModalBody] = useState();
     const [submitted, setSubmitted] = useState(false);
 
     function Submit(){
