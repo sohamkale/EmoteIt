@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react'
-import {AuthenticationContext} from "../../components/contexts/AuthenticationProvider";
+import {AuthenticationContext} from "../../contexts/AuthenticationProvider";
 import axios from "axios";
 import {Link} from "react-router-dom";
 

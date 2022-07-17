@@ -3,8 +3,8 @@ import {useCookies} from "react-cookie";
 import axios from "axios";
 import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import firebase from "firebase/compat";
-import {config} from "../../config.firebase";
-import {Login} from "../../views/authentication/Login";
+import {config} from "../config.firebase";
+import {Login} from "../views/authentication/Login";
 
 export const AuthenticationContext = createContext();
 
@@ -56,8 +56,8 @@ export function AuthenticationProvider(props) {
 
     function SignOut(){
         setGoogleUser(null);
-        setCookie('token',null);
-        setCookie('tokenExpires',null);
+        removeCookie("token")
+        removeCookie("tokenExpires")
         setUser(null);
         console.log("you are now logged out!");
         window.location.href = "/";
@@ -98,7 +98,7 @@ export function AuthenticationProvider(props) {
         else if (token == null){
             {
                 console.log("no token in cookie! fetching user from backend...");
-                GetEmoteitUser(token);
+                // GetEmoteitUser(token);
             }
         }
     }, [])

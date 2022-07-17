@@ -4,27 +4,88 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="navbar restored">
-      <change afterPath="$PROJECT_DIR$/client/src/views/shared/components/RoutesBar.js" afterDir="false" />
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="to home page">
+      <change afterPath="$PROJECT_DIR$/client/src/assets/css/bootstrap-local-not-used.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/scss/emoteit-emortion.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmojiDiv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/friendship/components/RelationshipCollection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/shared/components/UserCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/images/404/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/404/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/images/404/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/404/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/images/404/2_0_dullface.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/404/2_0_dullface.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/images/404/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/404/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/images/404/dull_emoji.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/404/dull_emoji.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/images/leaderboard/brown.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/leaderboard/brown.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/images/leaderboard/darkgrey.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/leaderboard/darkgrey.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/images/leaderboard/goldenrod.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/leaderboard/goldenrod.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/images/leaderboard/leaders.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/leaderboard/leaders.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/images/leaderboard/trophy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/leaderboard/trophy.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/scss/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/_images.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_images.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/scss/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_typography.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/scss/_ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_ui.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/authentication.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark-1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/dark-1.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark-2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/dark-2.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/emoteit-theme.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/landing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/landing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_post.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_post.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/leaderboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/pages/leaderboard.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style-1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/style-1.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style-2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/style-2.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/utils/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/contexts/AuthenticationProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/contexts/AuthenticationProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/emortion/AnsweringInterface.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/emortion/EmortionCreate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/emortion/EmortionView.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/emortion/Insight.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/Insight.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/emortion/InsightFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/emortion/InsightFunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/emortion/RevelaedInsights.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/emortion/emortion.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/emortion/emortion.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/friendship/UserCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/friendship/components/UserCollection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/LeaderBoardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/home/components/LeaderBoardCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/LeaderBoardCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/home/components/LeaderBoardCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/LeaderBoardCarousel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/NewsCenter.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/home/components/NewsCenter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/leaderboard/TopLeaderBoardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/leaderboard/component/TopLeaderBoardCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/shared/UserCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/shared/UserTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/UserTitle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Error.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/Error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/admin/Feedbacks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/admin/Feedbacks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/admin/Translation.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/admin/Translation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/authentication/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/authentication/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/Emortion.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/Emortion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/friendship/Friends.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/friendship/Friends.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/leaderboard/Leaderboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/leaderboard/Leaderboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/leaderboard/LeaderboardTable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/profile/Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/shared/MainLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/MainLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/DisplayPicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/DisplayPicture.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/Feedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/Feedback.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/NavAccountInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/NavAccountInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/Navbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/NotificationTray.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/NotificationTray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/RoutesBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/RoutesBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/SearchBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/EmortionController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/FeedbackController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/FeedbackController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/FriendshipController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/FriendshipController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/TranslationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/TranslationController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/EmortionSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/EmortionSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/InsightSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/InsightSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/TranslationRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/TranslationRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +96,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Sass File" />
       </list>
     </option>
   </component>
@@ -63,28 +126,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/nodejs/node.exe&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/ashim/source/repos/EmoteIt-React",
+    "list.type.of.created.stylesheet": "Sass",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.1.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\views\emortion\components\insight" />
+      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\views\emortion\components" />
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\assets\scss" />
-      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\assets" />
-      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\assets\img\brand" />
-      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src" />
-      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client" />
+      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\views\shared\components" />
+      <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\client\src\views\emortion" />
     </key>
   </component>
   <component name="RunManager" selected="npm.server-start">
@@ -128,7 +192,8 @@
       <workItem from="1655703720288" duration="3448000" />
       <workItem from="1657680542075" duration="710000" />
       <workItem from="1657681271665" duration="17100000" />
-      <workItem from="1657851429365" duration="9144000" />
+      <workItem from="1657851429365" duration="9580000" />
+      <workItem from="1657924323738" duration="58188000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -228,7 +293,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657772518171</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="routes bar added">
+      <created>1657870057425</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1657870057425</updated>
+    </task>
+    <task id="LOCAL-00016" summary="routes bar added">
+      <created>1657870077660</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1657870077660</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +339,20 @@
     <MESSAGE value="runConfig" />
     <MESSAGE value="changing front end" />
     <MESSAGE value="navbar restored" />
-    <option name="LAST_COMMIT_MESSAGE" value="navbar restored" />
+    <MESSAGE value="routes bar added" />
+    <MESSAGE value="to home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="to home page" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/controllers/EmortionController.js</url>
+          <line>96</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

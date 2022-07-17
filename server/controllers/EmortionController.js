@@ -1,6 +1,8 @@
 import {EmortionSchema} from "../models/EmortionSchema.js";
 import {InsightSchema} from "../models/InsightSchema.js";
 import mongoose from "mongoose";
+import {GetTokenUser, GetUserFromToken} from "./UserController.js";
+import {GetProfileById} from "./ProfileController.js";
 
 const EmortionEngine = mongoose.model('Emortion', EmortionSchema);
 const InsightEngine = mongoose.model('Insight', InsightSchema);
@@ -8,25 +10,58 @@ const LoggedInUserUID = "1BE2WmbnyGWETpIuunJ4USPCvLz2";
 
 export function CreateEmortion(req, res) {
     let _emortion = req.body;
-    let newEmortion = new EmortionEngine(_emortion);
-    newEmortion.save((err, addedEmortion) => {
-        if (err) {
-            console.log("Could not save to mongo!: " + err)
-            res.send(err);
-        } else {
-            res.send(addedEmortion);
-            console.log("Emortion saved to mongo!");
-        }
-    })
+
+    // idToken comes from the client app
+    const idToken = req.get("access-token");
+    if (idToken == null)
+        res.status(401).send("no user token");
+    else
+        GetTokenUser(idToken, (user, err) => {
+            if (err)
+                res.status(500).send(err);
+            else if (err == null && user == null)
+                res.status(204).send("user not found!")
+            else if (err == null) {
+                const timeNow = new Date();
+                _emortion.createdBy = user._id;
+                const _expireOpt = _emortion.expireOpt;
+                let _expireHours = _expireOpt == 1 ? 3 : _expireOpt == 2 ? 24 : 1; // 0 =1 hour, 1= 3 hours and 2= 24 hours. default = 1 hour
+                _emortion.expiresAt = new Date(new Date().setHours(timeNow.getHours() + _expireHours));
+                //note: expire-time is expected from the front end! depending on what is selected
+                let newEmortion = new EmortionEngine(_emortion);
+                newEmortion.save((err, addedEmortion) => {
+                    if (err) {
+                        console.log("Could not save to mongo!: " + err)
+                        res.send(err);
+                    } else {
+                        res.send(addedEmortion);
+                        console.log("Emortion saved to mongo!");
+                    }
+                })
+            }
+        })
+
+
 }
 
 export function GetEmortion(req, res) {
-    EmortionEngine.findById({_id: req.params.id},
-        (err, emortion) => {
-            if (err)
-                res.send(err)
+    EmortionEngine.findById({_id: req.params.id}, async (err, emortion) => {
+        if (err)
+            res.send(err);
+
+        //get the createdBy user of emortion
+        let createdByUser = await GetProfileById(emortion.createdBy);
+        emortion.createdBy = createdByUser;
+
+
+        //if not visible to user, take away secret!
+        await IsEmortionVisible(emortion._id, LoggedInUserUID, (visible) => {
+            if (!visible) {
+                emortion.secret = "not revealed";
+            }
             res.send(emortion);
-        })
+        });
+    })
 }
 
 export function GetUserEmortions(req, res) {
@@ -45,8 +80,8 @@ export function GetUserEmortions(req, res) {
 export function StartInsight(req, res) {
     let exists = false;
     const InsightArray = [];
-    EmortionEngine.findById({_id: req.params.id},
-        (err, emortion) => {
+    EmortionEngine.findById({_id: req.params.emortionId},
+        async (err, emortion) => {
             if (err) {
                 res.send(err);
             } else {
@@ -54,12 +89,17 @@ export function StartInsight(req, res) {
                     InsightArray.push(emortion.insightUIDs[i]);
                 }
             }
-            if (InsightArray.includes(LoggedInUserUID)) {
+
+            //get the logged in user
+            const tokenUser = await GetUserFromToken(req.get("access-token"));
+            const loggedInUserId = tokenUser._id.toString();
+
+            if (InsightArray.includes(loggedInUserId)) {
                 exists = true;
             }
             if (exists === true) {
                 // run insight engine return insight
-                InsightEngine.find({$and:[{createdBy: LoggedInUserUID}, {emortionId: emortion._id}]}, // check this!!!!
+                InsightEngine.findOne({$and: [{createdBy: loggedInUserId}, {emortionId: emortion._id}]}, // check this!!!!
                     (err, insight) => {
                         if (err) {
                             res.send(err);
@@ -68,10 +108,11 @@ export function StartInsight(req, res) {
                             res.send(insight);
                         }
                     })
-            } else {
+            }
+            else {
                 // run insight engine create insight
                 const sendInsight = {
-                    createdBy: LoggedInUserUID,
+                    createdBy: loggedInUserId,
                     secret: emortion.secret,
                     accuracy: 0,
                     score: 0,
@@ -84,7 +125,7 @@ export function StartInsight(req, res) {
                     if (err) {
                         res.send(err)
                     } else {
-                        EmortionEngine.findOneAndUpdate({_id: req.params.id}, {$push: {insightUIDs: LoggedInUserUID}}, {new: true},
+                        EmortionEngine.findOneAndUpdate({_id: req.params.emortionId}, {$push: {insightUIDs: loggedInUserId}}, {new: true},
                             (err, updatedEmortion) => {
                                 if (err) {
                                     res.send(err);
@@ -101,7 +142,7 @@ export function StartInsight(req, res) {
         })
 }
 
-export function SubmitEmortionInsight(req, res) {
+export async function SubmitEmortionInsight(req, res) {
     let matchCounter = 0;
     let answerNumber = 0;
     let timeSubtract = 0;
@@ -115,6 +156,17 @@ export function SubmitEmortionInsight(req, res) {
             matchCounter++;
         }
     }
+
+    //get the logged in user
+    const tokenUser = await GetUserFromToken(req.get("access-token"));
+
+    if(tokenUser == null) {
+        res.status(401).send('no access token');
+        return;
+    }
+
+    const loggedInUserId = tokenUser._id.toString();
+
     // Get answer number
     EmortionEngine.findById(req.params.emortionId, (err, emortion) => {
         answerNumber = emortion?.insightUIDs?.length
@@ -122,8 +174,8 @@ export function SubmitEmortionInsight(req, res) {
 
         //get start time
         //check this
-        InsightEngine.find({$and:[{createdBy: LoggedInUserUID}, {emortionId: req.params.emortionId}]}, (err, insight) => {
-            startTime = insight[0].createdAt
+        InsightEngine.findOne({$and: [{createdBy: loggedInUserId}, {emortionId: req.params.emortionId}]}, (err, insight) => {
+            startTime = insight.createdAt
             let currTime = new Date()
             let timeDifferential = Math.abs(currTime - startTime)
             if (timeDifferential >= 10000) {
@@ -145,14 +197,15 @@ export function SubmitEmortionInsight(req, res) {
                 timeSubtract = 30;
             }
             finalScore = (matchCounter * 10) + (10) - (subtractAnswerRank) + (30) - (timeSubtract);
-            console.log(finalScore)
+            // console.log(finalScore)
             let returnObj = {
                 score: finalScore,
                 submittedAt: currTime,
+                response: req.body.response,
                 accuracy: finalScore / timeSubtract,
                 timeTaken: timeDifferential
             }
-            InsightEngine.findByIdAndUpdate(insight[0]._id, returnObj, {new: true}, (err, updated) => {
+            InsightEngine.findByIdAndUpdate(insight._id, returnObj, {new: true}, (err, updated) => {
                 if (err) {
                     res.send(err)
                 }
@@ -169,13 +222,24 @@ export function SubmitEmortionInsight(req, res) {
 
 export function GetInsightsOfEmortion(req, eRes) {
     //fix this
-    InsightEngine.find({emortionId: req.params.emortionId}, async (err, insight) => {
+    InsightEngine.find({emortionId: req.params.emortionId}, async (err, insights) => {
         if (err) {
             eRes.send(err)
         }
-        await IsEmortionVisible(req.params.emortionId, LoggedInUserUID, (res) => {
+
+        //get the logged in user
+        const tokenUser = await GetUserFromToken(req.get("access-token"));
+        const loggedInUserId = tokenUser._id.toString();
+
+        //get the createdBy user of emortion
+        for (const item of insights) {
+            item.createdBy = await GetProfileById(item.createdBy);
+        }
+
+        await IsEmortionVisible(req.params.emortionId, loggedInUserId, (res) => {
             if (res) {
-                eRes.send(insight)
+                //add the created by users
+                eRes.send(insights)
             } else {
                 eRes.send([])
             }
@@ -191,50 +255,47 @@ export function GetUserInsight(req, eRes) {
         }
         for (let i = 0; i < insight.length; i++) {
             await EmortionEngine.findById(insight[i].emortionId).exec().then(async (emortion) => {
-                    await IsEmortionVisible(emortion, LoggedInUserUID, (res) => {
-                        if (res) {
-                            VisibleInsights.push(insight[i])
-                        }
-                    })
+                await IsEmortionVisible(emortion, LoggedInUserUID, (res) => {
+                    if (res) {
+                        VisibleInsights.push(insight[i])
+                    }
+                })
             })
         }
         eRes.send(VisibleInsights)
     }).limit(req.query.limit)
 }
 
-export function ReactInsight(req,res){
-    InsightEngine.findByIdAndUpdate(req.params.id,{$push: {reactionIds: LoggedInUserUID} }, {new: true},
-        (err, updated)=>{
-            if(err){
+export function ReactInsight(req, res) {
+    InsightEngine.findByIdAndUpdate(req.params.id, {$push: {reactionIds: LoggedInUserUID}}, {new: true},
+        (err, updated) => {
+            if (err) {
                 res.send(err)
-            }
-            else{
+            } else {
                 console.log("Reacted to Insight!")
                 res.send(updated)
             }
         })
 }
 
-export function TakeHint(req,res){
-    InsightEngine.findByIdAndUpdate(req.params.id,{$inc: {hintsTaken:1} },{new:true},
-        (err,updated)=>{
-        if(err){
-            res.send(err);
-        }
-        else{
-            console.log("Hint Taken!")
-            res.send(updated)
-        }
-    })
+export function TakeHint(req, res) {
+    InsightEngine.findByIdAndUpdate(req.params.id, {$inc: {hintsTaken: 1}}, {new: true},
+        (err, updated) => {
+            if (err) {
+                res.send(err);
+            } else {
+                console.log("Hint Taken!")
+                res.send(updated)
+            }
+        })
 }
 
-export function ReactEmortion(req,res){
-    EmortionEngine.findByIdAndUpdate(req.params.id,{$push: {reactionIds: LoggedInUserUID} },{new:true},
-        (err,updated)=>{
-            if(err){
+export function ReactEmortion(req, res) {
+    EmortionEngine.findByIdAndUpdate(req.params.id, {$push: {reactionIds: LoggedInUserUID}}, {new: true},
+        (err, updated) => {
+            if (err) {
                 res.send(err);
-            }
-            else{
+            } else {
                 console.log("Reacted to Emortion!")
                 res.send(updated)
             }
@@ -251,7 +312,7 @@ async function IsEmortionVisible(emortionID, UID, callBack) {
         if (emortion.createdBy === UID) {
             return callBack(true)
         }
-        if (emortion.expireTime < new Date()) {
+        if (emortion.expiresAt < new Date()) {
             return callBack(true)
         }
         for (let i = 0; i < emortion.insightUIDs.length; i++) {

@@ -45,8 +45,18 @@ export function UpdateTranslation(req, res){
         })
 }
 
+export function DeleteTranslation(req, res){
+    let _translation = req.body;
+    TranslationEngine.findByIdAndRemove(_translation._id, _translation,
+        (err, updatedTranslation)=>{
+            if(err)
+                res.send(err);
+            res.send(updatedTranslation);
+        })
+}
+
 export function GetAll(req,res){
-    TranslationEngine.find({},(err,trans)=>{
+    TranslationEngine.distinct("tableIdntfr",(err,trans)=>{
         if(err){
             res.send(err)
         }

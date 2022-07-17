@@ -2,15 +2,15 @@ import mongoose from "mongoose";
 const Schema  = mongoose.Schema;
 
 export const EmortionSchema = new Schema({
-    createdBy: String,
+    createdBy: Object,
     updatedBy: String,
     message: [String],
     secret: String,
-    expireTime: Date,
-    deprecated: false,
+    expiresAt: Date,
+    deprecated: {type: Boolean, default: false},
     categoryId: Number,
-    privacyId: String,
-    reactionIds: [String],
-    insightUIDs: [String]
+    privacyId: {type: Number, default: 0},
+    reactionIds: {type: [String], default: []},
+    insightUIDs: {type: [String], default: []}
 }, { id: true, timestamps: true }
 );

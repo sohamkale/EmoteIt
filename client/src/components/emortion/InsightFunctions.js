@@ -9,7 +9,7 @@ var appUser = {
 export const emortions = [ {
     id:"22993",
     message: "Hello Jeem",
-    expireTime: "12-20-2021",
+    expiresAt: "12-20-2021",
     emojis: ["😀", "😄 ", "🥰", "😍"],
     userId: "4388829",
 
@@ -59,7 +59,7 @@ export const emortions = [ {
 /*export const emortions = [ {
     id:"22993",
     message: "The quick brown fox jumped",
-    expireTime: "12-20-2021",
+    expiresAt: "12-20-2021",
     emojis: ["😀", "😄 ", "🥰", "😍"],
     userId: "4388829",
     insightUserIds: ["201220", "515668", "766432", "234478"],
@@ -69,7 +69,7 @@ export const emortions = [ {
     {
         id:"22996",
         message: "The quick brown fox jumped",
-        expireTime: "12-20-2021",
+        expiresAt: "12-20-2021",
         emojis: ["😀", "😄 ", "🥰", "😍"],
         userId: "4388829",
         insightUserIds: ["201220", "515668", "766432", "234478"],

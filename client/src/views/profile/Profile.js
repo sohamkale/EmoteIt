@@ -1,15 +1,26 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Stats from "../../components/profile/Stats";
-import UserCard from "../../components/shared/UserCard";
-import EmortionView from "../../components/emortion/EmortionView";
-import {RevealedInsight} from "../../components/emortion/RevelaedInsights";
+import UserCard from "../shared/components/UserCard";
+import EmortionView from "../emortion/components/EmortionView";
+import {RevealedInsight} from "../emortion/components/insight/RevealedInsights";
 import {emortions} from "../../components/emortion/InsightFunctions";
 import './profile.scss'
+import {AuthenticationContext} from "../../contexts/AuthenticationProvider";
+import EmortionForm from "../emortion/components/EmortionForm";
 
 export default function Profile(props){
+    const {user} = useContext(AuthenticationContext);
     return (
-        <>
-          <div className="row">
+        <div className="container">
+            <div className="row">
+                <UserCard user={user}/>
+            </div>
+            <div className="row">
+                <div className="col-12 col-md-6">
+                    <EmortionForm/>
+                </div>
+            </div>
+   {/*       <div className="row">
 
                     <div className="col-xl-4 col-sm-12" style={{height:"100% !important"}}>
                         <UserCard/>
@@ -62,7 +73,7 @@ export default function Profile(props){
                                 <div className="card-title p-3">
                                     <h3>Friends</h3>
                                 </div>
-                                {/*<div className="profilePageRestrictedHeight">*/}
+                                <div className="profilePageRestrictedHeight">
                                     <div className="col-12">
                                         <UserCard/>
                                     </div>
@@ -74,7 +85,7 @@ export default function Profile(props){
                                     </div>
 
 
-                                {/*</div>*/}
+                                </div>
                             </div>
                         </div>
                         <div className="col-xl-6 col-sm-12 mt-2">
@@ -82,11 +93,11 @@ export default function Profile(props){
                                 <div className="card-title p-3">
                                     <h3>Emortions</h3>
                                 </div>
-                                {/*<div className="profilePageRestrictedHeight">*/}
+                                <div className="profilePageRestrictedHeight">
                                     <EmortionView/>
                                     <EmortionView/>
                                     <EmortionView/>
-                                {/*</div>*/}
+                                </div>
                             </div>
 
 
@@ -98,14 +109,14 @@ export default function Profile(props){
                                     <h3>Insights</h3>
                                 </div>
                                 <div className="card-body ">
-                                    {/*<div className="profilePageRestrictedHeight">*/}
+                                    <div className="profilePageRestrictedHeight">
                                         <RevealedInsight insight={emortions[0].userInsight}/>
                                         <RevealedInsight insight={emortions[0].userInsight}/>
                                         <RevealedInsight insight={emortions[0].userInsight}/>
                                         <RevealedInsight insight={emortions[0].userInsight}/>
                                         <RevealedInsight insight={emortions[0].userInsight}/>
                                         <RevealedInsight insight={emortions[0].userInsight}/>
-                                    {/*</div>*/}
+                                    </div>
 
 
                                 </div>
@@ -114,7 +125,7 @@ export default function Profile(props){
 
                         </div>
                     </div>
-                </div>
-        </>
+                </div>*/}
+        </div>
     );
 }

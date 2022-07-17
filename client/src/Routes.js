@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
 import {Route, Switch} from "react-router-dom";
-import Layout from "./views/Layout";
 import Home from "./views/home/Home";
 import Profile from "./views/profile/Profile";
 import Leaderboard from "./views/leaderboard/Leaderboard";
 import Friends from "./views/friendship/Friends";
 import Emortion from "./views/emortion/Emortion";
-import Error from "./views/Error";
+import Error from "./views/shared/Error";
 import Feedbacks from "./views/admin/Feedbacks";
 import Translations from "./views/admin/Translation";
 import {Login} from "./views/authentication/Login";
@@ -14,9 +13,9 @@ import {MainLayout} from "./views/shared/MainLayout";
 
 const pageLinks = [
     {
-        name: "Profile",
-        link: "/app/profile",
-        icon: "fas fa-user"
+        name: "Home",
+        link: "/app/home",
+        icon: "fas fa-home"
     },
     {
         name: "Friendships",

@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import axios from "axios";
-import {AuthenticationContext} from "../../../components/contexts/AuthenticationProvider";
+import {AuthenticationContext} from "../../../contexts/AuthenticationProvider";
 
 export const Feedback = ()=>{
 

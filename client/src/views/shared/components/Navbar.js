@@ -10,8 +10,7 @@ import Tippy from "@tippyjs/react";
 export const Navbar = (props) => {
     return (
         // <!-- Just an image -->
-        <nav class="navbar fixed-top bg-dark navbar-light text-light">
-
+        <nav className="navbar bg-dark navbar-light text-light">
             <div className="row w-100 m-0">
                 <div className="brand-logo col-4 col-md-2">
                     <a className="navbar-brand" href="/">

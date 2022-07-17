@@ -47,7 +47,7 @@ export function RespondFriendship(req,res){
         else{
             FriendshipEngine.findByIdAndUpdate(_friendship._id,_friendship,{new:true}, (err, updated)=>{
                 if(err){
-                    res.send(err)
+                    res.status(500).send(err)
                 }
                 res.send(updated)
             })

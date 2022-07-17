@@ -16,3 +16,16 @@ $btn-hover-color: darkgoldenrod;
     }
   }
 }
+
+.tr{
+  &-clickable{
+    &:hover{
+      cursor: pointer;
+    }
+
+    &.selected{
+      color: $btn-hover-color;
+      text-decoration: underline;
+    }
+  }
+}

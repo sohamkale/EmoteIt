@@ -44,7 +44,7 @@ export async function GetNewFeedbacks(req, res) {
 
     for (let f of feedbacks){
         let profile = await GetProfileById(f.createdBy);
-        f.createdBy = profile.name;
+        f.createdBy = profile?.name??"profile not found";
         finalArray.push(f);
     }
     res.send(finalArray);
@@ -68,7 +68,7 @@ export async function GetFeedbacks(req, res) {
 
     for (let f of feedbacks){
         let profile = await GetProfileById(f.createdBy);
-        f.createdBy = profile.name;
+        f.createdBy = profile?.name??"profile not found";
         finalArray.push(f);
     }
     res.send(finalArray);

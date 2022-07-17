@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import '../src/assets/scss/main.scss'
 import EmoteItRouter from "./Routes";
 import {user} from "./FakeData";
-import {AuthenticationProvider} from "./components/contexts/AuthenticationProvider";
+import {AuthenticationProvider} from "./contexts/AuthenticationProvider";
 import {CookiesProvider} from "react-cookie";
 
 function App() {

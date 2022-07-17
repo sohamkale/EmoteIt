@@ -1,7 +1,5 @@
 import React, {useEffect, useRef} from 'react'
-import LeaderBoardCard from "../../components/home/LeaderBoardCard";
-import "./LeaderBoardCarousel.scss"
-
+import LeaderBoardCard from "./LeaderBoardCard";
 
 
 
@@ -44,19 +42,19 @@ export default function LeaderBoardCarousel(props) {
     };
 
     return(
-        <div className="leaderboard-carousel p-3"
+        <div className="leaderboard-carousel p-3 w-100"
              /*onMouseDown={mouseDownHandler} onmousedr={mouseMoveHandler} onMouseUp={mouseUpHandler}*/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
-            <LeaderBoardCard imageUrl={require("../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
+            <LeaderBoardCard imageUrl={require("../../../assets/img/extra/bg-ej.png").default} name="Ashiq Islam"/>
         </div>
         /*// <div style={parent}>
             {/!*<HorizontalScroll>*!/}

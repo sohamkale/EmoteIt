@@ -1,10 +1,10 @@
 import React, {useContext} from 'react'
-import UserCard from "../../components/shared/UserCard";
-import LeaderBoardCarousel from "../../components/home/LeaderBoardCarousel";
-import EmortionView from "../../components/emortion/EmortionView";
-import NewsCenter from "../../components/home/NewsCenter";
-import EmortionCreate from "../../components/emortion/EmortionCreate";
-import {AuthenticationContext} from "../../components/contexts/AuthenticationProvider";
+import UserCard from "../shared/components/UserCard";
+import LeaderBoardCarousel from "./components/LeaderBoardCarousel";
+import EmortionView from "../emortion/components/EmortionView";
+import NewsCenter from "./components/NewsCenter";
+import EmortionForm from "../emortion/components/EmortionForm";
+import {AuthenticationContext} from "../../contexts/AuthenticationProvider";
 
 
 export default function Home(props) {
@@ -22,10 +22,10 @@ export default function Home(props) {
         <>
 
             <div className="row">
-                <div className="col-xl-4 col-sm-12">
+                <div className="col-12 col-md-4">
                     <UserCard user={user}/>
                 </div>
-                <div className="col-xl-8 col-sm-12">
+                <div className="col-12 col-md-8">
                     <LeaderBoardCarousel/>
                 </div>
             </div>
@@ -33,18 +33,15 @@ export default function Home(props) {
             <hr/>
 
             <div className="row">
-                <div className="col-xl-5 col-lg-5 col-md-4 d-xl-block">
+                <div className="col">
                     <NewsCenter/>
-                    <EmortionCreate/>
                 </div>
-                <div className="col-xl-7 col-lg-7 col-md-8 col-sm-12 post-panel">
-                    <EmortionView/>
-                    <EmortionView/>
-                    <EmortionView/>
-                    <EmortionView/>
-                    <EmortionView/>
+                <div className="col">
+                    <EmortionForm/>
                 </div>
-
+            </div>
+            <div className="row">
+                    <EmortionView/>
             </div>
         </>
     )
