@@ -18,20 +18,8 @@ export default function Friends(props) {
         axios.get(`/api/friendship/request`, {
             headers: {"access-token": accessToken}
         }).then((res) => {
-            // setRelationships(res.data);
-            let _tempArray = [];
-            res.data?.forEach((item) => {
-                let obtainUserId = item.requesteeUserId;
-                if (obtainUserId == user._id)
-                    obtainUserId = item.requesterUserId;
-                axios.get(`/api/profile/byId/${obtainUserId}`).then((ures) => {
-                    item.targetUser = ures.data.user;
-                    setRelationships(res.data);
-                    // _tempArray.push(ures.data.user);
-                    // setRelationships(_tempArray);
-                })
-            });
-            // console.log(_tempArray)
+            setRelationships(res.data);
+            console.log(res.data)
         });
 
     }
@@ -40,7 +28,7 @@ export default function Friends(props) {
     function GetAllUsers() {
         if (relationships)
             axios.get('/api/user/index').then((res) => {
-                setAllUsers(res.data?.filter(x => x._id != user._id && !relationships.some(y => y.targetUser?._id == x._id)));
+                setAllUsers(res.data?.filter(x => x._id != user._id && !relationships.some(y => y.requesterUserId?._id == x._id || y.requesteeUserId?._id == x._id)));
             });
     }
 

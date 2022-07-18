@@ -1,7 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import {insight, emortions} from './InsightFunctions'
-import AnsweringInterface from "./AnsweringInterface";
-import RevealedInsights from "./RevelaedInsights";
+import RevealedInsights from "./RevealedInsights";
 
 export default function Insight(props){
 /*
@@ -47,29 +45,26 @@ export default function Insight(props){
     )
 
 
-    if(props.emortion.message !== null){
-        if(props.emortion.insights != null)
-            return (<RevealedInsights emortion={props.emortion} appUser={props.appUser}/>);
-        else return (<AnsweringInterface emortion={props.emortion}/>);
-    }
+    // if(props.emortion?.message !== null){
+    //     if(props.emortion?.insights != null)
+            return (<RevealedInsights emortionId={props.emortion?._id}/>);
+
+        // else return (<AnsweringInterface emortionId={props.emortion?._id}/>);
+    // }
 
     //did not answer! needs the option to start answering!
     return (
-        <div className="post-react">
-            <div className="gj-text-align-center">You have not answered this emortion yet!</div>
-            <ul>
+        <div className="row m-auto text-align-center">
+            <div className={"col-12 mb-2"}>
+                <div className="btn btn-light">You have not answered this emortion yet!</div>
+            </div>
 
-                <li className="comment-click">
-                    <a href="javascript:void(0)">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                             stroke-linejoin="round" className="feather feather-message-square iw-18 ih-18">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                        Start Answer Now
-                    </a>
-                </li>
-            </ul>
+            <div className={"col-12"}>
+                <div className="btn btn-dark">
+                    <i className="fa-regular fa-circle-play m-1"></i>
+                    Start Answer Now
+                </div>
+            </div>
         </div>
     );
 }

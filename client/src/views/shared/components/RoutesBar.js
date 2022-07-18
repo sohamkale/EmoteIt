@@ -7,8 +7,8 @@ export const RoutesBar = (props) => {
         <>
             <div className="routes-bar-md bg-dark d-none d-md-block">
                 {
-                    props.adminLinks?.map((item) =>
-                        <Tippy content={item.name} placement={"right"}>
+                    props.adminLinks?.map((item, index) =>
+                        <Tippy key={index} content={item.name} placement={"right"}>
                             <Link to={item.link}>
                                 <div className="routes-bar-md-item">
                                     <i data-feather="grid" className={item.icon + " icon-light"}></i>
@@ -21,8 +21,8 @@ export const RoutesBar = (props) => {
 
                 <div className="bg-light text-align-center">---</div>
                 {
-                    props.pageLinks?.map((item) =>
-                        <Tippy content={item.name} placement={"right"}>
+                    props.pageLinks?.map((item, index) =>
+                        <Tippy key={index} content={item.name} placement={"right"}>
                             <Link to={item.link}>
                                 <div className="routes-bar-md-item">
                                     <i data-feather="grid" className={item.icon + " icon-light"}></i>
@@ -36,9 +36,9 @@ export const RoutesBar = (props) => {
 
             <nav className="navbar fixed-bottom navbar-dark bg-dark routes-bar-sm d-md-none">
                 {
-                    props.pageLinks?.map((item) =>
+                    props.pageLinks?.map((item, index) =>
                         // <Tippy content={item.name} placement={"right"}>
-                            <Link to={item.link}>
+                            <Link key={index} to={item.link}>
                                 <div className="routes-bar-md-item">
                                     <i data-feather="grid" className={item.icon + " icon-light"}></i>
                                     {/*{item.name}*/}

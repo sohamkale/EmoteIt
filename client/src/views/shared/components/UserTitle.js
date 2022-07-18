@@ -1,30 +1,30 @@
 import React from 'react'
+
 const img = "https://nafizishtiaque.com/wp-content/uploads/2021/06/Nafiz_2757e-_screen_smaller-e1624454935407.jpg"
 
-export default function UserTitle(props)
-{
+export default function UserTitle(props) {
     return (
         <>
-                    <div className="col-2">
-                        <div className="profile-img">
-                            <div>
-                                <img src={img} className="img-fluid usercard-img" style={{
-                                    borderLeft: "3px solid purple",
-                                    borderBottom: "2px solid purple",
-                                    width:"50%"
-                                }} alt="profile"/>
-                            </div>
-                            {/*<span className="stats">
+            <div className="col-2">
+                <div className="profile-img">
+                    <div>
+                        <img src={img} className="img-fluid usercard-img" style={{
+                            borderLeft: "3px solid purple",
+                            borderBottom: "2px solid purple",
+                            width: "50%"
+                        }} alt="profile"/>
+                    </div>
+                    {/*<span className="stats">
                                   <i className="fas fa-smile-beam" style={{color: "purple"}}/>
                                 </span>*/}
-                        </div>
-                    </div>
-                    <div className="col-10 text-bold">
-                        <b>Kaniz Fatema</b>
-                        <h6>30 mins ago</h6>
-                    </div>
-            </>);
-            {/*<div className="setting-btn ms-auto setting-dropdown no-bg">
+                </div>
+            </div>
+            <div className="col-10 text-bold">
+                <b>Kaniz Fatema</b>
+                <h6>30 mins ago</h6>
+            </div>
+        </>);
+    {/*<div className="setting-btn ms-auto setting-dropdown no-bg">
                 <div className="btn-group custom-dropdown arrow-none dropdown-sm">
                     <div role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -74,5 +74,6 @@ export default function UserTitle(props)
                         </ul>
                     </div>
                 </div>
-            </div>*/}
+            </div>*/
+    }
 }

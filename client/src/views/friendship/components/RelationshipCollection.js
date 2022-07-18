@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import UserCard from "../../shared/components/UserCard";
+import {AuthenticationContext} from "../../../contexts/AuthenticationProvider";
 
 export const RelationshipCollection = (props)=>{
 
+    const {user} = useContext(AuthenticationContext);
     const [filteredList, setFilteredList] = useState();
 
     useEffect(()=>{
@@ -33,7 +35,8 @@ export const RelationshipCollection = (props)=>{
         <div className="card-body overflow-auto" style={{height: "500px"}}>
             <div className="row h-50">
                 {filteredList?.map((relationship)=>
-                    <UserCard user={relationship.targetUser} getList={props.getList} relationship={relationship}/>
+                    <UserCard user={user?._id === relationship?.requesteeUserId?._id ? relationship?.requesterUserId : relationship?.requesteeUserId}
+                              getList={props.getList} relationship={relationship}/>
                 )}
             </div>
         </div>

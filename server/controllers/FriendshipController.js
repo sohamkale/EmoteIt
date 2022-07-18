@@ -2,6 +2,7 @@ import {UserSchema} from "../models/UserSchema.js";
 import mongoose from "mongoose";
 import {FriendshipSchema} from "../models/FriendshipSchema.js";
 import {GetTokenUser} from "./UserController.js";
+import {GetProfileById} from "./ProfileController.js";
 
 const FriendshipEngine = mongoose.model('Friendship', FriendshipSchema);
 
@@ -63,11 +64,21 @@ export function UserFriendships(req,res){
         if(!user)
             res.status(401).send("user not retrieved!")
         else{
-            FriendshipEngine.find({$or: [{requesterUserId: user._id},{requesteeUserId: user._id}]}, (err, updated)=>{
+            FriendshipEngine.find({$or: [{requesterUserId: user._id},{requesteeUserId: user._id}]},  async  (err, friends)=>{
                 if(err){
                     res.send(err)
                 }
-                res.send(updated)
+                // res.send(updated)
+                for (const item of friends) {
+                    const requesterUser = await GetProfileById(item.requesterUserId);
+                    item.requesterUserId = requesterUser;
+
+                    const requesteeUser = await GetProfileById(item.requesteeUserId);
+                    item.requesteeUserId = requesteeUser;
+
+                }
+
+                res.send(friends);
             })
         }
 

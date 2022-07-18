@@ -1,0 +1,60 @@
+.insightInput{
+  background: transparent;
+  border-bottom: 2px solid black;
+  width: 35px;
+}
+
+.letterParent{
+  word-break: break-all;
+}
+
+
+.insight{
+}
+
+.emortionCreate{
+//font-family: "Ink Free";
+}
+
+.emojiInput{
+  border-radius: 3px;
+    border-bottom: 1px solid black;
+    min-height: 24px;
+    margin: 5px;
+}
+
+.word-wrap{
+  word-wrap: break-word;
+}
+
+.underlined{
+  text-decoration: underline;
+}
+
+.post-react-dropdown-menu{
+
+  div{
+    display: inline;
+    :hover{
+      transform: scale(1.1);
+
+      cursor: pointer;
+      background-color: beige;
+    }
+  }
+}
+
+
+.revealedInsight{
+  border-bottom: 1px solid lightblue;
+  background: rgba(173,216,230,0.2);
+  border-radius: 10px;
+  //margin-right: 2px;
+}
+
+.mostInsightedEmortion{
+  overflow-y: scroll;
+  height: 400px;
+
+}
+

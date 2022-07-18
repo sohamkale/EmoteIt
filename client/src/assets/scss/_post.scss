@@ -584,6 +584,7 @@
             }
             .react-btn {
                 position: relative;
+                list-style-type:none;
                 .react-box {
                     position: absolute;
                     bottom: 18px;
@@ -595,6 +596,7 @@
                     display: none;
                     ul {
                         li {
+                            list-style-type:none;
                             padding: 0 6px;
                             position: relative;
                             img {
@@ -652,6 +654,7 @@
                     }
                 }
             }
+
         }
         &.no-background {
             background-color: transparent;

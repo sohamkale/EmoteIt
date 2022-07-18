@@ -34,7 +34,7 @@ export default function UserCard({user, relationship, getList}) {
     }
 
     return (
-        <div className="card h-100 m-2">
+        <div className="card m-2">
             <div className="card-body m-auto">
                 <div className="row text-align-center m-auto">
                     <DisplayPicture width={50} user={user}/>

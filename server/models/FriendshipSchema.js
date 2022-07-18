@@ -15,8 +15,8 @@ const Schema = mongoose.Schema;
 export const FriendshipSchema = new Schema(
     {
         // createdBy: { type: string, required: 'created by id for feedbacks are requried!'}
-        requesterUserId: {type: String, required: true},
-        requesteeUserId: {type: String, required: true},
+        requesterUserId: {type: Object, required: true},
+        requesteeUserId: {type: Object, required: true},
         typeId: {type: Number, required: true},
         statusId: {type: Number, required: true}
     },{  id: true, timestamps: true }

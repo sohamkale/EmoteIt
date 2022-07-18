@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const Schema  = mongoose.Schema;
 
 export const InsightSchema = new Schema({
-    createdBy: String,
+    createdBy: Object,
     secret: String,
     accuracy: Number,
     score: Number,

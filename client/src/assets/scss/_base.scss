@@ -10,7 +10,7 @@ body {
 */
 
 //Authentication
-.login_page{
+.login_page {
   background: url("../img/authentication/emoji_keyboard.jpg");
   background-size: cover;
 }
@@ -116,6 +116,7 @@ body {
 
   background-image: url("../img/leaderboard/trophy.jpg");
   background-size: cover;
+
   h1 {
     font-family: "Montserrat", sans-serif;
   }
@@ -138,14 +139,22 @@ body {
     //white-space: nowrap;
   }
 
-  &-card{
+  &-card {
     border-radius: 10px;
     width: 140px;
-    &:hover{
-      transform:scale(1.1,1.1);
+
+    &:hover {
+      transform: scale(1.1, 1.1);
       cursor: pointer;
     }
   }
 }
 
+.profile-info-row {
+  height: 405px;
+
+  &-card {
+    height: 400px;
+  }
+}
 
