@@ -7,6 +7,8 @@ import {GetProfileById} from "./ProfileController.js";
 const EmortionEngine = mongoose.model('Emortion', EmortionSchema);
 const InsightEngine = mongoose.model('Insight', InsightSchema);
 const LoggedInUserUID = "1BE2WmbnyGWETpIuunJ4USPCvLz2";
+var ObjectId = mongoose.Types.ObjectId;
+
 
 export function CreateEmortion(req, res) {
     let _emortion = req.body;
@@ -65,14 +67,30 @@ export function GetEmortion(req, res) {
 }
 
 export function GetUserEmortions(req, res) {
-    EmortionEngine.find({createdBy: req.params.id},
-        (err, emortion) => {
+
+    EmortionEngine.find({createdBy: new ObjectId(req.params.id)},
+        async (err, emortions) => {
             if (err) {
                 console.log(err)
                 res.send(err)
             } else {
-                console.log("Emortions found!")
-                res.send(emortion)
+                //get the createdBy user of emortion
+                for (const item of emortions) {
+                    item.createdBy = await GetProfileById(item.createdBy);
+                    //get the logged in user
+                    const tokenUser = await GetUserFromToken(req.get("access-token"));
+                    if (tokenUser == null) {
+                        res.status(401).send('no access token');//
+                        return;
+                    }
+
+
+                    const isRevealed = await IsEmortionRevealed(item._id, tokenUser?._id);
+                    if(!isRevealed)
+                        item.secret = null;
+                }
+
+                res.send(emortions);
             }
         })
 }
@@ -108,8 +126,7 @@ export function StartInsight(req, res) {
                             res.send(insight);
                         }
                     })
-            }
-            else {
+            } else {
                 // run insight engine create insight
                 const sendInsight = {
                     createdBy: loggedInUserId,
@@ -160,7 +177,7 @@ export async function SubmitEmortionInsight(req, res) {
     //get the logged in user
     const tokenUser = await GetUserFromToken(req.get("access-token"));
 
-    if(tokenUser == null) {
+    if (tokenUser == null) {
         res.status(401).send('no access token');
         return;
     }
@@ -324,4 +341,29 @@ async function IsEmortionVisible(emortionID, UID, callBack) {
         return callBack(false)
     })
 }
+
+async function IsEmortionRevealed(emortionID, UID) {
+    const InsightArray = []
+    const emortion = await EmortionEngine.findById(emortionID).exec();
+
+    if (!emortion) {
+        return false
+    }
+
+    if (emortion.createdBy.toString() == UID.toString()) {
+        return true
+    }
+    if (emortion.expiresAt < new Date()) {
+        return true
+    }
+    /*for (let i = 0; i < emortion.insightUIDs.length; i++) {
+        InsightArray.push(emortion.insightUIDs[i]);
+    }*/
+    if (emortion?.insightUIDs.includes(UID)) {
+        return true
+    }
+    return false
+
+}
+
 

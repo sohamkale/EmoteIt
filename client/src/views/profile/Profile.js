@@ -5,23 +5,36 @@ import './profile.scss'
 import {AuthenticationContext} from "../../contexts/AuthenticationProvider";
 import Insight from "../emortion/components/insight/Insight";
 import axios from "axios";
+import {useParams} from "react-router-dom";
 
 export default function Profile(props) {
+    const [emortions, setEmortions] = useState([]);
     const {user, accessToken} = useContext(AuthenticationContext);
     const [relationships,setRelationships] = useState();
+
+    let {id:profileId} = useParams();
+
 
     function GetRelationships() {
         axios.get(`/api/friendship/request`, {
             headers: {"access-token": accessToken}
         }).then((res) => {
             setRelationships(res.data);
-            console.log(res.data)
         });
 
     }
 
     useEffect(()=>{
         GetRelationships();
+
+    //    get user's emortion
+        if(profileId == null)
+            profileId = user?._id;
+        axios.get(`/user/emortion/${profileId}`,{headers:{
+            "access-token":accessToken
+            }}).then((res)=>{
+            setEmortions(res.data);
+        })
     },[])
 
     return (
@@ -134,9 +147,9 @@ export default function Profile(props) {
                     <h2>Friends</h2>
                     <div className="bg-light mb-2 p-3">
                         <div className="row overflow-auto" style={{maxHeight:"400px"}}>
-                            {relationships?.filter(x=>x.statusId == 1)?.map((item)=>
+                            {relationships?.filter(x=>x.statusId == 1)?.map((item,index)=>
 
-                                    <UserCard user={user?._id === item?.requesteeUserId?._id ? item?.requesterUserId : item?.requesteeUserId}
+                                    <UserCard key={index} user={user?._id === item?.requesteeUserId?._id ? item?.requesterUserId : item?.requesteeUserId}
                                               getList={props.getList} relationship={item}/>
 
                             )}
@@ -145,8 +158,11 @@ export default function Profile(props) {
                 </div>
                 <div className="col-12 col-md-6">
                     <h2>Emortions</h2>
-                    <EmortionView/>
-                    <EmortionView/>
+                    {
+                        emortions.map((item,index)=>
+                        <EmortionView key={index} emortion={item}/>
+                        )
+                    }
                 </div>
 
                 <div className="col-12 col-md-3">

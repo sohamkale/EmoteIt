@@ -8,8 +8,7 @@ export default function EmortionRoutes (server) {
     server.route('/emortions/emortion/:id')
         //get a specific emortion
         .get(GetEmortion);
-
-    server.route('/user/emortionById/:id')
+    server.route('/user/emortion/:id')
         // get a user's emortion
         .get(GetUserEmortions);
     server.route('/insight/emortion/:emortionId')

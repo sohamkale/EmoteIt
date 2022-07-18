@@ -35,26 +35,29 @@ export default function EmortionView({emortion, expanded}) {
                     </div>
                     {/* Created At*/}
                     <div className="row">
-                        <div className="offset-2 col-10">
-                            <Moment date={emortion?.createdAt}
-                                    durationFromNow={true} format={"Y [years] D[d] H[h] m[m] ago"} trim={"both"}
-                            />
-                            {/*{new Date(emortion?.createdAt).toLocaleString()}*/}
+                        <div className="offset-2 col-10 row">
+                            <div className="col-5 border-right small">
+                                Posted: <Moment className="" date={emortion?.createdAt}
+                                                durationFromNow={true} format={"Y [years] D[d] H[h] m[m] ago"}
+                                                trim={"both"}/>
+                            </div>
+
+                            <div className="col-7 small">
+                                Expires: <Moment className="" date={emortion?.expiresAt} format={"D-M-Y hh:mm:ss A"}/>
+                            </div>
                         </div>
                     </div>
                     {/* Secret */}
                     <div className="row mt-3">
                         <div className="col-10">
                             Insight: &nbsp;
-                            {emortion?.message === null || emortion?.insights == null ?
-                                <b>Answer this emortion to reveal the message</b> : <h3>{emortion?.message}</h3>
-
-                            }
+                            {emortion?.secret??"Not Revealed"}
                         </div>
                     </div>
                     {/* The emojis*/}
                     <div className="row m-2">
-                        {emortion?.message?.map((item, index) => <EmojiDiv key={index} eId={item} index={index}/>)}
+                        {emortion?.message?.map((item, index) => <EmojiDiv key={index} eId={item}
+                                                                           index={index}/>)}
 
 
                     </div>
@@ -65,7 +68,8 @@ export default function EmortionView({emortion, expanded}) {
                         {/*React Option Buttons*/}
                         <div className="col-4 border-right">
                             <div className="btn-group dropup">
-                                <button type="button" className="btn btn-light dropdown-toggle" data-toggle="dropdown"
+                                <button type="button" className="btn btn-light dropdown-toggle"
+                                        data-toggle="dropdown"
                                         aria-expanded="false">
 
                                     <i className="fas fa-smile mr-2"></i>
@@ -90,7 +94,8 @@ export default function EmortionView({emortion, expanded}) {
                         {/* Emortion Reactions */}
                         <div className="col-4 border-right">
                             <div className="btn-group dropright">
-                                <button type="button" className="btn btn-light dropdown-toggle" data-toggle="dropdown"
+                                <button type="button" className="btn btn-light dropdown-toggle"
+                                        data-toggle="dropdown"
                                         aria-expanded="false">
                                     <i className="fa-regular fa-face-smile m-1 small"></i>
                                     <span className="small">+12 Reacts</span>
@@ -122,26 +127,6 @@ export default function EmortionView({emortion, expanded}) {
                     </div>
                 </div>
 
-
-
-
-
-                {/*  {
-                    expanded ? <></>:
-                        <div className="row">
-                            <div className="post-react">
-                                <ul>
-                                    <li className="react-btn">
-                                        <Link to={"/app/emortion/"+emortion.id}>
-                                            <div className="react-click">
-                                                View More
-                                            </div>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                }*/}
             </div>
         </>
     )

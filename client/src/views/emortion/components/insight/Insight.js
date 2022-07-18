@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import RevealedInsights from "./RevealedInsights";
+import AnsweringInterface from "./AnsweringInterface";
 
 export default function Insight(props){
 /*
@@ -42,15 +43,17 @@ export default function Insight(props){
         }*/
         },[]
 
-    )
+    );
+
+    return <RevealedInsights/>
 
 
-    // if(props.emortion?.message !== null){
-    //     if(props.emortion?.insights != null)
+    /*if(props.emortion?.secret !== null){
+        if(props.emortion?.insights != null)
             return (<RevealedInsights emortionId={props.emortion?._id}/>);
 
-        // else return (<AnsweringInterface emortionId={props.emortion?._id}/>);
-    // }
+        else return (<AnsweringInterface emortionId={props.emortion?._id}/>);
+    }
 
     //did not answer! needs the option to start answering!
     return (
@@ -66,5 +69,5 @@ export default function Insight(props){
                 </div>
             </div>
         </div>
-    );
+    );*/
 }
