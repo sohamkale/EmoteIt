@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="friendship updated!">
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="friendship request bug fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/Insight.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/Insight.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/profile/Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/UserCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/UserCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/EmortionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/FriendshipController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/FriendshipController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/FriendshipSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/FriendshipSchema.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +117,7 @@
       <workItem from="1657680542075" duration="710000" />
       <workItem from="1657681271665" duration="17100000" />
       <workItem from="1657851429365" duration="9580000" />
-      <workItem from="1657924323738" duration="73711000" />
+      <workItem from="1657924323738" duration="74874000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -253,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658124700979</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="friendship request bug fixed">
+      <created>1658126640159</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1658126640159</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +297,8 @@
     <MESSAGE value="profile partially restored" />
     <MESSAGE value="news commit" />
     <MESSAGE value="friendship updated!" />
-    <option name="LAST_COMMIT_MESSAGE" value="friendship updated!" />
+    <MESSAGE value="friendship request bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="friendship request bug fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

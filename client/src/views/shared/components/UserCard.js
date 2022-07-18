@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import {DisplayPicture} from "./DisplayPicture";
 import axios from "axios";
 import {AuthenticationContext} from "../../../contexts/AuthenticationProvider";
+import {Link} from "react-router-dom";
 
 
 export default function UserCard({user, relationship, getList}) {
@@ -39,7 +40,9 @@ export default function UserCard({user, relationship, getList}) {
                     <DisplayPicture width={50} user={user}/>
                 </div>
                 <div className="row text-align-center m-auto h-25">
-                    <h5>{user?.name}</h5>
+                    <Link to={`/app/profile/${user?._id}`}>
+                        <h5>{user?.name}</h5>
+                    </Link>
                 </div>
                 <div className="row">
                     <div className="col border-right text-align-center ">

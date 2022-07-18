@@ -62,6 +62,11 @@ export default function EmoteItRouter(props, {appUser}){
                         <Route exact path={'/app/profile'} component={()=>
                             <Profile appUser={appUser} setLoading={setLoading}/>
                         }/>
+
+                        <Route exact path={'/app/profile/:id'} component={()=>
+                            <Profile appUser={appUser} setLoading={setLoading}/>
+                        }/>
+
                         <Route exact path={'/app/leaderboard'} component={()=>
                             <Leaderboard appUser={appUser} setLoading={setLoading}/>
                         }/>

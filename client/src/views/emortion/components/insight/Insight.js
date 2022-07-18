@@ -45,7 +45,18 @@ export default function Insight(props){
 
     );
 
-    return <RevealedInsights/>
+    //if you have secret, then show answer
+
+    //if expired: show note expired
+
+    //if not expired (else):
+    //- check if I started answering:
+        //yes: Show Answering Interfacing
+        //no: Show button to start answering
+            //if clicked: Show Answering Interfacing!
+
+
+   /* return <RevealedInsights/>*/
 
 
     /*if(props.emortion?.secret !== null){
@@ -56,7 +67,7 @@ export default function Insight(props){
     }
 
     //did not answer! needs the option to start answering!
-    return (
+   */ return (
         <div className="row m-auto text-align-center">
             <div className={"col-12 mb-2"}>
                 <div className="btn btn-light">You have not answered this emortion yet!</div>
@@ -69,5 +80,5 @@ export default function Insight(props){
                 </div>
             </div>
         </div>
-    );*/
+    );
 }

@@ -11,6 +11,7 @@ export default function Profile(props) {
     const [emortions, setEmortions] = useState([]);
     const {user, accessToken} = useContext(AuthenticationContext);
     const [relationships,setRelationships] = useState();
+    const [profile, setProfile] = useState();
 
     let {id:profileId} = useParams();
 
@@ -30,6 +31,14 @@ export default function Profile(props) {
     //    get user's emortion
         if(profileId == null)
             profileId = user?._id;
+
+        axios.get(`/api/profile/byId/${profileId}`).then((res)=>{
+            setProfile(res.data);
+            console.log(profile)
+        });
+
+
+
         axios.get(`/user/emortion/${profileId}`,{headers:{
             "access-token":accessToken
             }}).then((res)=>{
@@ -41,7 +50,7 @@ export default function Profile(props) {
         <div className="container">
             <div className="row mb-3 profile-info-row">
                 <div className="col-12 col-md-4">
-                    <UserCard user={user}/>
+                    <UserCard user={profile?.user}/>
 
                     <div className="card m-2">
                         <div className="card-title border-bottom m-2">
@@ -50,17 +59,17 @@ export default function Profile(props) {
                         <div className="card-body">
                             <div className="row">
                                 <div className="col-5 text-bold">Bio</div>
-                                <div className="col-7 text-muted">{user?.bio}</div>
+                                <div className="col-7 text-muted">{profile?.user?.bio}</div>
                             </div>
 
                             <div className="row">
                                 <div className="col-5 text-bold">Birthday</div>
-                                <div className="col-7 text-muted">{new Date(user?.DOB)?.toLocaleDateString()}</div>
+                                <div className="col-7 text-muted">{new Date(profile?.user?.DOB)?.toLocaleDateString()}</div>
                             </div>
 
                             <div className="row">
                                 <div className="col-5 text-bold">Email</div>
-                                <div className="col-7 text-muted">{user?.email}</div>
+                                <div className="col-7 text-muted">{profile?.user?.email}</div>
                             </div>
 
                         </div>
