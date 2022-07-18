@@ -6,7 +6,7 @@ import {AuthenticationContext} from "../../../contexts/AuthenticationProvider";
 
 export default function UserCard({user, relationship, getList}) {
 
-    const {user:profileUser, accessToken} = useContext(AuthenticationContext);
+    const {user: profileUser, accessToken} = useContext(AuthenticationContext);
 
     function SendRequest() {
         const req = {
@@ -16,19 +16,18 @@ export default function UserCard({user, relationship, getList}) {
         axios.post('/api/friendship/request', req, {
             headers: {"access-token": accessToken}
         }).then((res) => {
-            console.log(res.data);
             getList();
         })
     }
 
-    function AcceptRequest(_relationship){
+    function AcceptRequest(_relationship) {
         _relationship.statusId = 1;
         axios.put('/api/friendship/request', _relationship, {
             headers: {"access-token": accessToken}
         }).then((res) => {
             // console.log(res.data);
             getList();
-        }).catch((err)=>{
+        }).catch((err) => {
             console.log(err)
         })
     }
@@ -60,14 +59,15 @@ export default function UserCard({user, relationship, getList}) {
                 {/*    Friend Request?  */}
                 <div className="row text-align-center mt-2">
                     {
-                        user?._id === profileUser._id?
-                            <></>:
-                            relationship?.requesterUserId === profileUser._id?
-                                <div className="btn disabled btn-outline-dark">REQUESTED</div>:
-                                relationship?.statusId == 1 ?
-                                    <div>You share emotions</div> :
-                                    relationship?.statusId == 0?
-                                        <button className="btn btn-success m-1" onClick={()=>AcceptRequest(relationship)}>ACCEPT</button> :
+                        user?._id === profileUser._id ?
+                            <></> :
+                            relationship?.statusId == 1 ?
+                                <div>You share emotions</div> :
+                                relationship?.requesterUserId?._id === profileUser._id ?
+                                    <div className="btn disabled btn-outline-dark">REQUESTED</div> :
+                                    relationship?.statusId == 0 ?
+                                        <button className="btn btn-success m-1"
+                                                onClick={() => AcceptRequest(relationship)}>ACCEPT</button> :
                                         <button className="btn btn-success m-1" onClick={SendRequest}>FOLLOW</button>
 
 
@@ -80,8 +80,8 @@ export default function UserCard({user, relationship, getList}) {
                 </div>
             </div>
         </div>
-      /*  <div className="col-12 col-md-4 col-lg-3 mb-2">
+        /*  <div className="col-12 col-md-4 col-lg-3 mb-2">
 
-        </div>*/
+          </div>*/
     )
 }

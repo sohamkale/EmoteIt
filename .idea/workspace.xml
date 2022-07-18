@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="profile partially restored">
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="friendship updated!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/Insight.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/Insight.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/UserCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/UserCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/EmortionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/FriendshipController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/FriendshipController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/FriendshipSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/FriendshipSchema.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +118,7 @@
       <workItem from="1657680542075" duration="710000" />
       <workItem from="1657681271665" duration="17100000" />
       <workItem from="1657851429365" duration="9580000" />
-      <workItem from="1657924323738" duration="71738000" />
+      <workItem from="1657924323738" duration="73711000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -246,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658114337354</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="news commit">
+      <created>1658124700979</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1658124700979</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,14 +289,16 @@
     <MESSAGE value="to home page" />
     <MESSAGE value="postings retrieved" />
     <MESSAGE value="profile partially restored" />
-    <option name="LAST_COMMIT_MESSAGE" value="profile partially restored" />
+    <MESSAGE value="news commit" />
+    <MESSAGE value="friendship updated!" />
+    <option name="LAST_COMMIT_MESSAGE" value="friendship updated!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/controllers/EmortionController.js</url>
-          <line>114</line>
+          <line>115</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>

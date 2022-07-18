@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import {FriendshipSchema} from "../models/FriendshipSchema.js";
 import {GetTokenUser} from "./UserController.js";
 import {GetProfileById} from "./ProfileController.js";
+import {ObjectId} from "../config.js";
 
 const FriendshipEngine = mongoose.model('Friendship', FriendshipSchema);
 
@@ -12,7 +13,10 @@ export function RequestFriendship(req,res){
     const accessToken = req.get("access-token");
     GetTokenUser(accessToken, (user, err)=>{
         if(!user)
-            res.status(401).send("user not retrieved!")
+        {
+            res.status(401).send("user not retrieved!");
+            return;
+        }
         _friendship.requesterUserId = user._id;
         _friendship.statusId = 0;
         FriendshipEngine.findOne({requesterUserId:_friendship.requesterUserId, requesteeUserId:_friendship.requesteeUserId})
@@ -22,6 +26,7 @@ export function RequestFriendship(req,res){
                 else if(existingFriendship)
                     res.status(400).send("connection request exists!");
                 else{
+                    _friendship.requesteeUserId = new ObjectId(_friendship.requesteeUserId);
                     let newFriendship = new FriendshipEngine(_friendship);
                     newFriendship.save((err,addedFriendship)=>{
                         if(err){
@@ -37,14 +42,21 @@ export function RequestFriendship(req,res){
 
 }
 
-export function RespondFriendship(req,res){
-    const _friendship = req.body;
+export  function RespondFriendship(req,res){
+    // const _friendship = req.body;
     const accessToken = req.get("access-token");
-    GetTokenUser(accessToken, (user, err)=>{
+    GetTokenUser(accessToken, async (user, err)=>{
         if(!user)
             res.status(401).send("user not retrieved!")
-        if(_friendship.requesteeUserId != user._id.toString())
-            res.status(401).send("only respond to your requests! "+user._id)
+
+        const _friendship = await FriendshipEngine.findById(req.body._id);
+        _friendship.statusId = req.body.statusId;
+
+        if(_friendship.requesteeUserId.toString() != user._id.toString())
+        {
+            res.status(401).send("only respond to your requests! "+user._id);
+            return;
+        }
         else{
             FriendshipEngine.findByIdAndUpdate(_friendship._id,_friendship,{new:true}, (err, updated)=>{
                 if(err){

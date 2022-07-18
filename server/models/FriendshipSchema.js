@@ -2,15 +2,7 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-// schema definition:
-//     (
-//         {
-//             fieldname: {
-//                 type: number/text/boolean,
-//                 required: 'You must enter this field!'
-//             }
-//         }
-//     )
+
 
 export const FriendshipSchema = new Schema(
     {
@@ -18,6 +10,6 @@ export const FriendshipSchema = new Schema(
         requesterUserId: {type: Object, required: true},
         requesteeUserId: {type: Object, required: true},
         typeId: {type: Number, required: true},
-        statusId: {type: Number, required: true}
+        statusId: {type: Number, default: 0}
     },{  id: true, timestamps: true }
 );

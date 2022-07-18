@@ -1,5 +1,8 @@
+import mongoose from "mongoose";
+
 export const mongoConnectionString =
     'mongodb+srv://emoteitdev:allowmeIn@emoteitdb01.vp1qu.mongodb.net/data?authSource=admin&replicaSet=atlas-hk55mk-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true'
+export var ObjectId = mongoose.Types.ObjectId;
 
 export const firebaseConfig =  {
     apiKey: "AIzaSyAotI_pxRFngCqeJMXeo9K-kpwpKLi4Vrc",

@@ -3,11 +3,12 @@ import {InsightSchema} from "../models/InsightSchema.js";
 import mongoose from "mongoose";
 import {GetTokenUser, GetUserFromToken} from "./UserController.js";
 import {GetProfileById} from "./ProfileController.js";
+import {ObjectId} from "../config.js";
 
 const EmortionEngine = mongoose.model('Emortion', EmortionSchema);
 const InsightEngine = mongoose.model('Insight', InsightSchema);
 const LoggedInUserUID = "1BE2WmbnyGWETpIuunJ4USPCvLz2";
-var ObjectId = mongoose.Types.ObjectId;
+
 
 
 export function CreateEmortion(req, res) {
