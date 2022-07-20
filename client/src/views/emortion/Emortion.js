@@ -8,7 +8,7 @@ export default function Emortion(props){
     const {id:emortionId} = useParams();
 
     useState(()=>{
-        axios.get(`/emortions/emortion/${emortionId}`).then((res)=>{
+        axios.get(`/api/emortion/emortion/${emortionId}`).then((res)=>{
             setEmortion(res.data);
         })
     })

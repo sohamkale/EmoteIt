@@ -5,7 +5,7 @@ export const NewsSchema = new Schema(
     {
         text: String,
         title: String,
-        createdBy: String,
+        createdBy: Object,
         updatedBy: String,
         deprecated: {type:Boolean, default:false}
     },{id: true, timestamps: true}

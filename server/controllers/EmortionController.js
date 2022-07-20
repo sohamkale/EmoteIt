@@ -99,7 +99,7 @@ export function GetUserEmortions(req, res) {
 export function StartInsight(req, res) {
     let exists = false;
     const InsightArray = [];
-    EmortionEngine.findById({_id: req.params.emortionId},
+    EmortionEngine.findById({_id: req.params.id},
         async (err, emortion) => {
             if (err) {
                 res.send(err);
@@ -143,7 +143,7 @@ export function StartInsight(req, res) {
                     if (err) {
                         res.send(err)
                     } else {
-                        EmortionEngine.findOneAndUpdate({_id: req.params.emortionId}, {$push: {insightUIDs: loggedInUserId}}, {new: true},
+                        EmortionEngine.findOneAndUpdate({_id: req.params.id}, {$push: {insightUIDs: loggedInUserId}}, {new: true},
                             (err, updatedEmortion) => {
                                 if (err) {
                                     res.send(err);
@@ -186,13 +186,13 @@ export async function SubmitEmortionInsight(req, res) {
     const loggedInUserId = tokenUser._id.toString();
 
     // Get answer number
-    EmortionEngine.findById(req.params.emortionId, (err, emortion) => {
+    EmortionEngine.findById(req.params.id, (err, emortion) => {
         answerNumber = emortion?.insightUIDs?.length
         subtractAnswerRank = (answerNumber - 1) * 2;
 
         //get start time
         //check this
-        InsightEngine.findOne({$and: [{createdBy: loggedInUserId}, {emortionId: req.params.emortionId}]}, (err, insight) => {
+        InsightEngine.findOne({$and: [{createdBy: loggedInUserId}, {emortionId: req.params.id}]}, (err, insight) => {
             startTime = insight.createdAt
             let currTime = new Date()
             let timeDifferential = Math.abs(currTime - startTime)
@@ -240,7 +240,7 @@ export async function SubmitEmortionInsight(req, res) {
 
 export function GetInsightsOfEmortion(req, eRes) {
     //fix this
-    InsightEngine.find({emortionId: req.params.emortionId}, async (err, insights) => {
+    InsightEngine.find({emortionId: req.params.id}, async (err, insights) => {
         if (err) {
             eRes.send(err)
         }
@@ -254,7 +254,7 @@ export function GetInsightsOfEmortion(req, eRes) {
             item.createdBy = await GetProfileById(item.createdBy);
         }
 
-        await IsEmortionVisible(req.params.emortionId, loggedInUserId, (res) => {
+        await IsEmortionVisible(req.params.id, loggedInUserId, (res) => {
             if (res) {
                 //add the created by users
                 eRes.send(insights)
@@ -263,6 +263,13 @@ export function GetInsightsOfEmortion(req, eRes) {
             }
         });
     }).limit(req.query.limit)
+}
+
+export async function CheckEmortionVisibility(req,res){
+    const tokenUser = await GetUserFromToken(req.get('access-token'));
+    const isRevealed = await IsEmortionRevealed(req.params.id, tokenUser._id);
+    //Checking if it is visible, thus opposite
+    res.send(isRevealed);
 }
 
 export function GetUserInsight(req, eRes) {

@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 export const SecretEmortionResponseSchema = new Schema(
     {
-        secretEmortionId: String,
-        createdBy: String,
+        secretEmortionId: Object,
+        createdBy: Object,
         response: [String],
         submittedAt: Date,
         deviceId: Number,

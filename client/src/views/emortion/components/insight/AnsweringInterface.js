@@ -14,7 +14,7 @@ export default function AnsweringInterface(props) {
     useEffect(() => {
         if (props.emortionId)
             //make call to notify start of answering
-            axios.post(`/insight/emortion/${props.emortionId}`,null,{
+            axios.post(`/api/emortion/insight/${props.emortionId}`,null,{
                 headers:{"access-token":accessToken}
             }).then((res)=>{
                 setEmortion(res.data);

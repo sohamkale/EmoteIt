@@ -1,28 +1,52 @@
-import{CreateEmortion, GetEmortion, GetUserEmortions, StartInsight, SubmitEmortionInsight, GetInsightsOfEmortion, GetUserInsight, ReactInsight, TakeHint, ReactEmortion} from "../controllers/EmortionController.js";
+import {
+    CreateEmortion,
+    GetEmortion,
+    GetUserEmortions,
+    StartInsight,
+    SubmitEmortionInsight,
+    GetInsightsOfEmortion,
+    GetUserInsight,
+    ReactInsight,
+    TakeHint,
+    ReactEmortion,
+    CheckEmortionVisibility
+} from "../controllers/EmortionController.js";
 
 export default function EmortionRoutes (server) {
 
-    server.route('/emortions/emortion')
+    server.route('/api/emortion/emortion')
         //create emortions
         .post(CreateEmortion);
-    server.route('/emortions/emortion/:id')
+    server.route('/api/emortion/emortion/:id')
         //get a specific emortion
         .get(GetEmortion);
-    server.route('/user/emortion/:id')
-        // get a user's emortion
+
+    server.route('/api/emortion/visibility/:id')
+        .get(CheckEmortionVisibility);
+
+    server.route('/api/emortion/user/:id')
+        // get a user's emortions
         .get(GetUserEmortions);
-    server.route('/insight/emortion/:emortionId')
-        //start answering an emortion
+
+    server.route('/api/emortion/insight/:id')
+        //start insight
         .post(StartInsight)
-        //complete answering emortion
+        //submit insight
         .patch(SubmitEmortionInsight)
+        //get insights of an emortion
         .get(GetInsightsOfEmortion)
-    server.route('/insight/user/:userId')
-        .get(GetUserInsight);
-    server.route('/react/insight/:id')
-        .put(ReactInsight)
-    server.route('/react/emortion/:id')
-        .put(ReactEmortion)
-    server.route('/emortion/insight/:id')
+        //take hint for an insight
         .put(TakeHint)
+
+    server.route('/api/insight/user/:userId')
+        //get all insights of a user
+        .get(GetUserInsight);
+
+    server.route('/api/emortion/react/:id')
+        .put(ReactEmortion)
+
+    server.route('/api/insight/react/:id')
+        .put(ReactInsight)
+
+
 }

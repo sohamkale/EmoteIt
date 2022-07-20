@@ -56,7 +56,7 @@ export default function EmortionForm(props) {
             expireOpt, message: messageEmojis, secret, categoryId: category
         }
 
-        axios.post('/emortions/emortion',_emortion,{
+        axios.post('/api/emortion/emortion',_emortion,{
             headers:{ "access-token": accessToken}
         }).then((res)=>{
             ResetForm();

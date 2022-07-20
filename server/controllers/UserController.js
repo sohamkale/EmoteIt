@@ -122,7 +122,7 @@ export async function GetUserFromToken(accessToken) {
 
     let _user = null;
     try {
-        console.log(`token request for: ${accessToken}`)
+        // console.log(`token request for: ${accessToken}`)
         let _googleUser = await admin.auth()
             .verifyIdToken(accessToken);
 

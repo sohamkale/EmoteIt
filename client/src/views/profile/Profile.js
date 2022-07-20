@@ -9,6 +9,7 @@ import {useParams} from "react-router-dom";
 
 export default function Profile(props) {
     const [emortions, setEmortions] = useState([]);
+    const [insights, setInsights] = useState([]);
     const {user, accessToken} = useContext(AuthenticationContext);
     const [relationships,setRelationships] = useState();
     const [profile, setProfile] = useState();
@@ -38,11 +39,16 @@ export default function Profile(props) {
         });
 
 
-
-        axios.get(`/user/emortion/${profileId}`,{headers:{
+        axios.get(`/api/emortion/user/${profileId}`,{headers:{
             "access-token":accessToken
             }}).then((res)=>{
             setEmortions(res.data);
+        })
+
+        axios.get(`/api/insight/user/${profileId}`,{headers:{
+            "access-token":accessToken
+            }}).then((res)=>{
+                setInsights(res.data);
         })
     },[])
 
@@ -152,10 +158,10 @@ export default function Profile(props) {
 
             </div>
             <div className="row">
-                <div className="col-12 col-md-3">
+                <div className="col-12 col-md-3 border-right">
                     <h2>Friends</h2>
                     <div className="bg-light mb-2 p-3">
-                        <div className="row overflow-auto" style={{maxHeight:"400px"}}>
+                        <div className="row overflow-auto" style={{maxHeight:"1000px"}}>
                             {relationships?.filter(x=>x.statusId == 1)?.map((item,index)=>
 
                                     <UserCard key={index} user={user?._id === item?.requesteeUserId?._id ? item?.requesterUserId : item?.requesteeUserId}
@@ -176,8 +182,11 @@ export default function Profile(props) {
 
                 <div className="col-12 col-md-3">
                     <h2>Insights</h2>
-                    <Insight/>
-                    <Insight/>
+                    {
+                        insights?.map((item)=>
+                        <Insight emortionId={item.emortionId}/>
+                        )
+                    }
                 </div>
             </div>
             {/*

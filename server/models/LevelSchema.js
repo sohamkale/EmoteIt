@@ -14,7 +14,7 @@ const Schema = mongoose.Schema;
 
 export const LevelScehema = new Schema(
     {
-        // createdBy: { type: string, required: 'created by id for feedbacks are requried!'}
+        createdBy: { type: Object, },
         minScore: {type: Number, required: true},
         levelIndex:{type:Number, required: true},
         Color: {type: String, required: true},

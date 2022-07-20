@@ -123,7 +123,7 @@ export default function EmortionView({emortion, expanded}) {
                     <hr/>
                     {/* Insight Portion */}
                     <div className="row w-100 m-1 rounded bg-light">
-                        <Insight emortion={emortion}/>
+                        <Insight emortionId={emortion?._id}/>
                     </div>
                 </div>
 
