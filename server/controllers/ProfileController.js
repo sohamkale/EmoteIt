@@ -11,7 +11,7 @@ import admin from "firebase-admin";
 export const UserEngine = mongoose.model('User', UserSchema);
 const NotificationEngine = mongoose.model('Notification', NotificationSchema);
 const EmortionEngine = mongoose.model('Emortion', EmortionSchema);
-const InsightEngine = mongoose.model('Insight', InsightSchema);
+const InsightEngine = mongoose.model('EmortionInsights', InsightSchema);
 const FriendshipEngine = mongoose.model('Friendship', FriendshipSchema);
 const LevelEngine = mongoose.model('Level', LevelScehema);
 

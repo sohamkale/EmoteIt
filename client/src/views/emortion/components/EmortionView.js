@@ -1,27 +1,18 @@
 import React, {useContext, useEffect, useState} from 'react'
-import Insight from "./insight/Insight";
+import EmortionInsights from "./insight/EmortionInsights";
 import {Link} from "react-router-dom";
 import {DisplayPicture} from "../../shared/components/DisplayPicture";
 import Moment from "react-moment";
 import {EmojiDiv} from "./EmojiDiv";
 import $ from 'jquery'
 import {AuthenticationContext} from "../../../contexts/AuthenticationProvider";
+import AnsweringInterface from "./insight/AnsweringInterface";
 
 
-export default function EmortionView({emortion, expanded}) {
-    const {accessToken} = useContext(AuthenticationContext);
-    useEffect(() => {
-        /* $('.dropup').hover(function(){
-             $('.dropdown-toggle', this).trigger('click');
-         });*/
-    })
-
-    const [reactShow, setReactShow] = useState(false);
+export default function EmortionView({emortion, answeringInterface}) {
+    const {user} = useContext(AuthenticationContext);
 
     return (
-
-        <>
-            {/*token: {accessToken}*/}
             <div className="card mb-2" style={{width: "98%"}}>
                 <div className={"card-body"}>
                     {/* Created By*/}
@@ -37,13 +28,24 @@ export default function EmortionView({emortion, expanded}) {
                     <div className="row">
                         <div className="offset-2 col-10 row">
                             <div className="col-5 border-right small">
-                                Posted: <Moment className="" date={emortion?.createdAt}
-                                                durationFromNow={true} format={"Y [years] D[d] H[h] m[m] ago"}
-                                                trim={"both"}/>
+                                <Link to={`/app/emortion/${emortion?._id}`}>
+                                    Posted: <Moment className="" date={emortion?.createdAt}
+                                                    durationFromNow={true} format={"Y [years] D[d] H[h] m[m] ago"}
+                                                    trim={"both"}/>
+                                </Link>
+                                {
+                                    user?._id?.toString() == emortion?.createdBy?._id ?
+                                        <span className="badge badge-primary m-1">SELF</span> : <></>
+                                }
                             </div>
 
                             <div className="col-7 small">
                                 Expires: <Moment className="" date={emortion?.expiresAt} format={"D-M-Y hh:mm:ss A"}/>
+
+                                {
+                                    new Date(emortion?.expiresAt) <= new Date() ?
+                                        <span className="badge badge-danger m-1">EXPIRED</span> : <></>
+                                }
                             </div>
                         </div>
                     </div>
@@ -51,7 +53,7 @@ export default function EmortionView({emortion, expanded}) {
                     <div className="row mt-3">
                         <div className="col-10">
                             Insight: &nbsp;
-                            {emortion?.secret??"Not Revealed"}
+                            {emortion?.secret ?? "Not Revealed"}
                         </div>
                     </div>
                     {/* The emojis*/}
@@ -121,13 +123,18 @@ export default function EmortionView({emortion, expanded}) {
                     </div>
 
                     <hr/>
-                    {/* Insight Portion */}
+                    {/* EmortionInsights Portion */}
+
                     <div className="row w-100 m-1 rounded bg-light">
-                        <Insight emortionId={emortion?._id}/>
+                    {
+                        answeringInterface?
+                            <AnsweringInterface emortionId={emortion?._id}/>:
+                                <EmortionInsights emortionId={emortion?._id} secret={emortion?.secret}
+                                                  expiresAt={emortion?.expiresAt}/>
+                    }
                     </div>
                 </div>
 
             </div>
-        </>
     )
 }

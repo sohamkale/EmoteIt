@@ -21,10 +21,13 @@ export default function RevealedInsights(props) {
 
     return (
         <div className="m-2 w-100">
+            <div className="row">
+                <span className="btn btn-sm btn-outline-warning disabled m-auto">INSIGHTS REVEALED</span>
+            </div>
             {
                 insights?.map((item,index)=>
                     <>
-                        <RevealedInsight key={index} insight={item}/>
+                        <SingleInsight key={index} insight={item}/>
                     </>
                 )
             }
@@ -32,7 +35,7 @@ export default function RevealedInsights(props) {
     )
 }
 
-export function RevealedInsight({insight}){
+export function SingleInsight({insight}){
 
     const [reactShow, setReactShow] = useState(false);
     return(

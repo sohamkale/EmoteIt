@@ -10,6 +10,7 @@ import Feedbacks from "./views/admin/Feedbacks";
 import Translations from "./views/admin/Translation";
 import {Login} from "./views/authentication/Login";
 import {MainLayout} from "./views/shared/MainLayout";
+import Insight from "./views/emortion/Insight";
 
 const pageLinks = [
     {
@@ -75,6 +76,9 @@ export default function EmoteItRouter(props, {appUser}){
                         }/>
                         <Route exact path={'/app/emortion/:id'} component={()=>
                             <Emortion appUser={appUser} setLoading={setLoading}/>
+                        }/>
+                        <Route exact path={'/app/insight/:id'} component={()=>
+                            <Insight appUser={appUser} setLoading={setLoading}/>
                         }/>
                         <Route>
                             <Error/>

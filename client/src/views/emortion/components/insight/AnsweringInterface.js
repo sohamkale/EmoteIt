@@ -83,7 +83,7 @@ export default function AnsweringInterface(props) {
                     <h2><span className="badge badge-dark">00:59</span></h2>
                 </div>
             </div>
-            {/* The Insight Inputs */}
+            {/* The EmortionInsights Inputs */}
             <div className="row text-align-center m-1" ref={letterParent}>
                 {
                     messageBreakdown?.map((word, index) =>

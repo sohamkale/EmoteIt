@@ -3,7 +3,7 @@ import UserCard from "../shared/components/UserCard";
 import EmortionView from "../emortion/components/EmortionView";
 import './profile.scss'
 import {AuthenticationContext} from "../../contexts/AuthenticationProvider";
-import Insight from "../emortion/components/insight/Insight";
+import EmortionInsights from "../emortion/components/insight/EmortionInsights";
 import axios from "axios";
 import {useParams} from "react-router-dom";
 
@@ -184,7 +184,7 @@ export default function Profile(props) {
                     <h2>Insights</h2>
                     {
                         insights?.map((item)=>
-                        <Insight emortionId={item.emortionId}/>
+                        <EmortionInsights emortionId={item.emortionId}/>
                         )
                     }
                 </div>

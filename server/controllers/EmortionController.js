@@ -56,14 +56,20 @@ export function GetEmortion(req, res) {
         let createdByUser = await GetProfileById(emortion.createdBy);
         emortion.createdBy = createdByUser;
 
+        //loggedin user id
+        const loggedInUser = await GetUserFromToken(req.get('access-token'));
+        if(!loggedInUser)
+        {
+            res.status(401).send('no access token');
+            return
+        }
 
         //if not visible to user, take away secret!
-        await IsEmortionVisible(emortion._id, LoggedInUserUID, (visible) => {
-            if (!visible) {
-                emortion.secret = "not revealed";
-            }
-            res.send(emortion);
-        });
+        const isRevealed = await IsEmortionRevealed(emortion._id, loggedInUser?._id);
+        if (!isRevealed) {
+            emortion.secret = "not revealed";
+        }
+        res.send(emortion);
     })
 }
 
@@ -148,11 +154,11 @@ export function StartInsight(req, res) {
                                 if (err) {
                                     res.send(err);
                                 } else {
-                                    console.log("Emortion has been updated with Insight ID!")
+                                    console.log("Emortion has been updated with EmortionInsights ID!")
                                 }
                             }
                         )
-                        console.log("Insight has been started!")
+                        console.log("EmortionInsights has been started!")
                         res.send(addedInsight)
                     }
                 })
@@ -297,7 +303,7 @@ export function ReactInsight(req, res) {
             if (err) {
                 res.send(err)
             } else {
-                console.log("Reacted to Insight!")
+                console.log("Reacted to EmortionInsights!")
                 res.send(updated)
             }
         })

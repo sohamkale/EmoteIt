@@ -5,7 +5,7 @@ import {InsightSchema} from "../models/InsightSchema.js";
 import {FriendshipSchema} from "../models/FriendshipSchema.js";
 const UserEngine = mongoose.model('User', UserSchema)
 const EmortionEngine = mongoose.model('Emortion', EmortionSchema)
-const InsightEngine = mongoose.model('Insight', InsightSchema)
+const InsightEngine = mongoose.model('EmortionInsights', InsightSchema)
 const FriendshipEngine = mongoose.model('Friendship', FriendshipSchema)
 export function GetStats (req,res){
     // get next friday

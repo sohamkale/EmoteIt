@@ -4,28 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="7/17/2022">
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="run client and server concurrently">
+      <change afterPath="$PROJECT_DIR$/client/src/views/emortion/Insight.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/EmortionInsights.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Insight.drawio.png" beforeDir="false" afterPath="$PROJECT_DIR$/Insight.drawio.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/emortion/Emortion.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/Emortion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/Insight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/EmortionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/LevelSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/LevelSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/NewsSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/NewsSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/NotificationSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/NotificationSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/SecretEmortionResponseSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/SecretEmortionResponseSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/SecretEmortionSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/SecretEmortionSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/TranslationSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/TranslationSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/LeaderboardController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/LeaderboardController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/ProfileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/ProfileController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +122,7 @@
       <workItem from="1657924323738" duration="74963000" />
       <workItem from="1658127891684" duration="7000" />
       <workItem from="1658127908524" duration="4035000" />
-      <workItem from="1658277087701" duration="2059000" />
+      <workItem from="1658277087701" duration="6116000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -279,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658127867733</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="run client and server concurrently">
+      <created>1658279194554</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1658279194554</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,14 +318,15 @@
     <MESSAGE value="friendship updated!" />
     <MESSAGE value="friendship request bug fixed" />
     <MESSAGE value="7/17/2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="7/17/2022" />
+    <MESSAGE value="run client and server concurrently" />
+    <option name="LAST_COMMIT_MESSAGE" value="run client and server concurrently" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/controllers/EmortionController.js</url>
-          <line>115</line>
+          <line>121</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
