@@ -9,7 +9,9 @@ import {
     ReactInsight,
     TakeHint,
     ReactEmortion,
-    CheckEmortionVisibility
+    CheckEmortionVisibility,
+    GetEmortionReacts,
+    GetInsightReacts
 } from "../controllers/EmortionController.js";
 
 export default function EmortionRoutes (server) {
@@ -27,6 +29,9 @@ export default function EmortionRoutes (server) {
     server.route('/api/emortion/user/:id')
         // get a user's emortions
         .get(GetUserEmortions);
+
+    server.route('api/emortion/reacts/:id')
+        .get(GetEmortionReacts)
 
     server.route('/api/emortion/insight/:id')
         //start insight
@@ -48,5 +53,7 @@ export default function EmortionRoutes (server) {
     server.route('/api/insight/react/:id')
         .put(ReactInsight)
 
-
+    server.route('/api/insight/react/:id')
+        // get a user's emortions
+        .get(GetInsightReacts);
 }

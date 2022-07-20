@@ -3,3 +3,4 @@
 .idea/runConfigurations/site_start.xml
 server/package.json
 server/package.json
+/node_modules/

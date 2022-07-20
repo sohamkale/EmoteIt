@@ -102,6 +102,38 @@ export function GetUserEmortions(req, res) {
         })
 }
 
+export function GetEmortionReacts(req, res){
+    EmortionEngine.findById({id: req.params.id},(err,emortion)=>{
+        let ReactionProfiles = [];
+        if(err){
+            res.send(err)
+        } else{
+            for(let i = 0; i<emortion.reactionIds.length;i++){
+                const profile = GetProfileById(emortion.reactionIds[i]);
+                ReactionProfiles.push(profile)
+            }
+        }
+        res.send(ReactionProfiles)
+    })
+
+}
+
+export function GetInsightReacts(req,res){
+    InsightEngine.findById({id: req.params.id}, (err,insights)=>{
+        let ReactionProfiles = []
+        if(err){
+            res.send(err)
+        }
+        else{
+            for(let i = 0; i<insights.reactionIds.length;i++){
+                const profile = GetProfileById(insights.reactionIds[i])
+                ReactionProfiles.push(profile)
+            }
+        }
+        res.send(ReactionProfiles)
+    })
+}
+
 export function StartInsight(req, res) {
     let exists = false;
     const InsightArray = [];
@@ -110,6 +142,12 @@ export function StartInsight(req, res) {
             if (err) {
                 res.send(err);
             } else {
+                let currentDateTime = new Date().getTime();
+                if(currentDateTime > emortion.expiresAt){
+                    res.send("Emortion expired!")
+                    console.log("Emortion expired!")
+                    return;
+                }
                 for (let i = 0; i < emortion.insightUIDs.length; i++) {
                     InsightArray.push(emortion.insightUIDs[i]);
                 }

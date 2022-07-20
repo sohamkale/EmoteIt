@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="run client and server concurrently">
-      <change afterPath="$PROJECT_DIR$/client/src/views/emortion/Insight.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/EmortionInsights.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2022_10_25_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2022_10_25_PM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/Emortion.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/Emortion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/Insight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/profile/Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/EmortionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/LeaderboardController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/LeaderboardController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/ProfileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/ProfileController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +50,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ashim/source/repos/EmoteIt-React&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;Sass&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.1.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ashim\source\repos\EmoteIt-WebService\models" />
@@ -123,6 +107,7 @@
       <workItem from="1658127891684" duration="7000" />
       <workItem from="1658127908524" duration="4035000" />
       <workItem from="1658277087701" duration="6116000" />
+      <workItem from="1658285696104" duration="4972000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -294,6 +279,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Notification Controller Todo" />
@@ -320,16 +306,5 @@
     <MESSAGE value="7/17/2022" />
     <MESSAGE value="run client and server concurrently" />
     <option name="LAST_COMMIT_MESSAGE" value="run client and server concurrently" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/controllers/EmortionController.js</url>
-          <line>121</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
