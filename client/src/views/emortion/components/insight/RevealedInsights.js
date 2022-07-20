@@ -13,7 +13,7 @@ export default function RevealedInsights(props) {
     useEffect(() => {
         if (props.emortionId)
             //make call to notify start of answering
-            axios.get(`/insight/emortion/${props.emortionId}`,{headers:{"access-token":accessToken}}).then((res)=>{
+            axios.get(`/api/emortion/insight/${props.emortionId}`,{headers:{"access-token":accessToken}}).then((res)=>{
                 setInsights(res.data);
                 console.log(res.data)
             })

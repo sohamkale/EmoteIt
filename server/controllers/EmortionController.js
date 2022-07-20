@@ -10,7 +10,6 @@ const InsightEngine = mongoose.model('Insight', InsightSchema);
 const LoggedInUserUID = "1BE2WmbnyGWETpIuunJ4USPCvLz2";
 
 
-
 export function CreateEmortion(req, res) {
     let _emortion = req.body;
 
@@ -103,14 +102,17 @@ export function GetUserEmortions(req, res) {
 }
 
 export function GetEmortionReacts(req, res){
-    EmortionEngine.findById({id: req.params.id},(err,emortion)=>{
+    console.log(req.params.id);
+    EmortionEngine.findById(req.params.id,async (err,emortion)=>{
         let ReactionProfiles = [];
         if(err){
-            res.send(err)
+            console.log(err)
+            res.send(err);
+            return;
         } else{
             for(let i = 0; i<emortion.reactionIds.length;i++){
-                const profile = GetProfileById(emortion.reactionIds[i]);
-                ReactionProfiles.push(profile)
+                const profile = await GetProfileById(emortion.reactionIds[i]);
+                ReactionProfiles.push(profile);
             }
         }
         res.send(ReactionProfiles)
@@ -119,10 +121,11 @@ export function GetEmortionReacts(req, res){
 }
 
 export function GetInsightReacts(req,res){
-    InsightEngine.findById({id: req.params.id}, (err,insights)=>{
+    InsightEngine.findById(req.params.id, (err,insights)=>{
         let ReactionProfiles = []
         if(err){
-            res.send(err)
+            res.send(err);
+            return;
         }
         else{
             for(let i = 0; i<insights.reactionIds.length;i++){
@@ -162,7 +165,7 @@ export function StartInsight(req, res) {
             }
             if (exists === true) {
                 // run insight engine return insight
-                InsightEngine.findOne({$and: [{createdBy: loggedInUserId}, {emortionId: emortion._id}]}, // check this!!!!
+                InsightEngine.findOne({$and: [{createdBy: new ObjectId(loggedInUserId)}, {emortionId: emortion._id}]}, // check this!!!!
                     (err, insight) => {
                         if (err) {
                             res.send(err);
@@ -230,13 +233,17 @@ export async function SubmitEmortionInsight(req, res) {
     const loggedInUserId = tokenUser._id.toString();
 
     // Get answer number
-    EmortionEngine.findById(req.params.id, (err, emortion) => {
+    EmortionEngine.findById(req.params.id, async (err, emortion) => {
         answerNumber = emortion?.insightUIDs?.length
         subtractAnswerRank = (answerNumber - 1) * 2;
 
+        //get the logged in user
+        const tokenUser = await GetUserFromToken(req.get("access-token"));
+        const loggedInUserId = tokenUser._id.toString();
+
         //get start time
         //check this
-        InsightEngine.findOne({$and: [{createdBy: loggedInUserId}, {emortionId: req.params.id}]}, (err, insight) => {
+        InsightEngine.findOne({$and: [{createdBy: new ObjectId(loggedInUserId)}, {emortionId: req.params.id}]}, (err, insight) => {
             startTime = insight.createdAt
             let currTime = new Date()
             let timeDifferential = Math.abs(currTime - startTime)
@@ -366,15 +373,38 @@ export async function ReactEmortion(req, res) {
     const userToken = req.get('access-token');
     const loggedInUser = await GetUserFromToken(userToken);
 
-    EmortionEngine.findByIdAndUpdate(req.params.id, {$push: {reactionIds: loggedInUser?._id}}, {new: true},
-        (err, updated) => {
-            if (err) {
-                res.send(err);
-            } else {
-                console.log("Reacted to Emortion!")
-                res.send(updated)
-            }
-        })
+    EmortionEngine.findById(req.params.id,(err, emortion)=>{
+        if(emortion.reactionIds.includes(loggedInUser?._id.toString())){
+            //remove it
+            EmortionEngine.findByIdAndUpdate(req.params.id, {$pull: {reactionIds: loggedInUser?._id}}, {new: true},
+                (err, updated) => {
+                    if (err) {
+                        res.send(err);
+                        return;
+                    } else {
+                        console.log("Reacted to Emortion!")
+                        res.send(updated);
+                        return;
+                    }
+                })
+        }
+        else {
+            EmortionEngine.findByIdAndUpdate(req.params.id, {$push: {reactionIds: loggedInUser?._id}}, {new: true},
+                (err, updated) => {
+                    if (err) {
+                        res.send(err);
+                        return;
+                    } else {
+                        console.log("Reacted to Emortion!")//
+                        res.send(updated)
+                        return;
+
+                    }
+                })
+        }
+    })
+
+
 }
 
 async function IsEmortionVisible(emortionID, UID, callBack) {

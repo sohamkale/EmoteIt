@@ -4,18 +4,38 @@ import {Link} from "react-router-dom";
 import {DisplayPicture} from "../../shared/components/DisplayPicture";
 import Moment from "react-moment";
 import {EmojiDiv} from "./EmojiDiv";
-import $ from 'jquery'
 import {AuthenticationContext} from "../../../contexts/AuthenticationProvider";
 import AnsweringInterface from "./insight/AnsweringInterface";
 import axios from "axios";
 
 
-export default function EmortionView({emortion, answeringInterface}) {
-    const {user} = useContext(AuthenticationContext);
+export default function EmortionView({emortion, answeringInterface, GetEmortion}) {
+    const {user, accessToken} = useContext(AuthenticationContext);
+
+    const[likes, setLikes] = useState([]);
+
+    function GetEmortionLikes(){
+        axios.get(`/api/emortion/react/${emortion?._id}`).then((res)=>{
+            console.log(res.data)
+            if(res.data)
+                setLikes(res.data);
+            else setLikes([]);
+        })
+    }
 
     function LikeEmortion(){
-        axios.post('/api/')
+        axios.put(`/api/emortion/react/${emortion?._id}`,null,{headers:
+                {'access-token':accessToken}})
+            .then((res)=>{
+                GetEmortion();
+                GetEmortionLikes();
+        })
     }
+
+    useEffect(()=>{
+        if(emortion?._id)
+            GetEmortionLikes();
+    },[emortion])
 
     return (
             <div className="card mb-2" style={{width: "98%"}}>
@@ -75,12 +95,14 @@ export default function EmortionView({emortion, answeringInterface}) {
                         {/*React Option Buttons*/}
                         <div className="col-4 border-right">
                             <div className="btn-group dropup">
-                                <button type="button" className="btn btn-light"
-                                        data-toggle="dropdown"
-                                        aria-expanded="false">
+                                <button type="button" className="btn btn-light" onClick={LikeEmortion}>
+                                    {
+                                        likes?.some(x=>x._id == user?._id)?
+                                            <i className="fa-solid fa-heart-pulse"></i>:
+                                            <i className="fa-regular fa-heart"></i>
 
-                                    <i className="fa-regular fa-heart"></i>
-                                    {/*<i className="fa-solid fa-heart-pulse"></i>*/}
+                                    }
+
                                     <span className="ml-1">React</span>
                                 </button>
                                {/* <div className="dropdown-menu post-react-dropdown-menu w-25">
@@ -98,12 +120,17 @@ export default function EmortionView({emortion, answeringInterface}) {
                                         data-toggle="dropdown"
                                         aria-expanded="false">
                                     <i className="fa-regular fa-face-smile m-1 small"></i>
-                                    <span className="small">+12 Reacts</span>
+                                    <span className="small">+{likes?.length} Reacts</span>
                                 </button>
                                 <div className="dropdown-menu">
                                     {/*Reactions Here*/}
-                                    <span className="dropdown-item small">Action</span>
-                                    <span className="dropdown-item small">Action</span>
+                                    {
+                                        likes.map((item, index)=>
+                                            <Link to={`/app/profile/${item._id}`}>
+                                                <span key={index} className="dropdown-item small"><DisplayPicture user={item} width={30} /> &nbsp;{item.name}</span>
+                                            </Link>
+                                        )
+                                    }
                                 </div>
                             </div>
 
@@ -114,7 +141,7 @@ export default function EmortionView({emortion, answeringInterface}) {
                                 <div type="button" className="m-2"
                                      aria-expanded="false">
                                     <i className="fa-regular fa-message m-1 small"></i>
-                                    <span className="small">26 Insights</span>
+                                    <span className="small">{emortion?.insightUIDs?.length} Insights</span>
                                 </div>
                             </div>
                         </div>
