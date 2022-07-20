@@ -297,8 +297,11 @@ export function GetUserInsight(req, eRes) {
     }).limit(req.query.limit)
 }
 
-export function ReactInsight(req, res) {
-    InsightEngine.findByIdAndUpdate(req.params.id, {$push: {reactionIds: LoggedInUserUID}}, {new: true},
+export async function ReactInsight(req, res) {
+    const userToken = req.get('access-token');
+    const loggedInUser = await GetUserFromToken(userToken);
+
+    InsightEngine.findByIdAndUpdate(req.params.id, {$push: {reactionIds: loggedInUser?._id}}, {new: true},
         (err, updated) => {
             if (err) {
                 res.send(err)
@@ -321,8 +324,11 @@ export function TakeHint(req, res) {
         })
 }
 
-export function ReactEmortion(req, res) {
-    EmortionEngine.findByIdAndUpdate(req.params.id, {$push: {reactionIds: LoggedInUserUID}}, {new: true},
+export async function ReactEmortion(req, res) {
+    const userToken = req.get('access-token');
+    const loggedInUser = await GetUserFromToken(userToken);
+
+    EmortionEngine.findByIdAndUpdate(req.params.id, {$push: {reactionIds: loggedInUser?._id}}, {new: true},
         (err, updated) => {
             if (err) {
                 res.send(err);

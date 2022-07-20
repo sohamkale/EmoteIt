@@ -7,10 +7,15 @@ import {EmojiDiv} from "./EmojiDiv";
 import $ from 'jquery'
 import {AuthenticationContext} from "../../../contexts/AuthenticationProvider";
 import AnsweringInterface from "./insight/AnsweringInterface";
+import axios from "axios";
 
 
 export default function EmortionView({emortion, answeringInterface}) {
     const {user} = useContext(AuthenticationContext);
+
+    function LikeEmortion(){
+        axios.post('/api/')
+    }
 
     return (
             <div className="card mb-2" style={{width: "98%"}}>
@@ -70,27 +75,20 @@ export default function EmortionView({emortion, answeringInterface}) {
                         {/*React Option Buttons*/}
                         <div className="col-4 border-right">
                             <div className="btn-group dropup">
-                                <button type="button" className="btn btn-light dropdown-toggle"
+                                <button type="button" className="btn btn-light"
                                         data-toggle="dropdown"
                                         aria-expanded="false">
 
-                                    <i className="fas fa-smile mr-2"></i>
-                                    <span className="">React</span>
+                                    <i className="fa-regular fa-heart"></i>
+                                    {/*<i className="fa-solid fa-heart-pulse"></i>*/}
+                                    <span className="ml-1">React</span>
                                 </button>
-                                <div className="dropdown-menu post-react-dropdown-menu row">
+                               {/* <div className="dropdown-menu post-react-dropdown-menu w-25">
                                     <div className="post-react-item col">
                                         <i className={`fa-regular fa-thumbs-up text-dark`}></i>
-                                        {/*{item.name}*/}
+                                        {item.name}
                                     </div>
-                                    <div className="post-react-item col">
-                                        <i className={`fa-regular fa-thumbs-up text-dark`}></i>
-                                        {/*{item.name}*/}
-                                    </div>
-                                    <div className="post-react-item col">
-                                        <i className={`fa-regular fa-thumbs-up text-dark`}></i>
-                                        {/*{item.name}*/}
-                                    </div>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                         {/* Emortion Reactions */}

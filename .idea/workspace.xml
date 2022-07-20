@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="run client and server concurrently">
-      <change afterPath="$PROJECT_DIR$/client/src/views/emortion/Insight.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/EmortionInsights.js" afterDir="false" />
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="break">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/Emortion.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/Emortion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/Insight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/profile/Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/EmortionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/LeaderboardController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/LeaderboardController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/ProfileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/ProfileController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +115,8 @@
       <workItem from="1658127891684" duration="7000" />
       <workItem from="1658127908524" duration="4035000" />
       <workItem from="1658277087701" duration="6116000" />
+      <workItem from="1658285228797" duration="3660000" />
+      <workItem from="1658292611649" duration="2335000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -278,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658279194554</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="break">
+      <created>1658285281606</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1658285281606</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +320,8 @@
     <MESSAGE value="friendship request bug fixed" />
     <MESSAGE value="7/17/2022" />
     <MESSAGE value="run client and server concurrently" />
-    <option name="LAST_COMMIT_MESSAGE" value="run client and server concurrently" />
+    <MESSAGE value="break" />
+    <option name="LAST_COMMIT_MESSAGE" value="break" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

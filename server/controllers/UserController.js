@@ -80,6 +80,7 @@ export function GetAllUsers(req, res) {
 export function GetUser(req, res) {
     // idToken comes from the client app
     const idToken = req.get("access-token");
+    console.log(idToken)
     GetTokenUser(idToken, (user, err) => {
         if (err)
             res.status(500).send(err);
