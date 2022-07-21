@@ -306,8 +306,8 @@ export async function SubmitEmortionInsight(req, res) {
     let timeSubtract = 0;
     let subtractAnswerRank = 0;
     let finalScore = 0;
-    let response = req.body.response.split(" ")
-    let secret = req.body.secret.split(" ")
+    let response = req.body.response
+    let secret = req.body.secret
     let startTime;
     for (let i = 0; i < response.length; i++) {
         if (response[i] === secret[i]) {
@@ -355,8 +355,12 @@ export async function SubmitEmortionInsight(req, res) {
             if (timeDifferential >= 50000) {
                 timeSubtract = 25;
             }
-            if (timeDifferential >= 60000) {
+            if (timeDifferential === 55000) {
                 timeSubtract = 30;
+            }
+            if(timeDifferential > 60000){
+                res.status(500).send("Timer Expired!");
+                return;
             }
             finalScore = (matchCounter * 10) + (10) - (subtractAnswerRank) + (30) - (timeSubtract);
             // console.log(finalScore)
