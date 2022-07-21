@@ -11,10 +11,10 @@ export default function Profile(props) {
     const [emortions, setEmortions] = useState([]);
     const [insights, setInsights] = useState([]);
     const {user, accessToken} = useContext(AuthenticationContext);
-    const [relationships,setRelationships] = useState();
+    const [relationships, setRelationships] = useState();
     const [profile, setProfile] = useState();
 
-    let {id:profileId} = useParams();
+    let {id: profileId} = useParams();
 
 
     function GetRelationships() {
@@ -26,35 +26,48 @@ export default function Profile(props) {
 
     }
 
-    function GetEmortions(){
-        axios.get(`/api/emortion/user/${profileId}`,{headers:{
-                "access-token":accessToken
-            }}).then((res)=>{
+    function GetEmortions() {
+        axios.get(`/api/emortion/user/${profileId}?limit=5`, {
+            headers: {
+                "access-token": accessToken
+            }
+        }).then((res) => {
             setEmortions(res.data);
         })
     }
 
-    useEffect(()=>{
-        GetRelationships();
+    useEffect(() => {
 
-        GetEmortions();
-
-    //    get user's emortion
-        if(profileId == null)
-            profileId = user?._id;
-
-        axios.get(`/api/profile/byId/${profileId}`).then((res)=>{
-            setProfile(res.data);
-            console.log(profile)
-        });
+        if (user != null) {
+            //    get user's emortion
+            if (profileId == null)
+                profileId = user?._id;
 
 
-        axios.get(`/api/insight/user/${profileId}`,{headers:{
-            "access-token":accessToken
-            }}).then((res)=>{
-                setInsights(res.data);
-        })
-    },[])
+
+            {
+
+                GetRelationships();
+                GetEmortions();
+
+                axios.get(`/api/profile/byId/${profileId}`).then((res) => {
+                    setProfile(res.data);
+                    console.log(profile)
+                });
+
+
+                axios.get(`/api/insight/user/${profileId}`, {
+                    headers: {
+                        "access-token": accessToken
+                    }
+                }).then((res) => {
+                    setInsights(res.data);
+                })
+            }
+        }
+
+
+    }, [user])
 
     return (
         <div className="container">
@@ -74,7 +87,8 @@ export default function Profile(props) {
 
                             <div className="row">
                                 <div className="col-5 text-bold">Birthday</div>
-                                <div className="col-7 text-muted">{new Date(profile?.user?.DOB)?.toLocaleDateString()}</div>
+                                <div
+                                    className="col-7 text-muted">{new Date(profile?.user?.DOB)?.toLocaleDateString()}</div>
                             </div>
 
                             <div className="row">
@@ -165,12 +179,12 @@ export default function Profile(props) {
                 <div className="col-12 col-md-3 border-right">
                     <h2>Friends</h2>
                     <div className="bg-light mb-2 p-3">
-                        <div className="row overflow-auto" style={{maxHeight:"1000px"}}>
-                            {relationships?.filter(x=>x.statusId == 1)?.map((item,index)=>
+                        <div className="row overflow-auto" style={{maxHeight: "1000px"}}>
+                            {relationships?.filter(x => x.statusId == 1)?.map((item, index) =>
 
-                                    <UserCard key={index} user={user?._id === item?.requesteeUserId?._id ? item?.requesterUserId : item?.requesteeUserId}
-                                              getList={props.getList} relationship={item}/>
-
+                                <UserCard key={index}
+                                          user={user?._id === item?.requesteeUserId?._id ? item?.requesterUserId : item?.requesteeUserId}
+                                          getList={props.getList} relationship={item}/>
                             )}
                         </div>
                     </div>
@@ -178,8 +192,8 @@ export default function Profile(props) {
                 <div className="col-12 col-md-6">
                     <h2>Emortions</h2>
                     {
-                        emortions.map((item,index)=>
-                        <EmortionView key={index} emortion={item} GetEmortion={GetEmortions}/>
+                        emortions.map((item, index) =>
+                            <EmortionView key={index} emortion={item} GetEmortion={GetEmortions}/>
                         )
                     }
                 </div>
@@ -187,8 +201,8 @@ export default function Profile(props) {
                 <div className="col-12 col-md-3">
                     <h2>Insights</h2>
                     {
-                        insights?.map((item)=>
-                        <EmortionInsights emortionId={item.emortionId}/>
+                        insights?.map((item, index) =>
+                            <EmortionInsights key={index} emortionId={item.emortionId}/>
                         )
                     }
                 </div>

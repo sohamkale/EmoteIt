@@ -10,7 +10,7 @@ export default function EmortionForm(props) {
     const [msg, setMsg] = useState("");
 
     const [secret, setSecret] = useState("");
-    const [category, setCategory] = useState("");
+    const [category, setCategory] = useState(0);
     const [expireOpt, setExpireOpt] = useState(0);
     const [messageEmojis, setMessageEmojis] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);

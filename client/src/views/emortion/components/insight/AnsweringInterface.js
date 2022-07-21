@@ -2,28 +2,61 @@ import React, {useState, useRef, useEffect, useContext} from 'react'
 import UserTitle from "../../../shared/components/UserTitle";
 import axios from "axios";
 import {AuthenticationContext} from "../../../../contexts/AuthenticationProvider";
+import {useHistory} from "react-router-dom"
+import {isMobile} from 'react-device-detect';
 
 export default function AnsweringInterface(props) {
     const {accessToken} = useContext(AuthenticationContext);
-    const [emortion, setEmortion] = useState();
-    const messageBreakdown = emortion?.secret?.split(' ');
+    const [insight, setInsight] = useState();
+    const messageBreakdown = insight?.secret?.split(' ');
 
-    const letterParent = useRef([]);
+    const letterParent = useRef();
     const [focusOn, setFocusOn] = useState([0, 0]);
+    const [timeLeft, setTimeLeft] = useState();
+
+    const [responseString, setResponseString] = useState([]);
+    const history = useHistory();
+    let lIndex = 0;
+
 
     useEffect(() => {
+
         if (props.emortionId)
             //make call to notify start of answering
             axios.post(`/api/emortion/insight/${props.emortionId}`,null,{
                 headers:{"access-token":accessToken}
             }).then((res)=>{
-                setEmortion(res.data);
-                console.log(res.data)
+
+                if(res.data){
+                    setInsight(res.data);
+                    const startedTime = new Date(res.data?.createdAt);
+                    setTimeLeft(60 - (new Date() - startedTime)/1000);
+
+                    const split = res.data.secret.split(' ');
+
+                    let _responseString = [];
+                    // console.log(split.length)
+
+                    for(let sIndex=0; sIndex<split.length; sIndex++){
+                        let filler = "_";
+                        filler = filler.repeat(split[sIndex].length);
+                        _responseString.push(filler);
+                    }
+                    // console.log(_responseString)
+                    setResponseString(_responseString);
+                }
+
             })
-    }, [props.emortionId])
+
+    }, [props.emortionId]);
+
+    useEffect(()=>{
+        const timer = timeLeft > 0 && setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+        // return () => clearInterval(timer);
+    },[timeLeft])
 
     useEffect(() => {
-        if (focusOn[0] !== 1000 && focusOn[1] !== 1000) {
+        if (letterParent.current && focusOn[0] !== 1000 && focusOn[1] !== 1000) {
             letterParent.current?.children[focusOn[0]]?.children[focusOn[1]].focus();
         }
     }, [focusOn])
@@ -56,23 +89,19 @@ export default function AnsweringInterface(props) {
     }
 
     function _Submit() {
-        let matchedWords = 0;
-        let wordCount = letterParent.current.children.length;
-        for (let i = 0; i < wordCount; i++) {
-            let wordLetterCount = letterParent.current.children[i].children.length;
-            let matchedLetters = 0;
-            for (let j = 0; j < wordLetterCount; j++) {
-                let letterColor = letterParent.current.children[i].children[j].style.color;
-                if (letterColor === "green") {
-                    matchedLetters++;
-                }
-            }
-            if (matchedLetters === wordLetterCount) {
-                matchedWords++
-            }
+        const response = {
+            secret: insight.secret,
+            response: responseString,
+            deviceId: isMobile?0:1
         }
-        const returnValue = matchedWords * 10;
-        console.log(returnValue);
+
+        axios.post(`/api/emortion/insight/${insight?.emortionId}`,response,{headers:{
+            'access-token': accessToken
+            }}).then((res)=>{
+                console.log(res.data);
+                history.push(`/app/emortion/${insight?.emortionId}`)
+
+        })
     }
 
     return (
@@ -80,41 +109,50 @@ export default function AnsweringInterface(props) {
             {/*Clock Row*/}
             <div className="row m-3 text-align-center">
                 <div className={"col"}>
-                    <h2><span className="badge badge-dark">00:59</span></h2>
+                    <h2><span className="badge badge-dark">00:{timeLeft>0 ? parseInt(timeLeft) :0}</span></h2>
                 </div>
             </div>
+            {
+                timeLeft>0?
+                    <>
+                    <div className="row text-align-center m-1" ref={letterParent}>
+                        {
+                            messageBreakdown?.map((word, index) =>
+                                <>
+                                    <div key={index} id={"word"} className={"col-12 row h-25"} style={{maxWidth: "fit-content"}}>
+                                        {
+                                            word.split('').map((item, wIndex) =>
+                                                <>
+                                                    {/*{lIndex++}*/}
+                                                <InsightInput key={wIndex} group={index} index={wIndex} letter={item} _SetFocus={_SetFocus}
+                                                              setFocusOn={setFocusOn} responseString={responseString} setResponseString={setResponseString}/>
+                                                </>
+                                                )
+                                        }
+                                    </div>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </>
+                            )
+                        }
+
+                    </div>
+                    <div className="row  m-3 text-align-center">
+                        <div className="col">
+                            <button type="button" className="btn btn-dark" onClick={_Submit}>
+                                <i className="fa-regular fa-paper-plane m-1"></i>
+                                SUBMIT
+                            </button>
+                        </div>
+                    </div>
+                </>
+                :
+                    <div className="row m-2">
+                        <div className="btn btn-outline-danger disabled m-auto">TIME UP &nbsp;
+                            <i className="fas fa-sad-tear"></i></div>
+                    </div>
+            }
             {/* The EmortionInsights Inputs */}
-            <div className="row text-align-center m-1" ref={letterParent}>
-                {
-                    messageBreakdown?.map((word, index) =>
-                        <>
-                            <div key={index} id={"word"} className={"col-12 row h-25"} style={{maxWidth: "fit-content"}}>
-                                {
-                                    word.split('').map((item, wIndex) =>
-                                        <InsightInput key={index} group={index} index={wIndex} letter={item} _SetFocus={_SetFocus}
-                                                      setFocusOn={setFocusOn}/>
-                                    )
-                                }
-                            </div>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </>
-                    )
-                }
-                {/*{
-                        props.emortion?.message.split('').map((item)=>
-                            item === ' '? <SpaceCharacter/>:
-                                <InsightInput letter={item} _SetFocus={_SetFocus} setFocusOn={setFocusOn}/>
-                        )
-                    }*/}
-            </div>
-            <div className="row  m-3 text-align-center">
-                <div className="col">
-                    <button type="button" className="btn btn-dark" onClick={_Submit}>
-                        <i className="fa-regular fa-paper-plane m-1"></i>
-                        SUBMIT
-                    </button>
-                </div>
-            </div>
+
 
         </div>
     )
@@ -138,6 +176,13 @@ function InsightInput(iProps) {
         }
         setColor(e.target.value.toLowerCase() === iProps.letter.toLowerCase() ? "green" : "red");
         iProps._SetFocus();
+
+        let _responseString = iProps.responseString;
+        let str = _responseString[iProps.group].split('');
+        str[iProps.index] = e.target.value;
+        str = str.join('');
+        _responseString[iProps.group] = str;
+        iProps.setResponseString(_responseString);
     }
 
     function _HandleClick(e) {

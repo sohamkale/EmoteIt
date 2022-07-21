@@ -1,12 +1,22 @@
-import React, {useState, createContext} from 'react'
+import React, {useState, createContext, useEffect} from 'react'
 import {Navbar} from "./components/Navbar";
 import {RoutesBar} from "./components/RoutesBar";
+import axios from "axios";
 
 export const LayoutContext = createContext();
 
 export const MainLayout = (props) => {
     const [pageTitle, setPageTitle] = useState("");
-    const contextVars = {setPageTitle}
+    const [categories, setCategories] = useState([]);
+
+    useEffect(()=>{
+        axios.get('/api/translation/Category').then((res) => {
+            setCategories(res.data);
+        })
+    },[])
+
+    const contextVars = {setPageTitle, categories}
+
     return (
         <>
             <Navbar/>

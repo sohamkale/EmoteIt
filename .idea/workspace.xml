@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="gitignore updated">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="reacts competed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/Emortion.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/Emortion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/Insight.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/Insight.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/home/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/MainLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/MainLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/EmortionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +120,7 @@
       <workItem from="1658127908524" duration="4035000" />
       <workItem from="1658277087701" duration="6116000" />
       <workItem from="1658285228797" duration="3660000" />
-      <workItem from="1658292611649" duration="5540000" />
+      <workItem from="1658292611649" duration="17510000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -304,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658295275021</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="reacts competed">
+      <created>1658298377616</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1658298377616</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +329,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="user controller completed" />
     <MESSAGE value="news controller!" />
     <MESSAGE value="daily secret emortion completed!" />
     <MESSAGE value="LevelSchema.js" />
@@ -347,17 +353,7 @@
     <MESSAGE value="break" />
     <MESSAGE value="logged in user reacts" />
     <MESSAGE value="gitignore updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore updated" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/controllers/EmortionController.js</url>
-          <line>162</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="reacts competed" />
+    <option name="LAST_COMMIT_MESSAGE" value="reacts competed" />
   </component>
 </project>

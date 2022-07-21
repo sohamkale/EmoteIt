@@ -7,16 +7,17 @@ import {EmojiDiv} from "./EmojiDiv";
 import {AuthenticationContext} from "../../../contexts/AuthenticationProvider";
 import AnsweringInterface from "./insight/AnsweringInterface";
 import axios from "axios";
+import {LayoutContext} from "../../shared/MainLayout";
 
 
 export default function EmortionView({emortion, answeringInterface, GetEmortion}) {
     const {user, accessToken} = useContext(AuthenticationContext);
+    const {categories} = useContext(LayoutContext);
 
     const[likes, setLikes] = useState([]);
 
     function GetEmortionLikes(){
         axios.get(`/api/emortion/react/${emortion?._id}`).then((res)=>{
-            console.log(res.data)
             if(res.data)
                 setLikes(res.data);
             else setLikes([]);
@@ -46,7 +47,9 @@ export default function EmortionView({emortion, answeringInterface, GetEmortion}
                             <DisplayPicture user={emortion?.createdBy} width={50}/>
                         </div>
                         <div className="col-10">
-                            <h5 className="mt-3">{emortion?.createdBy?.name}</h5>
+                            <Link to={`/app/profile/${emortion?.createdBy?._id}`}>
+                                <h5 className="mt-3">{emortion?.createdBy?.name}</h5>
+                            </Link>
                         </div>
                     </div>
                     {/* Created At*/}
@@ -75,6 +78,12 @@ export default function EmortionView({emortion, answeringInterface, GetEmortion}
                         </div>
                     </div>
                     {/* Secret */}
+                    <div className="row mt-3">
+                        <div className="col-10">
+                            Category: &nbsp;
+                            {categories.find(x=>x.rid == emortion?.categoryId)?.label??"not found"}
+                        </div>
+                    </div>
                     <div className="row mt-3">
                         <div className="col-10">
                             Insight: &nbsp;
