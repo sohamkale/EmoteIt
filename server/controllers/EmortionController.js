@@ -213,8 +213,8 @@ export async function SubmitEmortionInsight(req, res) {
     let timeSubtract = 0;
     let subtractAnswerRank = 0;
     let finalScore = 0;
-    let response = req.body.response.split(" ")
-    let secret = req.body.secret.split(" ")
+    let response = req.body.response
+    let secret = req.body.secret
     let startTime;
     for (let i = 0; i < response.length; i++) {
         if (response[i] === secret[i]) {
