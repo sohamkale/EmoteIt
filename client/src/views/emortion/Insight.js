@@ -9,18 +9,21 @@ export default function Insight(props){
     const [emortion, setEmortion] = useState();
     const {id:emortionId} = useParams();
 
-    useState(()=>{
+    function GetEmortion(){
         axios.get(`/api/emortion/emortion/${emortionId}`, {headers:{
                 'access-token': accessToken
             }}).then((res)=>{
             setEmortion(res.data);
         })
+    }
+    useState(()=>{
+        GetEmortion();
     })
 
     return(
         <div>
             <div className="col-12 col-md-8">
-                <EmortionView answeringInterface={true} emortion={emortion}/>
+                <EmortionView answeringInterface={true} emortion={emortion} GetEmortion={GetEmortion}/>
             </div>
         </div>
     )

@@ -30,8 +30,9 @@ export default function EmortionRoutes (server) {
         // get a user's emortions
         .get(GetUserEmortions);
 
-    server.route('api/emortion/reacts/:id')
+    server.route('/api/emortion/react/:id')
         .get(GetEmortionReacts)
+        .put(ReactEmortion)
 
     server.route('/api/emortion/insight/:id')
         //start insight
@@ -47,8 +48,6 @@ export default function EmortionRoutes (server) {
         //get all insights of a user
         .get(GetUserInsight);
 
-    server.route('/api/emortion/react/:id')
-        .put(ReactEmortion)
 
     server.route('/api/insight/react/:id')
         .put(ReactInsight)

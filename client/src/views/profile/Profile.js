@@ -26,8 +26,18 @@ export default function Profile(props) {
 
     }
 
+    function GetEmortions(){
+        axios.get(`/api/emortion/user/${profileId}`,{headers:{
+                "access-token":accessToken
+            }}).then((res)=>{
+            setEmortions(res.data);
+        })
+    }
+
     useEffect(()=>{
         GetRelationships();
+
+        GetEmortions();
 
     //    get user's emortion
         if(profileId == null)
@@ -38,12 +48,6 @@ export default function Profile(props) {
             console.log(profile)
         });
 
-
-        axios.get(`/api/emortion/user/${profileId}`,{headers:{
-            "access-token":accessToken
-            }}).then((res)=>{
-            setEmortions(res.data);
-        })
 
         axios.get(`/api/insight/user/${profileId}`,{headers:{
             "access-token":accessToken
@@ -175,7 +179,7 @@ export default function Profile(props) {
                     <h2>Emortions</h2>
                     {
                         emortions.map((item,index)=>
-                        <EmortionView key={index} emortion={item}/>
+                        <EmortionView key={index} emortion={item} GetEmortion={GetEmortions}/>
                         )
                     }
                 </div>
