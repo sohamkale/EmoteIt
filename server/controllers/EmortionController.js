@@ -255,8 +255,12 @@ export async function SubmitEmortionInsight(req, res) {
             if (timeDifferential >= 50000) {
                 timeSubtract = 25;
             }
-            if (timeDifferential >= 60000) {
+            if (timeDifferential === 55000) {
                 timeSubtract = 30;
+            }
+            if(timeDifferential > 60000){
+                res.status(500).send("Timer Expired!");
+                return;
             }
             finalScore = (matchCounter * 10) + (10) - (subtractAnswerRank) + (30) - (timeSubtract);
             // console.log(finalScore)
