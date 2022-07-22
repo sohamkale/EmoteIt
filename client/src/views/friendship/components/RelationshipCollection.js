@@ -34,8 +34,8 @@ export const RelationshipCollection = (props)=>{
         </div>
         <div className="card-body overflow-auto" style={{height: "500px"}}>
             <div className="row h-50">
-                {filteredList?.map((relationship)=>
-                    <UserCard user={user?._id === relationship?.requesteeUserId?._id ? relationship?.requesterUserId : relationship?.requesteeUserId}
+                {filteredList?.map((relationship,index)=>
+                    <UserCard key={index} user={user?._id === relationship?.requesteeUserId?._id ? relationship?.requesterUserId : relationship?.requesteeUserId}
                               getList={props.getList} relationship={relationship}/>
                 )}
             </div>

@@ -6,7 +6,7 @@ export const InsightSchema = new Schema({
     secret: String,
     accuracy: Number,
     score: Number,
-    response: String,
+    response: [String],
     hintsTaken: Number,
     timeTaken: Number,
     submittedAt: Date,

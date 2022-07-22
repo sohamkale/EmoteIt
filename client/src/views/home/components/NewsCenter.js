@@ -22,7 +22,7 @@ const [news, setNews] = useState([]);
             <div className="bg-light mb-2 p-3">
                 <div className="row overflow-auto" style={{height:"400px"}}>
                     {news?.map((item)=>
-                        <News news={item}/>
+                        <News key={item._id} news={item}/>
                     )}
                 </div>
             </div>

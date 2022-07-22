@@ -22,9 +22,19 @@ body {
   width: 7%;
 }
 
+.emoteit-body{
+  width: 95%;
+  margin-left: auto;
+}
+
 @media (max-width: 720px) {
   .brand-logo {
     width: 35%;
+  }
+
+  .emoteit-body{
+    width: 100%;
+    margin: auto;
   }
 }
 
@@ -157,4 +167,5 @@ body {
     height: 400px;
   }
 }
+
 

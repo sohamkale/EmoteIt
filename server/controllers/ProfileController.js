@@ -1,17 +1,18 @@
 import mongoose from "mongoose";
 import {UserSchema} from "../models/UserSchema.js";
 import {NotificationSchema} from "../models/NotificationSchema.js";
-import {GetTokenUser} from "./UserController.js";
+import {GetTokenUser, GetUserFromToken} from "./UserController.js";
 import {EmortionSchema} from "../models/EmortionSchema.js";
 import {InsightSchema} from "../models/InsightSchema.js";
 import {FriendshipSchema} from "../models/FriendshipSchema.js";
 import {LevelScehema} from "../models/LevelSchema.js";
 import admin from "firebase-admin";
+import {ObjectId} from "../config.js";
 
 export const UserEngine = mongoose.model('User', UserSchema);
 const NotificationEngine = mongoose.model('Notification', NotificationSchema);
 const EmortionEngine = mongoose.model('Emortion', EmortionSchema);
-const InsightEngine = mongoose.model('EmortionInsights', InsightSchema);
+const InsightEngine = mongoose.model('Insight', InsightSchema);
 const FriendshipEngine = mongoose.model('Friendship', FriendshipSchema);
 const LevelEngine = mongoose.model('Level', LevelScehema);
 
@@ -25,22 +26,27 @@ export function SearchProfiles(req, res){
 
 export function GetProfile(req, res){
     const searchId = req.params.id;
-    UserEngine.findOne({_id:searchId}).then((user,err)=>{
-        const userId = user.id
+    UserEngine.findOne({_id:searchId}).then(async (user,err)=>{
+        const userToken = req.get('access-token');
+        const tokenUser = await GetUserFromToken(userToken);
+        const userId = tokenUser._id;
+
         //POST LIKES
         EmortionEngine.find({createdBy: userId}, (err, emortions)=>{
             let latestActive = null;
-            let postLikes = 0;
-            let postCount = emortions.length;
-            if(postCount>0)
+            let emortionLikes = 0;
+            let emortionCount = emortions.length;
+            if(emortionCount>0)
                 latestActive = emortions[0].createdAt;
             for(let i = 0; i<emortions.length;i++){
-                postLikes = postLikes+emortions[i].reactionIds.length;
+                emortionLikes = emortionLikes+emortions[i].reactionIds.length;
             }
+
+
             //ANSWER LIKES
             //INSIGHT COUNT
             InsightEngine.find({createdBy: userId},(err,insights)=>{
-                let answerLikes = 0;
+                let insightLikes = 0;
                 let insightCount = insights.length;
                 let AnswerTimeSum = 0;
                 let AccuracySum = 0;
@@ -50,35 +56,41 @@ export function GetProfile(req, res){
                     if(latestActive == null && latestActive<latestInsightTime)
                         latestActive = latestInsightTime;
                 }
-                for(let i = 0; i<insightCount.length; i++){
-                    answerLikes = answerLikes+insights[i].reactionIds.length;
-                    AnswerTimeSum = AnswerTimeSum + insights[i].timeTaken;
+                for(let i = 0; i<insights.length; i++){
+                    insightLikes = insightLikes+insights[i].reactionIds.length;
                     AccuracySum = AccuracySum+insights[i].accuracy;
                 }
-                let avgAnswerTime = AnswerTimeSum/insightCount;
                 let avgAccuracy = AccuracySum/insightCount;
                 //FRIENDSHIP COUNT!
                 FriendshipEngine.find({$and:[{$or:[{requesterUserId: userId},{requesteeUserId: userId}]}, {status:1}]}, (err,friendships)=>{
-                    let happyFriendCount = friendships.length;
+                    let relationshipCount = friendships.length;
                     //LEVEL
                     LevelEngine.find({},(err,levels)=>{
                         const userLevel = levels[0];
                         let globalRank = -1;
                         //GLOBAL RANK
                         UserEngine.find({},(err, users)=>{
+                            if(err){
+                                console.log(err)
+                                res.status(500).send(err);
+                                return;
+                            }
                             users.forEach((user,index)=>{
-                                if(user.id == userId){
+
+                                if(user._id.toString() === userId.toString()){
                                     globalRank = index+1;
                                     //completed! Now send back the data!
-                                    const finalObject = {
-                                        latestActive,globalRank,userLevel, happyFriendCount,avgAccuracy,avgAnswerTime,
-                                        insightCount,answerLikes,postCount,postLikes,user
-                                    }
+                                    let avgAnswerTime = user.totalAnswerTimeMs/insightCount;
 
+                                    const finalObject = {
+                                        latestActive,globalRank,userLevel, relationshipCount,avgAccuracy,avgAnswerTime,
+                                        insightCount,insightLikes,emortionCount,emortionLikes,user
+                                    }
                                     res.send(finalObject);
+                                    return;
                                 }
                             })
-                        }).sort({score:1})
+                        }).sort({score:-1})
                     }).where('minScore').gt(user.score)
                 })
             }).sort('-createdAt')
@@ -87,27 +99,15 @@ export function GetProfile(req, res){
 
     }).catch((err)=>{
         res.status(500).send(err);
+        return
     })
 }
-
-
 
 
 export async function GetProfileById(profileId){
     let outUser = await UserEngine.findById(profileId);
     return outUser;
 }
-
-
-//use the above funtion in the following way
-/*GetTokenUser(idToken,(user, err)=>{
-    if(err)
-        res.status(500).send(err);
-    else if (err == null && user == null)
-        res.status(204).send("user not found!")
-    else if(err == null)
-        res.send(user);
-})*/
 
 
 //Notification Stuff

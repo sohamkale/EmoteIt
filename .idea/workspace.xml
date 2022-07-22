@@ -4,16 +4,191 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="reacts competed">
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="submission and view of insights">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/base/_reset.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/base/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_accordion.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_animation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_button.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_calender.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_emoji.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_form.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_gradient.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_icon.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_leaderBoardCard.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_popover.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_ratio.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_slick-slider.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_switch.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_timer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_title.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/components/_usercard.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark-1.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/dark-2.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/landing.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_activity-log.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_birthday.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_breadcrumb.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_chatbox.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_conversation-sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_element-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_event.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_filter.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_gallery.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_hashtag.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_like-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_loader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_location.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_page-cover.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_player.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_profile-about.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_profile-box.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_profile-cover.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_story.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_suggestion-box.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_tap-top.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_user.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/layout/_weather.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_about.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_birthday-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_blog-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_career.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_coming-soon.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_company-landing.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_contact-us.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_error-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_event-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_favourite-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_games.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_help-support.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_home.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_login-signup.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_messanger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_music.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_page-list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_profile-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_setting.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/_switch.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/pages/leaderboard.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style-1.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style-2.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/themes/_dark.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/themes/_responsive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/themes/_rtl.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/themes/_theme-setting.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/utils/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/_animate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/_date-picker.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_accordion.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_badge.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_breadcrumb.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_button-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_card.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_carousel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_close.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_containers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_helpers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_images.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_nav.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_offcanvas.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_popover.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_progress.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_reboot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_root.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_spinners.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_toasts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_tooltip.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_transitions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_type.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/forms/_floating-labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/forms/_form-check.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/forms/_form-control.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/forms/_form-range.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/forms/_form-select.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/forms/_form-text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/forms/_input-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/forms/_labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/forms/_validation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/helpers/_clearfix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/helpers/_colored-links.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/helpers/_position.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/helpers/_ratio.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/helpers/_stretched-link.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/helpers/_text-truncation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/helpers/_visually-hidden.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_border-radius.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_box-shadow.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_breakpoints.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_caret.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_clearfix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_container.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_deprecate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_gradients.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_image.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_lists.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_reset-text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_resize.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_table-variants.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_text-truncate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_transition.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/mixins/_visually-hidden.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/utilities/_api.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/bootstrap/vendor/_rfs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/emojionearea.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/fullcalender.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/old_bootstrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/slick-theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/slick.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/vendors/weather-animated.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/EmortionView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/AnsweringInterface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/emortion/components/insight/RevealedInsights.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/friendship/components/RelationshipCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/friendship/components/RelationshipCollection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/friendship/components/UserCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/friendship/components/UserCollection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/home/components/NewsCenter.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/home/components/NewsCenter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/profile/Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/shared/MainLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/MainLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/SearchBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/shared/components/UserCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/shared/components/UserCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/EmortionController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/ProfileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/ProfileController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/InsightSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/InsightSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/UserSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/UserSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +295,7 @@
       <workItem from="1658127908524" duration="4035000" />
       <workItem from="1658277087701" duration="6116000" />
       <workItem from="1658285228797" duration="3660000" />
-      <workItem from="1658292611649" duration="17510000" />
+      <workItem from="1658292611649" duration="29207000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
@@ -311,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658298377616</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="emortion submit written">
+      <created>1658385572479</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1658385572479</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,8 +511,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="news controller!" />
-    <MESSAGE value="daily secret emortion completed!" />
     <MESSAGE value="LevelSchema.js" />
     <MESSAGE value="profile completed. needs to be tested heavily" />
     <MESSAGE value="begin" />
@@ -354,6 +534,8 @@
     <MESSAGE value="logged in user reacts" />
     <MESSAGE value="gitignore updated" />
     <MESSAGE value="reacts competed" />
-    <option name="LAST_COMMIT_MESSAGE" value="reacts competed" />
+    <MESSAGE value="emortion submit written" />
+    <MESSAGE value="submission and view of insights" />
+    <option name="LAST_COMMIT_MESSAGE" value="submission and view of insights" />
   </component>
 </project>

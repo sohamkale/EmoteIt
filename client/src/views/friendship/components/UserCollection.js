@@ -33,8 +33,8 @@ export default function UserCollection(props){
             </div>
             <div className="card-body overflow-auto" style={{height: "500px"}}>
                 <div className="row  h-50">
-                    {filteredList?.map((user)=>
-                        <UserCard user={user} getList={props.getList}/>
+                    {filteredList?.map((user,index)=>
+                        <UserCard key={index} user={user} getList={props.getList}/>
                     )}
                 </div>
             </div>

@@ -28,7 +28,7 @@ export default function EmortionView({emortion, answeringInterface, GetEmortion}
         axios.put(`/api/emortion/react/${emortion?._id}`,null,{headers:
                 {'access-token':accessToken}})
             .then((res)=>{
-                GetEmortion();
+                // GetEmortion();
                 GetEmortionLikes();
         })
     }
@@ -135,8 +135,8 @@ export default function EmortionView({emortion, answeringInterface, GetEmortion}
                                     {/*Reactions Here*/}
                                     {
                                         likes.map((item, index)=>
-                                            <Link to={`/app/profile/${item._id}`}>
-                                                <span key={index} className="dropdown-item small"><DisplayPicture user={item} width={30} /> &nbsp;{item.name}</span>
+                                            <Link key={index} to={`/app/profile/${item._id}`}>
+                                                <span  className="dropdown-item small"><DisplayPicture user={item} width={30} /> &nbsp;{item.name}</span>
                                             </Link>
                                         )
                                     }

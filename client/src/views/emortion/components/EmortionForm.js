@@ -77,8 +77,8 @@ export default function EmortionForm(props) {
                             <select id="postType" name='type' className='form-control'
                                     value={category} onChange={(e)=>setCategory(e.target.value)}>
                                 {
-                                    availableCategories.map((item) =>
-                                        <option value={item.rid}>{item.label}</option>
+                                    availableCategories.map((item, index) =>
+                                        <option key={index} value={item.rid}>{item.label}</option>
                                     )
                                 }
                             </select>
@@ -113,7 +113,7 @@ export default function EmortionForm(props) {
                     <div className="row m-2" onClick={_PopMessage}>
                         {
                             messageEmojis.map((item, index) =>
-                                <EmojiDiv eId={item} setMessageEmojis={setMessageEmojis} index={index}
+                                <EmojiDiv key={index} eId={item} setMessageEmojis={setMessageEmojis} index={index}
                                           currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>
                             )
                         }

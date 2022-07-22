@@ -25,7 +25,7 @@ export const MainLayout = (props) => {
                     /*onClick={ResetTabs}*/>
                     <h2>{pageTitle}</h2>
                     <RoutesBar pageLinks={props.pageLinks} adminLinks={props.adminLinks}/>
-                    <div className="container">
+                    <div className="emoteit-body">
                         {props.children}
                     </div>
                 </div>

@@ -5,9 +5,9 @@ import {AuthenticationContext} from "../../../contexts/AuthenticationProvider";
 import {Link} from "react-router-dom";
 
 
-export default function UserCard({user, relationship, getList}) {
+export default function UserCard({user, relationship, getList,profile}) {
 
-    const {user: profileUser, accessToken} = useContext(AuthenticationContext);
+    const {user: appUser, accessToken} = useContext(AuthenticationContext);
 
     function SendRequest() {
         const req = {
@@ -50,11 +50,11 @@ export default function UserCard({user, relationship, getList}) {
                         <div className="small">Score</div>
                     </div>
                     <div className="col border-right text-align-center ">
-                        <h3>123</h3>
+                        <h3>{profile?.insightCount}</h3>
                         <div className="small">Emortions</div>
                     </div>
                     <div className="col text-align-center">
-                        <h3>12</h3>
+                        <h3>{profile?.emortionLikes+profile?.insightLikes}</h3>
                         <div className="small">Likes</div>
                     </div>
                 </div>
@@ -62,11 +62,11 @@ export default function UserCard({user, relationship, getList}) {
                 {/*    Friend Request?  */}
                 <div className="row text-align-center mt-2">
                     {
-                        user?._id === profileUser._id ?
+                        user?._id === appUser._id ?
                             <></> :
                             relationship?.statusId == 1 ?
                                 <div>You share emotions</div> :
-                                relationship?.requesterUserId?._id === profileUser._id ?
+                                relationship?.requesterUserId?._id === appUser._id ?
                                     <div className="btn disabled btn-outline-dark">REQUESTED</div> :
                                     relationship?.statusId == 0 ?
                                         <button className="btn btn-success m-1"

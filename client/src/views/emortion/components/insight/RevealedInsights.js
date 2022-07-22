@@ -4,18 +4,19 @@ import axios from "axios";
 import {AuthenticationContext} from "../../../../contexts/AuthenticationProvider";
 import {DisplayPicture} from "../../../shared/components/DisplayPicture";
 import Moment from "react-moment";
+import {Link} from "react-router-dom";
 
 export default function RevealedInsights(props) {
 
     const {accessToken} = useContext(AuthenticationContext);
     const [insights, setInsights] = useState();
 
+
     useEffect(() => {
         if (props.emortionId)
             //make call to notify start of answering
-            axios.get(`/api/emortion/insight/${props.emortionId}`,{headers:{"access-token":accessToken}}).then((res)=>{
+            axios.get(`/api/emortion/insight/${props.emortionId}`, {headers: {"access-token": accessToken}}).then((res) => {
                 setInsights(res.data);
-                console.log(res.data)
             })
     }, [props.emortionId])
 
@@ -25,21 +26,42 @@ export default function RevealedInsights(props) {
                 <span className="btn btn-sm btn-outline-warning disabled m-auto">INSIGHTS REVEALED</span>
             </div>
             {
-                insights?.map((item,index)=>
-                    <>
-                        <SingleInsight key={index} insight={item}/>
-                    </>
+                insights?.map((item, index) =>
+                    <React.Fragment key={index}>
+                        <SingleInsight insight={item}/>
+                    </React.Fragment>
                 )
             }
         </div>
     )
 }
 
-export function SingleInsight({insight}){
+export function SingleInsight({insight}) {
 
-    const [reactShow, setReactShow] = useState(false);
-    return(
-        <div className="revealedInsight m-1 p-2">
+    const {user, accessToken} = useContext(AuthenticationContext);
+    const [likes, setLikes] = useState([]);
+
+
+    function GetInsightLikes() {
+        axios.get(`/api/insight/react/${insight?._id}`).then((res) => {
+            if (res.data)
+                setLikes(res.data);
+            else setLikes([]);
+        })
+    }
+
+    function LikeInsight() {
+        axios.put(`/api/insight/react/${insight?._id}`, null, {
+            headers:
+                {'access-token': accessToken}
+        })
+            .then((res) => {
+                GetInsightLikes();
+            })
+    }
+
+    return (
+        <div className="revealedInsight m-2 p-2 w-100">
             {/* Created By*/}
             <div className="row">
                 <div className="col-2">
@@ -49,22 +71,34 @@ export function SingleInsight({insight}){
                     <h6 className="mt-2 text-truncate">{insight?.createdBy?.name}</h6>
                 </div>
             </div>
-             {/*Created At*/}
+            {/*Created At*/}
             <div className="row">
                 <div className="offset-2 col-10">
-                    <Moment date={insight?.submittedAt}
-                            durationFromNow={true} format={"Y [years] D[d] H[h] m[m] ago"} trim={"both"}
-                    />
+                    <Link to={`/app/emortion/${insight?.emortionId}`}>
+                        <Moment date={insight?.submittedAt}
+                                durationFromNow={true} format={"Y [years] D[d] H[h] m[m] ago"} trim={"both"}
+                        />
+                    </Link>
                 </div>
             </div>
             <hr/>
             {/* Secret */}
             <div className="row m-1">
-                    <div className="col-8 text-bold">{insight?.response} </div>
-                <div className="col-4 text-align-right">
+                <div className="col-7 text-bold">
+                    {insight?.response.map((item, index) =>
+                        <span key={index}>{item} &nbsp;</span>)}
+                </div>
+                <div className="col-5 text-align-right">
                     <div className="mb-2 ml-auto">
-                        <span className="badge badge-dark">Score: {insight?.score}</span>
-                        <i className="fa-solid fa-mobile-screen-button m-2"></i>
+                        <span className="badge badge-dark m-1">Score: {insight?.score}</span>
+                        <span className="badge badge-dark">Accuracy: {insight?.accuracy * 100}%</span>
+
+                        <span className="badge badge-dark m-1">
+                            <Moment diff={insight?.createdAt} unit={"seconds"}>{insight?.submittedAt}</Moment> seconds
+                        </span>
+                        {insight?.deviceId == 0 ?
+                            <i className="fa-solid fa-mobile-screen-button m-2"></i> :
+                            <i className="fa-solid fa-desktop m-2"></i>}
                     </div>
                 </div>
             </div>
@@ -72,83 +106,50 @@ export function SingleInsight({insight}){
             {/*Reaction Row*/}
             <div className="row">
                 {/*React Option Buttons*/}
-                <div className="col-6 border-right">
+                <div className="col-4 border-right">
                     <div className="btn-group dropup">
-                        <button type="button" className="btn btn-light dropdown-toggle" data-toggle="dropdown"
-                                aria-expanded="false">
+                        <button type="button" className="btn btn-light" onClick={LikeInsight}>
+                            {
+                                likes?.some(x => x._id == user?._id) ?
+                                    <i className="fa-solid fa-heart-pulse"></i> :
+                                    <i className="fa-regular fa-heart"></i>
 
-                            <i className="fas fa-smile mr-2"></i>
-                            <span className="">React</span>
+                            }
+
+                            <span className="ml-1">React</span>
                         </button>
-                        <div className="dropdown-menu post-react-dropdown-menu row">
-                            <div className="post-react-item col">
-                                <i className={`fa-regular fa-thumbs-up text-dark`}></i>
-                                {/*{item.name}*/}
-                            </div>
-                            <div className="post-react-item col">
-                                <i className={`fa-regular fa-thumbs-up text-dark`}></i>
-                                {/*{item.name}*/}
-                            </div>
-                            <div className="post-react-item col">
-                                <i className={`fa-regular fa-thumbs-up text-dark`}></i>
-                                {/*{item.name}*/}
-                            </div>
-                        </div>
+                        {/* <div className="dropdown-menu post-react-dropdown-menu w-25">
+                                    <div className="post-react-item col">
+                                        <i className={`fa-regular fa-thumbs-up text-dark`}></i>
+                                        {item.name}
+                                    </div>
+                                </div>*/}
                     </div>
                 </div>
                 {/* Emortion Reactions */}
-                <div className="col-6">
+                <div className="col-4 border-right">
                     <div className="btn-group dropright">
-                        <button type="button" className="btn btn-light dropdown-toggle" data-toggle="dropdown"
+                        <button type="button" className="btn btn-light dropdown-toggle"
+                                data-toggle="dropdown"
                                 aria-expanded="false">
                             <i className="fa-regular fa-face-smile m-1 small"></i>
-                            <span className="small">+12 Reacts</span>
+                            <span className="small">+{likes?.length} Reacts</span>
                         </button>
                         <div className="dropdown-menu">
                             {/*Reactions Here*/}
-                            <span className="dropdown-item small">Action</span>
-                            <span className="dropdown-item small">Action</span>
+                            {
+                                likes.map((item, index) =>
+                                    <Link key={index} to={`/app/profile/${item._id}`}>
+                                        <span key={index} className="dropdown-item small"><DisplayPicture user={item}
+                                                                                                          width={30}/> &nbsp;{item.name}</span>
+                                    </Link>
+                                )
+                            }
                         </div>
                     </div>
 
                 </div>
             </div>
-
-           {/* <div className="row">
-                <div className="col-2">
-
-                </div>
-                <div className="col-7 post-react">
-                        {props.insight.response}
-                    <ul style={{display:"inline"}}>
-                        <li className="react-btn">
-                            <a className="react-click" onClick={()=>setReactShow(!reactShow)}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round" className="feather feather-smile iw-18 ih-18">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                                </svg>
-                            </a>
-                            <EmoteItReactOptions show={reactShow}/>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className="col-3">
-                    <div className="float-right">
-                        {
-                            props.insight.device == "phone"?
-                            <i className="fas fa-mobile-alt m-2"></i>:
-                                <i className="fas fa-desktop m-2"></i>
-                        }
-                        <span className="badge-pill badge-dark">{props.insight.score}</span>
-                    </div>
-
-                </div>
-            </div>*/}
         </div>
     );
 }

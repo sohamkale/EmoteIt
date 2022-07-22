@@ -23,21 +23,21 @@ export default function AnsweringInterface(props) {
 
         if (props.emortionId)
             //make call to notify start of answering
-            axios.post(`/api/emortion/insight/${props.emortionId}`,null,{
-                headers:{"access-token":accessToken}
-            }).then((res)=>{
+            axios.post(`/api/emortion/insight/${props.emortionId}`, null, {
+                headers: {"access-token": accessToken}
+            }).then((res) => {
 
-                if(res.data){
+                if (res.data) {
                     setInsight(res.data);
                     const startedTime = new Date(res.data?.createdAt);
-                    setTimeLeft(60 - (new Date() - startedTime)/1000);
+                    setTimeLeft(60 - (new Date() - startedTime) / 1000);
 
                     const split = res.data.secret.split(' ');
 
                     let _responseString = [];
                     // console.log(split.length)
 
-                    for(let sIndex=0; sIndex<split.length; sIndex++){
+                    for (let sIndex = 0; sIndex < split.length; sIndex++) {
                         let filler = "_";
                         filler = filler.repeat(split[sIndex].length);
                         _responseString.push(filler);
@@ -50,14 +50,14 @@ export default function AnsweringInterface(props) {
 
     }, [props.emortionId]);
 
-    useEffect(()=>{
+    useEffect(() => {
         const timer = timeLeft > 0 && setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
         // return () => clearInterval(timer);
-    },[timeLeft])
+    }, [timeLeft])
 
     useEffect(() => {
         if (letterParent.current && focusOn[0] !== 1000 && focusOn[1] !== 1000) {
-            letterParent.current?.children[focusOn[0]]?.children[focusOn[1]].focus();
+            letterParent.current?.children[focusOn[0]]?.children[focusOn[1]]?.focus();
         }
     }, [focusOn])
 
@@ -90,16 +90,18 @@ export default function AnsweringInterface(props) {
 
     function _Submit() {
         const response = {
-            secret: insight.secret,
+            secret: insight?.secret,
             response: responseString,
-            deviceId: isMobile?0:1
+            deviceId: isMobile ? 0 : 1
         }
 
-        axios.post(`/api/emortion/insight/${insight?.emortionId}`,response,{headers:{
-            'access-token': accessToken
-            }}).then((res)=>{
-                console.log(res.data);
-                history.push(`/app/emortion/${insight?.emortionId}`)
+        axios.patch(`/api/emortion/insight/${insight?.emortionId}`, response, {
+            headers: {
+                'access-token': accessToken
+            }
+        }).then((res) => {
+            console.log(res.data);
+            history.push(`/app/emortion/${insight?.emortionId}`)
 
         })
     }
@@ -109,43 +111,47 @@ export default function AnsweringInterface(props) {
             {/*Clock Row*/}
             <div className="row m-3 text-align-center">
                 <div className={"col"}>
-                    <h2><span className="badge badge-dark">00:{timeLeft>0 ? parseInt(timeLeft) :0}</span></h2>
+                    <h2><span className="badge badge-dark">00:{timeLeft > 0 ? parseInt(timeLeft) : 0}</span></h2>
                 </div>
             </div>
             {
-                timeLeft>0?
+                timeLeft > 0 ?
                     <>
-                    <div className="row text-align-center m-1" ref={letterParent}>
-                        {
-                            messageBreakdown?.map((word, index) =>
-                                <>
-                                    <div key={index} id={"word"} className={"col-12 row h-25"} style={{maxWidth: "fit-content"}}>
-                                        {
-                                            word.split('').map((item, wIndex) =>
-                                                <>
-                                                    {/*{lIndex++}*/}
-                                                <InsightInput key={wIndex} group={index} index={wIndex} letter={item} _SetFocus={_SetFocus}
-                                                              setFocusOn={setFocusOn} responseString={responseString} setResponseString={setResponseString}/>
-                                                </>
+                        <div className="row text-align-center m-1" ref={letterParent}>
+                            {
+                                messageBreakdown?.map((word, index) =>
+                                    <React.Fragment key={index}>
+                                        <div id={"word"} className={"col-12 row h-25"}
+                                             style={{maxWidth: "fit-content"}}>
+                                            {
+                                                word.split('').map((item, wIndex) =>
+                                                    <React.Fragment key={wIndex}>
+                                                        {/*{lIndex++}*/}
+                                                        <InsightInput key={wIndex} group={index} index={wIndex}
+                                                                      letter={item} _SetFocus={_SetFocus}
+                                                                      setFocusOn={setFocusOn}
+                                                                      responseString={responseString}
+                                                                      setResponseString={setResponseString}/>
+                                                    </React.Fragment>
                                                 )
-                                        }
-                                    </div>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </>
-                            )
-                        }
+                                            }
+                                        </div>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </React.Fragment>
+                                )
+                            }
 
-                    </div>
-                    <div className="row  m-3 text-align-center">
-                        <div className="col">
-                            <button type="button" className="btn btn-dark" onClick={_Submit}>
-                                <i className="fa-regular fa-paper-plane m-1"></i>
-                                SUBMIT
-                            </button>
                         </div>
-                    </div>
-                </>
-                :
+                        <div className="row  m-3 text-align-center">
+                            <div className="col">
+                                <button type="button" className="btn btn-dark" onClick={_Submit}>
+                                    <i className="fa-regular fa-paper-plane m-1"></i>
+                                    SUBMIT
+                                </button>
+                            </div>
+                        </div>
+                    </>
+                    :
                     <div className="row m-2">
                         <div className="btn btn-outline-danger disabled m-auto">TIME UP &nbsp;
                             <i className="fas fa-sad-tear"></i></div>

@@ -6,7 +6,7 @@ export const UserSchema = new Schema(
     {
         name: String,
         bio: String,
-        totalAnswerTimeMs: Number,
+        totalAnswerTimeMs: {type:Number, default:0},
         email: String,
         DOB: Date,
         score: {type: Number, default: 0},

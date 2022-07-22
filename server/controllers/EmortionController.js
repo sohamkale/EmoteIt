@@ -1,7 +1,7 @@
 import {EmortionSchema} from "../models/EmortionSchema.js";
 import {InsightSchema} from "../models/InsightSchema.js";
 import mongoose from "mongoose";
-import {GetTokenUser, GetUserFromToken} from "./UserController.js";
+import {GetTokenUser, GetUserFromToken, UserEngine} from "./UserController.js";
 import {GetProfileById} from "./ProfileController.js";
 import {ObjectId} from "../config.js";
 
@@ -301,13 +301,15 @@ export function TakeHint(req, res) {
 }
 
 export async function SubmitEmortionInsight(req, res) {
+
+    console.log(req.body)
     let matchCounter = 0;
     let answerNumber = 0;
     let timeSubtract = 0;
     let subtractAnswerRank = 0;
     let finalScore = 0;
     let response = req.body.response
-    let secret = req.body.secret
+    let secret = req.body.secret?.split(' ');
     let startTime;
     for (let i = 0; i < response.length; i++) {
         if (response[i] === secret[i]) {
@@ -332,14 +334,25 @@ export async function SubmitEmortionInsight(req, res) {
 
         //get the logged in user
         const tokenUser = await GetUserFromToken(req.get("access-token"));
-        const loggedInUserId = tokenUser._id.toString();
+        const loggedInUserId = tokenUser._id;
 
         //get start time
         //check this
         InsightEngine.findOne({$and: [{createdBy: loggedInUserId}, {emortionId: req.params.id}]}, (err, insight) => {
+            if (err) {
+                res.send(err)
+                return;
+            }
+
             startTime = insight.createdAt
             let currTime = new Date()
             let timeDifferential = Math.abs(currTime - startTime)
+
+            if(timeDifferential > 60000){
+                res.status(500).send("Timer Expired!");
+                return;
+            }
+
             if (timeDifferential >= 10000) {
                 timeSubtract = 5;
             }
@@ -358,30 +371,37 @@ export async function SubmitEmortionInsight(req, res) {
             if (timeDifferential === 55000) {
                 timeSubtract = 30;
             }
-            if(timeDifferential > 60000){
-                res.status(500).send("Timer Expired!");
-                return;
-            }
+
             finalScore = (matchCounter * 10) + (10) - (subtractAnswerRank) + (30) - (timeSubtract);
-            // console.log(finalScore)
+            finalScore -= (insight.hintsTaken*5); // each hint taken deduct 5 points
             let returnObj = {
                 score: finalScore,
                 submittedAt: currTime,
                 response: req.body.response,
-                accuracy: finalScore / timeSubtract,
+                accuracy: matchCounter/secret.length,
                 timeTaken: timeDifferential
             }
-            InsightEngine.findByIdAndUpdate(insight._id, returnObj, {new: true}, (err, updated) => {
+            InsightEngine.findByIdAndUpdate(insight._id.toString(), returnObj, {new: true}, (err, updated) => {
                 if (err) {
-                    res.send(err)
+                    res.send(err);
+                    return;
                 }
-                console.log("Updated to insight table")
+
+                //add the score to the user
+                UserEngine.findByIdAndUpdate(loggedInUserId, {$inc: {score: finalScore, totalAnswerTimeMs: timeDifferential}}, {new: true},
+                    (err, updated) => {
+                        if (err) {
+                            res.send(err);
+                        } else {
+                            res.send(updated)
+                            return;
+                        }
+                    })
+
+
             })
-            if (err) {
-                res.send(err)
-            }
-            res.send(returnObj)
-            console.log("Submitted Emortion!")
+
+
         })
     })
 }
@@ -414,24 +434,27 @@ export function GetInsightsOfEmortion(req, eRes) {
 }
 
 export function GetUserInsight(req, eRes) {
-    InsightEngine.find({createdBy: req.params.userId}, async (err, insight) => {
+    InsightEngine.find({createdBy: new ObjectId(req.params.userId)}, async (err, insights) => {
         let VisibleInsights = []
         if (err) {
             eRes.send(err)
         }
+
+        const userToken = req.get('access-token');
         const loggedInUser = await GetUserFromToken(userToken);
 
-        for (let i = 0; i < insight.length; i++) {
-            await EmortionEngine.findById(insight[i].emortionId).exec().then(async (emortion) => {
-                await IsEmortionVisible(emortion, loggedInUser?._id.toString(), (res) => {
+        for (let i = 0; i < insights.length; i++) {
+            await EmortionEngine.findById(insights[i].emortionId).exec().then(async (emortion) => {
+                await IsEmortionVisible(emortion, loggedInUser?._id.toString(), async (res) => {
                     if (res) {
-                        VisibleInsights.push(insight[i])
+                        insights[i].createdBy = loggedInUser;
+                        VisibleInsights.push(insights[i])
                     }
                 })
             })
         }
         eRes.send(VisibleInsights)
-    }).limit(req.query.limit)
+    }).sort({createdAt:-1}).limit(req.query.limit)
 }
 
 export async function ReactInsight(req, res) {
@@ -472,7 +495,7 @@ export async function ReactInsight(req, res) {
 }
 
 export function GetInsightReacts(req,res){
-    InsightEngine.findById(req.params.id, (err,insights)=>{
+    InsightEngine.findById(req.params.id, async(err,insights)=>{
         let ReactionProfiles = []
         if(err){
             res.send(err);
@@ -480,7 +503,7 @@ export function GetInsightReacts(req,res){
         }
         else{
             for(let i = 0; i<insights.reactionIds.length;i++){
-                const profile = GetProfileById(insights.reactionIds[i])
+                const profile = await GetProfileById(insights.reactionIds[i])
                 ReactionProfiles.push(profile)
             }
         }
