@@ -6,3 +6,6 @@ server/package.json
 /node_modules/
 /package-lock.json
 /.idea/.name
+/client/package-lock.json
+/.idea/shelf/Uncommitted_changes_before_Update_at_7_20_2022_1_34_AM_[Default_Changelist]/shelved.patch
+/.idea/shelf/Uncommitted_changes_before_Update_at_7_20_2022_1_34_AM__Default_Changelist_.xml
