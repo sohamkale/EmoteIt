@@ -524,18 +524,40 @@ export function MostInsightedEmortion(req,res){
         }
         const userToken = req.get('access-token');
         const loggedInUser = await GetUserFromToken(userToken);
-        await IsEmortionVisible(bestEmortion, loggedInUser?._id.toString(), async (result) => {
-            if (!result) {
-                bestEmortion.secret = "";
-            }
-            res.send(bestEmortion);
-            console.log(bestEmortion)
-        })
+        if(await IsEmortionRevealed(bestEmortion._id, loggedInUser?._id.toString())){
+            bestEmortion.secret = ""
+        }
+        res.send(bestEmortion)
     })
 }
 
-export function Feed(req,res){
+
+export async function UserHappyFriends(userId){
+    return await FriendEngine.find({$and: [{$or: [{requesterUserId: userId}, {requesteeUserId: userId}]}, {statusId: 1}, {typeId: 1}]}).exec()
 }
+
+export async function UserEmortions(userId){
+    return await EmortionEngine.find({createdBy: userId}).exec()
+}
+
+export async function Feed(req,res){
+    // Get user's friends
+    const userToken = req.get('access-token')
+    const loggedInUser = await GetUserFromToken(userToken)
+    let UID = loggedInUser?._id.toString()
+    const friends = await UserHappyFriends(UID)
+    // Get all friends emortions
+    let emortions = []
+    for(let i = 0; i<friends.length;i++){
+        let emortion = UserEmortions(friends[i].requesteeUserId)
+        if(await IsEmortionRevealed(emortion._id, loggedInUser?._id.toString())){
+            emortion.secret = ""
+        }
+        emortions.push(emortion)
+    }
+    res.send(emortions)
+}
+
 
 //INSIGHT END
 

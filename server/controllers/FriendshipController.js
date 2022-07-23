@@ -1,4 +1,3 @@
-import {UserSchema} from "../models/UserSchema.js";
 import mongoose from "mongoose";
 import {FriendshipSchema} from "../models/FriendshipSchema.js";
 import {GetTokenUser} from "./UserController.js";
@@ -105,6 +104,7 @@ export function UserHappyFriendships(req,res){
         res.send(updated)
     })
 }
+
 
 export function CancelFriendshipRequest(req,res){
     const _friendship = req.body;

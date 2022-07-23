@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="submission and view of insights">
+    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="run client and server concurrently">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/EmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/EmortionController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/FriendshipController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/FriendshipController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/EmortionRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +51,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -105,6 +109,7 @@
       <workItem from="1658277087701" duration="6116000" />
       <workItem from="1658285228797" duration="3660000" />
       <workItem from="1658292611649" duration="29207000" />
+      <workItem from="1658551457924" duration="2252000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Controller Todo">
       <created>1642905993631</created>
