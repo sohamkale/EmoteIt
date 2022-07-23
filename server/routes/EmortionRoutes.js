@@ -11,7 +11,8 @@ import {
     ReactEmortion,
     CheckEmortionVisibility,
     GetEmortionReacts,
-    GetInsightReacts
+    GetInsightReacts,
+    MostInsightedEmortion
 } from "../controllers/EmortionController.js";
 
 export default function EmortionRoutes (server) {
@@ -47,7 +48,9 @@ export default function EmortionRoutes (server) {
     server.route('/api/insight/user/:userId')
         //get all insights of a user
         .get(GetUserInsight);
-
+    server.route('/api/emortion/user/:userID')
+        //get most insighted emortion
+        .get(MostInsightedEmortion)
 
     server.route('/api/insight/react/:id')
         .get(GetInsightReacts)

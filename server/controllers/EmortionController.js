@@ -4,10 +4,11 @@ import mongoose from "mongoose";
 import {GetTokenUser, GetUserFromToken, UserEngine} from "./UserController.js";
 import {GetProfileById} from "./ProfileController.js";
 import {ObjectId} from "../config.js";
+import {FriendshipSchema} from "../models/FriendshipSchema.js";
 
 const EmortionEngine = mongoose.model('Emortion', EmortionSchema);
 const InsightEngine = mongoose.model('Insight', InsightSchema);
-
+const FriendEngine = mongoose.model('Friends', FriendshipSchema);
 
 //EMORTION START
 
@@ -509,6 +510,31 @@ export function GetInsightReacts(req,res){
         }
         res.send(ReactionProfiles)
     })
+}
+
+export function MostInsightedEmortion(req,res){
+    console.log("IN")
+    let UID = req.params.userId;
+    EmortionEngine.find({createdBy:UID},async (err, emortions) => {
+        let bestEmortion = emortions[0];
+        for (let i = 1; i < emortions.length; i++) {
+            if (bestEmortion.insightUIDs.length < emortions[i].insightUIDs.length) {
+                bestEmortion = emortions[i];
+            }
+        }
+        const userToken = req.get('access-token');
+        const loggedInUser = await GetUserFromToken(userToken);
+        await IsEmortionVisible(bestEmortion, loggedInUser?._id.toString(), async (result) => {
+            if (!result) {
+                bestEmortion.secret = "";
+            }
+            res.send(bestEmortion);
+            console.log(bestEmortion)
+        })
+    })
+}
+
+export function Feed(req,res){
 }
 
 //INSIGHT END
