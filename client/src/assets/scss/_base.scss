@@ -1,0 +1,236 @@
+body {
+  background-image: url("../../assets/img/brand/logo/logo-dark-tp.png");
+  //padding-bottom: 100px;
+
+}
+
+$btn-hover-color: darkgoldenrod;
+
+.bg{
+  &-extra_dark{
+    background-color: black;
+    color: whitesmoke;
+  }
+}
+
+.btn{
+  &-extra_dark{
+    background-color: black;
+    color: whitesmoke;
+    &:hover {
+      color: $btn-hover-color !important;
+    }
+  }
+}
+
+.tr{
+  &-clickable{
+    &:hover{
+      cursor: pointer;
+    }
+
+    &.selected{
+      color: $btn-hover-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+#emoteit-app-top{
+
+  //overflow: scroll;
+}
+
+//Authentication
+.login_page {
+  background: url("../img/authentication/emoji_keyboard.jpg");
+  background-size: cover;
+  background-repeat: repeat-y;
+  height: 100%;
+  overflow: auto;
+}
+
+
+//Navbar
+
+.brand-logo {
+  width: 7%;
+}
+
+.emoteit-body{
+  width: 95%;
+  margin-left: auto;
+  margin-bottom: 150px !important;
+}
+
+@media (max-width: 720px) {
+  .brand-logo {
+    width: 35%;
+  }
+
+  .emoteit-body{
+    width: 100%;
+    margin: auto;
+  }
+}
+
+//End Navbar
+
+.bg {
+  &_fullpage {
+    background-color: lightgrey;
+    height: 100vh;
+  }
+}
+
+.container {
+  &_fullpage {
+    height: 100vh;
+  }
+}
+
+.bg {
+  &-dark {
+    &-75 {
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+  }
+}
+
+.op {
+  &-25 {
+    opacity: 0.25;
+  }
+}
+
+
+//modal
+.modal {
+  z-index: 1100 !important;
+}
+
+
+//sidebar
+/**=====================
+    Sidebar Panel css start
+==========================**/
+
+.routes-bar-sm {
+  height: 80px;
+
+  &-item {
+    color: whitesmoke;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+
+    &:hover {
+      color: $btn-hover-color !important;
+      cursor: pointer;
+
+    }
+  }
+}
+
+.routes-bar-md {
+  position: absolute;
+  border-radius: 10px;
+  width: 60px;
+
+  &-item {
+    color: whitesmoke;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+
+    &:hover {
+      color: $btn-hover-color !important;
+      cursor: pointer;
+
+    }
+  }
+
+}
+
+
+//leaderbaord jumbotron
+.leaderboard {
+
+  background-image: url("../img/leaderboard/trophy.jpg");
+  background-size: cover;
+
+  h1 {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &-header {
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+
+  &-carousel {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    //flex-wrap: wrap;
+    //height: 220px;
+    //white-space: nowrap;
+  }
+
+  &-card {
+    border-radius: 10px;
+    width: 140px;
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+      cursor: pointer;
+    }
+  }
+}
+
+.profile-info-row {
+  height: 405px;
+
+  &-card {
+    height: 400px;
+  }
+}
+
+//loader
+
+.loader-page{
+  height: 99vh;
+  width: 99vw;
+  z-index: 10000;
+  position: absolute;
+  ;
+  opacity: .8;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+
+  opacity: 1.0;
+  margin:auto;
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

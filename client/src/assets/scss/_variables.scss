@@ -1,0 +1,51 @@
+/**=====================
+    default variables
+==========================**/
+
+// Font family
+$font-1: 'Montserrat',
+sans-serif;
+$font-2: 'Roboto',
+sans-serif;
+//font size
+$h1-size: calc(28px + (36 - 28) * ((100vw - 320px) / (1920 - 320)));
+$h2-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+$h3-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+$h4-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+$h5-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+$h6-size: calc(11px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
+$medium-size: calc(11px + (13 - 11) * ((100vw - 320px) / (1920 - 320)));
+$small-size:11px;
+$xs-size: 8px;
+//color variables
+$black: #000000;
+$white: #ffffff;
+$theme-color: #343a40;
+$theme-light: #edf7fb;
+$title-color: #51595e;
+$font-color: #647589;
+$light-font: rgba($font-color, 0.7);
+$light-border: rgba($font-color, 0.1);
+$theme-danger:#ff2f25;
+$theme-success: #2bc60c;
+$theme-warning: #ff9037;
+$label-danger: #c1232f;
+$landing-bg: rgba(243, 248, 254,  0.52);
+// social color
+$facebook: #385cb4;
+$twitter: #00a0dd;
+$whatsapp: #1abc56;
+$instagram: #b744e7;
+$youtube: #fe4653;
+// shadow
+$light-shadow: 0 0 8px 0 rgba($black, 0.05);
+$dark-shadow: 0 0 8px 0 rgba($black, 0.14);
+$dropdown-shadow:0 1px 5px 0 rgba($black, 0.1);
+$card-shadow: 0px 5px 20px 0px rgba($black, 0.02);
+// border-radius 
+$radius-5: 5px;
+$radius-10: 10px;
+$radius-15: 15px;
+$radius-20: 20px;
+$radius-25: 25px;
+$radius-100: 100%;

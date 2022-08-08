@@ -1,0 +1,69 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"b068f188-c3dc-4bf3-828d-67b3239667f4\" name=\"Default Changelist\" comment=\"daily secret emortion completed!\">\r\n      <change afterPath=\"$PROJECT_DIR$/controllers/ProfileController.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/routes/ProfileRoutes.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/controllers/FriendshipController.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/controllers/FriendshipController.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/controllers/NotificationController.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/controllers/SecretEmortionController.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/controllers/SecretEmortionController.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/controllers/UserController.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/controllers/UserController.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/models/FriendshipSchema.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/models/FriendshipSchema.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/models/TranslationSchema.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/models/TranslationSchema.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/models/UserSchema.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/models/UserSchema.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/routes/FeedbackRoutes.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/routes/FeedbackRoutes.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/routes/NotificationRoutes.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/routes/index.js\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"22ZiuNDz1XfU9s8OAzthhbd8RJ7\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"javascript.nodejs.core.library.configured.version\" value=\"14.15.1\" />\r\n    <property name=\"javascript.nodejs.core.library.typings.version\" value=\"14.18.12\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../EmoteIt-React\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_interpreter_path\" value=\"node\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\ashim\\source\\repos\\EmoteIt-WebService\\models\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"start\" type=\"js.build_tools.npm\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"start\" />\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"b068f188-c3dc-4bf3-828d-67b3239667f4\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1640051731610</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1640051731610</updated>\r\n      <workItem from=\"1640051734290\" duration=\"5031000\" />\r\n      <workItem from=\"1640058544686\" duration=\"5000\" />\r\n      <workItem from=\"1641697128610\" duration=\"7532000\" />\r\n      <workItem from=\"1641974699325\" duration=\"2792000\" />\r\n      <workItem from=\"1649133345791\" duration=\"5938000\" />\r\n      <workItem from=\"1649211760606\" duration=\"10104000\" />\r\n      <workItem from=\"1649224780464\" duration=\"1917000\" />\r\n      <workItem from=\"1649307048720\" duration=\"6815000\" />\r\n      <workItem from=\"1649326906617\" duration=\"125000\" />\r\n      <workItem from=\"1649641425817\" duration=\"5003000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Notification Controller Todo\">\r\n      <created>1642905993631</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1642905993631</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"user controller completed\">\r\n      <created>1649214786299</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1649214786299</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"news controller!\">\r\n      <created>1649224595954</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1649224595954</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"daily secret emortion completed!\">\r\n      <created>1649313829239</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1649313829239</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"config js added\">\r\n      <created>1649326988639</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1649326988639</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Notification Controller Todo\" />\r\n    <MESSAGE value=\"user controller completed\" />\r\n    <MESSAGE value=\"news controller!\" />\r\n    <MESSAGE value=\"daily secret emortion completed!\" />\r\n    <MESSAGE value=\"config js added\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"config js added\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,22 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!">
+-      <change afterPath="$PROJECT_DIR$/controllers/ProfileController.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/routes/ProfileRoutes.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/controllers/FriendshipController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FriendshipController.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/controllers/NotificationController.js" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/controllers/SecretEmortionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SecretEmortionController.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserController.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/models/FriendshipSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/FriendshipSchema.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/models/TranslationSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/TranslationSchema.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/models/UserSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/UserSchema.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/routes/FeedbackRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/FeedbackRoutes.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/routes/NotificationRoutes.js" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" />
+-    </list>
++    <list default="true" id="b068f188-c3dc-4bf3-828d-67b3239667f4" name="Default Changelist" comment="daily secret emortion completed!" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -86,7 +71,7 @@
+       <workItem from="1649224780464" duration="1917000" />
+       <workItem from="1649307048720" duration="6815000" />
+       <workItem from="1649326906617" duration="125000" />
+-      <workItem from="1649641425817" duration="5003000" />
++      <workItem from="1649641425817" duration="5256000" />
+     </task>
+     <task id="LOCAL-00001" summary="Notification Controller Todo">
+       <created>1642905993631</created>
+@@ -123,7 +108,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1649326988639</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="profile controller 85%">
++      <created>1649646534620</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1649646534620</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -147,6 +139,7 @@
+     <MESSAGE value="news controller!" />
+     <MESSAGE value="daily secret emortion completed!" />
+     <MESSAGE value="config js added" />
+-    <option name="LAST_COMMIT_MESSAGE" value="config js added" />
++    <MESSAGE value="profile controller 85%" />
++    <option name="LAST_COMMIT_MESSAGE" value="profile controller 85%" />
+   </component>
+ </project>
+\ No newline at end of file
