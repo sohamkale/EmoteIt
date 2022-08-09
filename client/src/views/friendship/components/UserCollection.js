@@ -1,23 +1,24 @@
 import React, {useEffect, useState} from 'react'
 import UserCard from "../../shared/components/UserCard";
-export default function UserCollection(props){
+
+export default function UserCollection(props) {
 
     const [searchValue, setSearchValue] = useState("");
     const [filteredList, setFilteredList] = useState();
 
-    useEffect(()=>{
+    useEffect(() => {
         setFilteredList(props.users);
-    },[props.users])
+    }, [props.users])
 
-    function SearchUsers(e){
+    function SearchUsers(e) {
         const searchValue = e.target.value.toLowerCase();
-        if(searchValue)
-            setFilteredList(props.users?.filter(x=>x.name.toLowerCase().includes(searchValue)));
-        if(!searchValue || searchValue == "" || searchValue == null)
+        if (searchValue)
+            setFilteredList(props.users?.filter(x => x.name.toLowerCase().includes(searchValue)));
+        if (!searchValue || searchValue == "" || searchValue == null)
             setFilteredList(props.users);
     }
 
-    return(
+    return (
         <div className="card mb-3">
             <div className="card-header">
 
@@ -25,7 +26,7 @@ export default function UserCollection(props){
                     <h5 className="card-title">{props.name}</h5>
                     <div className="ml-auto">
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                        onChange={SearchUsers}/>
+                               onChange={SearchUsers}/>
                     </div>
 
                 </div>
@@ -33,8 +34,10 @@ export default function UserCollection(props){
             </div>
             <div className="card-body overflow-auto" style={{height: "500px"}}>
                 <div className="row  h-50">
-                    {filteredList?.map((user,index)=>
-                        <UserCard key={index} user={user} getList={props.getList}/>
+                    {filteredList?.map((user, index) =>
+                        <div className="col-12 col-md-4">
+                            <UserCard key={index} user={user} getList={props.getList}/>
+                        </div>
                     )}
                 </div>
             </div>

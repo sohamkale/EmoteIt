@@ -52,7 +52,7 @@ export default function Leaderboard(props) {
                             </div>
 
                             <div className={"col"}>
-                                <h5>Realtionships</h5>
+                                <h5>Relationships</h5>
                                 <h5 className="text-bold">{stats?.newRelationshipCount}</h5>
                             </div>
 

@@ -18,6 +18,10 @@
         "source": "/api/**",
         "dynamicLinks": true,
         "function": "emoteit_server"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }

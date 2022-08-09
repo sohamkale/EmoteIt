@@ -33,14 +33,14 @@ export default function TopLeaderBoardCard(props) {
                         </div>
                         <div className="col">
                             <span
-                                className="badge badge-light border-left ">{profile?.avgAnswerTime.toFixed()/1000 ?? 0} seconds</span>
+                                className="badge badge-light border-left ">{profile?.avgAnswerTime?.toFixed()/1000 ?? 0} seconds</span>
 
                         </div>
                     </div>
                     <div className="row">
                         <div className="col">
                             <h6>
-                                <span>{((profile?.avgAccuracy ?? 0) * 100).toFixed(2)}% Accurate {props.insights} Insights &nbsp;{props.emortions} </span>
+                                <span>{((profile?.avgAccuracy ?? 0) * 100)?.toFixed(2)}% Accurate {props.insights} Insights &nbsp;{props.emortions} </span>
                             </h6>
                         </div>
                     </div>

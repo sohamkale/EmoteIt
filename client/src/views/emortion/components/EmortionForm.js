@@ -12,7 +12,7 @@ export default function EmortionForm(props) {
     const [secret, setSecret] = useState("");
     const [category, setCategory] = useState(0);
     const [expireOpt, setExpireOpt] = useState(0);
-    const [expiresAt, setExpiresAt] = useState(new Date());
+    const [adminExpiresAt, setAdminExpiresAt] = useState();
     const [messageEmojis, setMessageEmojis] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -53,12 +53,16 @@ export default function EmortionForm(props) {
     }
 
     function SubmitEmortion() {
+        let expiresAt = new Date();
         if(user.typeId != 0) {
-            const timeNow = new Date();
 
-            let _expireHours = expireOpt == 1 ? 3 : expireOpt == 2 ? 24 : 1; // 0 =1 hour, 1= 3 hours and 2= 24 hours. default = 1 hour
-            setExpiresAt( new Date(new Date().setHours(timeNow.getHours() + _expireHours)))
-        }
+            let _expireHours = 1;
+            _expireHours += expireOpt == 1 ? 2 : expireOpt == 2 ? 23 : 0; // 0 =1 hour, 1= 3 hours and 2= 24 hours. default = 1 hour
+
+            expiresAt.setHours(expiresAt.getHours() + _expireHours )
+
+            console.log(expiresAt)
+        } else expiresAt = adminExpiresAt;
 
         const _emortion = {
             expiresAt, message: messageEmojis, secret, categoryId: category
@@ -79,11 +83,11 @@ export default function EmortionForm(props) {
             headers: {"access-token": accessToken}
         }).then((res) => {
             ResetForm();
+            props.GetEmortion();
             setMsg("success!");
         }).catch((err) => {
             setMsg(`error! status: ${err.response?.status}, message: ${err.response?.data?.message}`);
             console.log(err.response);
-
         })
     }
 
@@ -112,7 +116,7 @@ export default function EmortionForm(props) {
                             <label className='form-label'>Expires</label>
                             {
                                 user?.typeId == 0?
-                                    <input type="date" className="form-control" onChange={(e)=>{let date = new Date(e.target.value); date.setUTCHours(23,59,59); setExpiresAt(date)}}/>:
+                                    <input type="date" className="form-control" onChange={(e)=>{let date = new Date(e.target.value); date.setUTCHours(23,59,59); setAdminExpiresAt(date)}}/>:
                                     <select id="postType" name='type' className='form-control'
                                             value={expireOpt} onChange={(e) => setExpireOpt(e.target.value)}>
                                         <option value={0}>In 1 Hour</option>
@@ -124,14 +128,13 @@ export default function EmortionForm(props) {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-3">Perfect Insight</div>
-                        <div className="col-7">
+                        <div className="col-8">
                             <input style={{fontFamily: 'Ink Free', fontWeight: 'bold'}}
                                    required id="" name="secretAnswer" value={secret} onChange={_OnSecretChange}
-                                   className="form-control" placeholder="Six word max..."/>
+                                   className="form-control" placeholder="Your insight in six word max..."/>
                         </div>
-                        <div className="col-2">
-                            <button className={"btn btn-warning"} onClick={SubmitEmortion}>OK</button>
+                        <div className="col-3">
+                            <button className={"btn btn-warning"} onClick={SubmitEmortion}>SUBMIT</button>
                         </div>
                     </div>
                     <div className={"row m-2"}>
@@ -148,23 +151,7 @@ export default function EmortionForm(props) {
                         }
                         <EmojiInputCaret index={messageEmojis.length} currentIndex={currentIndex}
                                          setCurrentIndex={setCurrentIndex}/>
-                        {/*     <div className="col-2">
-                            <div className="btn btn-danger" onClick={_PopMessage}>X</div>
-                        </div>*/}
-                        {/*<div>{emojiValue}</div>
-                        <textarea
-                            ref={emojiInput}
-                            className="form-control"
-                            onChange={(e)=>{
-                                //restrict typing but only backspaces
-                                if(e.target.value.length>emojiValue.length)
-                                    return;
-                                setEmojiValue(e.target.value);
-                            }}
-                            value={emojiValue}
-                            type="text"
-                            placeholder="Pick you emojis that resembles your emotions..."
-                        />*/}
+
 
                     </div>
                     <div className={"row"}>

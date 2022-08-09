@@ -150,7 +150,7 @@ export const Login = () => {
                     </div>
 
                     <div className={"col border-right border-bottom"}>
-                        <h5>Realtionships</h5>
+                        <h5>Relationships</h5>
                         <h5 className="text-bold">{stats?.newRelationshipCount}</h5>
                     </div>
 
@@ -160,7 +160,7 @@ export const Login = () => {
                 <hr/>
                 <div className="row w-75 m-auto">
 
-                    {topTen?.slice(0, 3).map((item, index) =>
+                    {topTen?.slice(0, 3)?.map((item, index) =>
                         <div key={index} className="col-12 col-md-4 mb-2">
                             <TopLeaderBoardCard color={
                                 index == 0 ? "goldenrod" : index == 1 ? "darkgrey" : index == 2 ? "brown" : "black"
