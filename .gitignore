@@ -81,3 +81,7 @@ package-lock.json
 
 /functions/config.js
 /server/config.js
+*.xml
+*.xml
+client/package.json
+client/package.json

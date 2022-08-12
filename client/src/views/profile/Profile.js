@@ -22,13 +22,21 @@ export default function Profile(props) {
     let {id: profileId} = useParams();
 
 
-    function GetRelationships() {
-        axios.get(`/api/friendship/request`, {
+    // function GetRelationships() {
+    //     axios.get(`/api/friendship/request`, {
+    //         headers: {"access-token": accessToken}
+    //     }).then((res) => {
+    //         setRelationships(res.data);
+    //     });
+    //
+    // }
+
+    function GetRelationships(){
+        axios.get(`/api/friendship/user/${profileId}`, {
             headers: {"access-token": accessToken}
         }).then((res) => {
             setRelationships(res.data);
         });
-
     }
 
     function GetEmortions() {
@@ -241,11 +249,12 @@ export default function Profile(props) {
                             {(relationships === undefined || relationships === null) ? <center>
                                     <div className="text-center spinner-border"/>
                                 </center> :
-                                relationships?.filter(x => x.statusId == 1)?.map((item, index) =>
-
+                                relationships?.filter(x => x.statusId === 1)?.map((item, index) =>
+                                    <div className="col-12" key={index}>
                                     <UserCard key={index}
-                                              user={user?._id === item?.requesteeUserId?._id ? item?.requesterUserId : item?.requesteeUserId}
+                                              user={profileId === item?.requesteeUserId?._id ? item?.requesterUserId : item?.requesteeUserId}
                                               getList={props.getList} relationship={item}/>
+                                    </div>
                                 )}
                         </div>
                     </div>
