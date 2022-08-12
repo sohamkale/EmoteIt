@@ -17,8 +17,7 @@ export const Navbar = (props) => {
                 </Link>
             </div>
             <NotificationTray/>
-
-
+            <Feedback/>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -35,17 +34,13 @@ export const Navbar = (props) => {
             </div>
         </nav>
        /* <nav className="navbar bg-dark navbar-light text-light">
-
                 <div className="col-2 col-md-5 row align-self-center">
-
-
                 </div>
                 <div className={"col-4 col-md-5 row align-self-center"}>
                     <SearchBox/>
                 </div>
                 <div className="col-4 col-md-3 ml-auto order-md-last">
                 </div>
-
         </nav>*/
     )
 }

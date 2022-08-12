@@ -384,7 +384,8 @@ export async function SubmitInsight(req, res) {
                                 submittedAt: currTime,
                                 response: req.body.response,
                                 accuracy: matchCounter / secret.length,
-                                timeTaken: timeDifferential
+                                timeTaken: timeDifferential,
+                                deviceId: req.body.deviceId
                             }
                             InsightEngine.findByIdAndUpdate(insight._id.toString(), returnObj, {new: true})
                                 .then(() => {

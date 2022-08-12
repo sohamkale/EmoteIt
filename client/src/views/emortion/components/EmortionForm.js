@@ -65,7 +65,7 @@ export default function EmortionForm(props) {
         } else expiresAt = adminExpiresAt;
 
         const _emortion = {
-            expiresAt, message: messageEmojis, secret, categoryId: category
+            expiresAt, message: messageEmojis, secret:secret.trim(), categoryId: category
         }
         setMsg("");
 
