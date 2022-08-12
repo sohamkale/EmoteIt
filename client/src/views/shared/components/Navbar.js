@@ -1,11 +1,21 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {SearchBox} from "./SearchBox";
 import {NavAccountInfo} from "./NavAccountInfo";
 import {NotificationTray} from "./NotificationTray";
 import {Feedback} from "./Feedback";
 import {Link} from "react-router-dom";
-
 export const Navbar = (props) => {
+    const [darkMode, setDarkMode] = useState(false);
+    const [toggle, setToggle] = useState(false);
+    useEffect(()=>{
+        if(toggle){
+            import("../../../assets/scss/_darkmode.scss")
+            setDarkMode(true)
+        }
+        if(!toggle && darkMode){
+            window.location.reload()
+        }
+    })
     return (
         // <!-- Just an image -->
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -18,6 +28,7 @@ export const Navbar = (props) => {
             </div>
             <NotificationTray/>
             <Feedback/>
+            <button onClick={()=>{toggle===false?setToggle(true):setToggle(false)}} type={"button"} className={"btn btn-dark"}><i className="fa-solid fa-moon"/></button>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">

@@ -13,6 +13,22 @@ $btn-hover-color: darkgoldenrod;
   }
 }
 
+tr.green td{
+  background-color: lightgreen;
+}
+
+tr.yellow td{
+  background-color: lightyellow;
+}
+
+tr.orange td{
+  background-color: lightsalmon;
+}
+
+tr.blue td{
+  background-color: lightblue;
+}
+
 .btn{
   &-extra_dark{
     background-color: black;
@@ -233,4 +249,3 @@ $btn-hover-color: darkgoldenrod;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-

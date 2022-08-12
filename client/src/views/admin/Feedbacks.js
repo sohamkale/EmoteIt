@@ -11,6 +11,9 @@ export default function Feedbacks(props){
 
     const [completed, setCompleted] = useState(false);
     const [feedbacks, setFeedbacks] = useState([]);
+    const Green = {
+        backgroundColor: 'green'
+    }
 
     useEffect(()=>{
         setPageTitle("Feedbacks")
@@ -61,7 +64,8 @@ export default function Feedbacks(props){
                 <tbody>
                 {
                     feedbacks?.map((item, row)=>
-                        <tr key={row}>
+                        <tr className={item.statusId===2?"green" : item.statusId===0?"orange" :
+                            item.statusId===1?"yellow" : item.statusId===3?"blue":""} key={row}>
                           <td>{item.createdAt}</td>
                                 <td>{item.createdBy?.name}</td>
                              <td>{item.objectTypeId}</td>
