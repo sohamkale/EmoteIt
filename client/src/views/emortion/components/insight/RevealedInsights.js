@@ -99,7 +99,7 @@ export function SingleInsight({insight, GetInsights, setMsg}) {
             <div className="row m-1">
                 <div className="col-7 text-bold">
                     {insight?.response.map((item, index) =>
-                        <span key={index}>{item} &nbsp;</span>)}
+                        <span key={index}>{item.toUpperCase()} &nbsp;</span>)}
                 </div>
                 <div className="col-5 text-align-right">
                     <div className="mb-2 ml-auto">
@@ -110,9 +110,9 @@ export function SingleInsight({insight, GetInsights, setMsg}) {
                             <Moment diff={insight?.createdAt} unit={"seconds"}>{insight?.submittedAt}</Moment> seconds
                         </span>
                         {
-                            insight?.deviceId == 0 ?
-                            <i className="fa-solid fa-mobile-screen-button m-2"></i> :
-                            <i className="fa-solid fa-desktop m-2"></i>}
+                            insight?.deviceId === 0 ?
+                            <i className="fa-solid fa-mobile-screen-button m-2"/> :
+                            <i className="fa-solid fa-desktop m-2"/>}
                     </div>
                 </div>
             </div>
