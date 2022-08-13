@@ -88,7 +88,7 @@ Secrets: One Drive: /Projects/EmoteIt
 
 ## Contributors
 - Soham Kale (Project Owner)   [sohamkale2412@gmail.com]
-- Mohammad Asfaq Immam (Principle Developer)   [immammohammad1@gmail.com]
+- Mohammad Asfaq Immam (Principle Software Developer)   [immammohammad1@gmail.com]
 - Esfar Mohammad (Software Developer)   [immam.m@ufl.edu]
 - Ashiq Islam (Front End Developement and Documentation)   [ashiqulislam234@gmail.com]
 
